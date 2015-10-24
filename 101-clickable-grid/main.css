@@ -1,0 +1,65 @@
+body {
+    font-family: Helvetica, Tahoma, Arial, STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑', SimSun, '宋体', Heiti, '黑体', sans-serif;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    background-color: #FAF8EF;
+}
+
+#container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#selnum {
+    display: flex;
+
+    margin: 20px 3px;
+    padding: 10px 0;
+
+    border-radius: 8px;
+    background-color: #BBADA0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    padding: 4px;
+    border-radius: 8px;
+
+    height: 500px;
+    margin-top: 15px;
+
+    flex-wrap: wrap;
+    background-color: #BBADA0;
+    /*align-content: space-between;*/
+}
+
+.column {
+    display: flex;
+
+    flex: 1 1 100%;
+    /*justify-content: space-between;*/
+}
+
+.item {
+    display: flex;
+
+    margin: 4px;
+
+    text-align: center;
+
+    border-radius: 3px;
+    background-color: #EDE0C8;
+
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    font-size: 50px;
+
+}
