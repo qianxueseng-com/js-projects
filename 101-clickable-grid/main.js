@@ -3,29 +3,33 @@
  */
 
 box = document.getElementsByClassName('box')[0];
+select = document.getElementById('select');
+
+// 事件绑定
+select.addEventListener('change', function(){update(select.value)}, false);
 
 function update(value) {
 
-    while (box.childElementCount) {
-        box.removeChild(box.children[0]);
-    }
+    // 清空所有小方块
+    box.innerHTML = '';
 
     for (var i = 0; i < value; i++) {
-        var new_column = document.createElement('div');
-        new_column.setAttribute('class', 'column');
-        box.appendChild(new_column);
+        var newColumn = document.createElement('div');
+        newColumn.setAttribute('class', 'column');
+        box.appendChild(newColumn);
         for (var j = 0; j < value; j++) {
             var new_item = document.createElement('span');
             new_item.setAttribute('class', 'item');
             changeFontSize(new_item, value);
             var numnode = document.createTextNode((i * value + j + 1).toString());
             new_item.appendChild(numnode);
-            new_column.appendChild(new_item);
+            newColumn.appendChild(new_item);
         }
     }
 }
 
 function changeFontSize(node, value) {
+    // 根据方块个数调整字体大小
     switch (value) {
         case '1':
             node.style.fontSize = '200px';
