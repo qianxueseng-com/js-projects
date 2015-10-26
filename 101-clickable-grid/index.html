@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Lian Liu">
+		<title>101-clickable-grid</title>
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Clickable Grid</h1>
+			<input type="number" min="1" max="20" id="size" placeholder="Please select a number between 1 and 10." required>
+			<button id="generateButton">Generate</button>
+			<button id="clearButton">Clear</button>
+			<p>Attention: After grids are generated, you can click any of the grid which will activate a log of its value.</p>
+		</header>
+		
+		<div id="grids"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js.js"></script>
+	</body>
+</html>
+
+
