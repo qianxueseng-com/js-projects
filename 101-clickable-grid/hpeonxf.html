@@ -7,69 +7,50 @@
         .box{
             width:25px;height: 25px;float:left;
             cursor: pointer;border:1px red solid;
-
         }
-       
     </style>
 </head>
 <body>
 <input type="text" id="text" >
 <input type="button"  value="生成盒子" id="button">
     <div id="containBox">
-        
     </div>
 </body>
 
 
 <script type="text/javascript">
     window.onload=function(){
-
-       
-        var containBox=document.getElementById("containBox");
+        var containBox=document.getElementById("containBox
+        // 创建盒子的函数
 var createbox=function(n){
+    // 先清除旧有的盒子
+    var boxArea=document.getElementById("boxArea");
+    if(boxArea){
+    boxArea.remove()};
 
-
-var boxArea=document.getElementById("boxArea");
-if(boxArea){
-boxArea.remove()};
-
- var box={};
-var bod=document.createElement("div");
-bod.id="boxArea";
-
-bod.style.width=n*27+"px"
-for(var z=0;z<n;z++){
-
-for(var i=0;i<n;i++)
-{
-
-box[z*n+i]=document.createElement("div");
-box[z*n+i].className="box"
-    box[z*n+i].innerHTML=z*n+i+1;
-
-bod.appendChild(box[z*n+i])
+    var box={};
+    // 创建一个div用于存放盒子
+    var bod=document.createElement("div");
+    bod.id="boxArea";
+    bod.style.width=n*27+"px"
+    for(var z=0;z<n;z++){
+        for(var i=0;i<n;i++){
+            box[z*n+i]=document.createElement("div");
+            box[z*n+i].className="box"
+            box[z*n+i].innerHTML=z*n+i+1;
+            bod.appendChild(box[z*n+i])
+        }
+    }
+    containBox.appendChild(bod);
 }
-
-}
-
-containBox.appendChild(bod);
-
-}
-
-
-
-
-var text=document.getElementById("text");
-var button=document.getElementById("button");
-
-button.addEventListener("click",function(){
-createbox(text.value);
-
-
-
-
-})
-
+(function(){
+    var text=document.getElementById("text");
+    var button=document.getElementById("button");
+    button.addEventListener("click",function(){
+    createbox(text.value);}
+    })()
+)
+(function(){
 containBox.addEventListener("click",function(e){
   
     var e=e||window.event;
@@ -81,7 +62,7 @@ containBox.addEventListener("click",function(e){
 
 })
 
-}
+})()}
 
 </script>
 </html>
