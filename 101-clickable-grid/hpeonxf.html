@@ -20,8 +20,8 @@
 
 <script type="text/javascript">
     window.onload=function(){
-        var containBox=document.getElementById("containBox
-        // 创建盒子的函数
+        var containBox=document.getElementById("containBox")
+ // 创建盒子的函数
 var createbox=function(n){
     // 先清除旧有的盒子
     var boxArea=document.getElementById("boxArea");
@@ -42,15 +42,16 @@ var createbox=function(n){
         }
     }
     containBox.appendChild(bod);
-}
-(function(){
+};
+// 点击按钮生成盒子
+(function (){
     var text=document.getElementById("text");
     var button=document.getElementById("button");
     button.addEventListener("click",function(){
     createbox(text.value);}
-    })()
-)
-(function(){
+    )})();
+// 给盒子添加事件
+(function (){
 containBox.addEventListener("click",function(e){
   
     var e=e||window.event;
@@ -62,7 +63,10 @@ containBox.addEventListener("click",function(e){
 
 })
 
-})()}
+})()
+
+
+}
 
 </script>
 </html>
