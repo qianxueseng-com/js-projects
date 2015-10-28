@@ -1,4 +1,8 @@
-# github pages，用github来做一个个人主页
+# github pages，用github来做个人主页
+
+## 主要目的
+- 了解webpack
+- 建立个人主页来展示将来的项目
 
 ## 使用方法
 - 如下
@@ -33,7 +37,7 @@ git push origin gh-pages
 - 了解`npm start`和`npm run build`的工作方式，加入一个自己的`npm run abc`命令
 - 买个域名并指向这个网站
 
-##
+## 参考链接
 - http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
 - https://github.com/webpack/webpack/issues/1548
 - https://github.com/ampedandwired/html-webpack-plugin
