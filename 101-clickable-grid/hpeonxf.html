@@ -5,8 +5,11 @@
     <title>Document</title>
     <style type="text/css" media="screen">
         .box{
-            width:25px;height: 25px;float:left;
-            cursor: pointer;border:1px red solid;
+            width:25px;
+            height: 25px;
+            float:left;
+            cursor: pointer;
+            border:1px red solid;
         }
     </style>
 </head>
@@ -15,58 +18,49 @@
 <input type="button"  value="生成盒子" id="button">
     <div id="containBox">
     </div>
-</body>
-
-
 <script type="text/javascript">
-    window.onload=function(){
-        var containBox=document.getElementById("containBox")
- // 创建盒子的函数
-var createbox=function(n){
-    // 先清除旧有的盒子
-    var boxArea=document.getElementById("boxArea");
-    if(boxArea){
-    boxArea.remove()};
-
-    var box={};
-    // 创建一个div用于存放盒子
-    var bod=document.createElement("div");
-    bod.id="boxArea";
-    bod.style.width=n*27+"px"
-    for(var z=0;z<n;z++){
-        for(var i=0;i<n;i++){
-            box[z*n+i]=document.createElement("div");
-            box[z*n+i].className="box"
-            box[z*n+i].innerHTML=z*n+i+1;
-            bod.appendChild(box[z*n+i])
+window.onload=function(){
+    var containBox=document.getElementById("containBox")
+    // 创建盒子的函数
+    var createbox=function(n){
+        // 先清除旧有的盒子
+        var boxArea=document.getElementById("boxArea");
+        if(boxArea){
+        boxArea.remove()
+        };
+        var box={};
+        // 创建一个div用于存放盒子
+        var newBoxArea=document.createElement("div");
+        newBoxArea.id="boxArea";
+        newBoxArea.style.width=n*27+"px"
+        for(var z=0;z<n;z++){
+            for(var i=0;i<n;i++){
+                box[z*n+i]=document.createElement("div");
+                box[z*n+i].className="box"
+                box[z*n+i].innerHTML=z*n+i+1;
+                newBoxArea.appendChild(box[z*n+i])
+            }
         }
-    }
-    containBox.appendChild(bod);
-};
-// 点击按钮生成盒子
-(function (){
-    var text=document.getElementById("text");
-    var button=document.getElementById("button");
-    button.addEventListener("click",function(){
-    createbox(text.value);}
-    )})();
-// 给盒子添加事件
-(function (){
-containBox.addEventListener("click",function(e){
-  
-    var e=e||window.event;
-    var target=e.target||e.srcElement;
-    
-    if(target.className=="box"){
-        console.log(target.innerHTML  )
-    }
-
-})
-
-})()
-
-
+        containBox.appendChild(newBoxArea);
+    };
+    // 点击按钮生成盒子
+    (function (){
+        var text=document.getElementById("text");
+        var button=document.getElementById("button");
+        button.addEventListener("click",function(){
+        createbox(text.value);}
+        )})();
+    // 给盒子添加事件
+    (function (){
+        containBox.addEventListener("click",function(e){
+            e=e||window.event;
+            var target=e.target||e.srcElement;
+            if(target.className=="box"){
+            console.log(target.innerHTML)
+            }
+        })
+    })()
 }
-
 </script>
+</body>
 </html>
