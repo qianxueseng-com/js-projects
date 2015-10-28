@@ -8,11 +8,20 @@ npm install
 npm start
 # 然后访问http://localhost:8080/
 ```
+要创建gh-pages的时候
+```
+npm run build
+git checkout -b gh-pages
+rm .gitignore
+git add .
+git commit
+git push origin gh-pages
+```
 
 ## 基本要求
 - 创建一个repo名字叫username.github.io，[github page官方文档](https://pages.github.com/)
 - 写很多html，一些css，一些js。主要将来用这个页面来展示你的项目和教育状况。从上到下分为，github名字，教育状况，项目。在项目部分，用类似于101的格子来展示你的个人项目。例如[这样](http://www.nancygarciafashion.com/)
-- 创建一个gh-pages的branch，这个branch下所有的东西都能在username.github.io被访问[详细的步骤](https://help.github.com/articles/creating-project-pages-manually/)
+- 创建一个gh-pages的branch，这个branch下所有的东西都能在username.github.io被访问[参考但不要完全照搬详细的步骤](https://help.github.com/articles/creating-project-pages-manually/)
 - 使用webpack来生成文件
 - 使用SCSS来生成css
 - 使用CommonJs来把javascript拆成多个文件
