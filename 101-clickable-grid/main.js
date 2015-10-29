@@ -25,8 +25,8 @@ function update(){
 	};
 	function show(self){
 		var text=self.getAttribute("name");
-		var texttt=document.createTextNode(text);
-		word.appendChild(texttt);
+		var textNode=document.createTextNode(text);
+		word.appendChild(textNode);
     }
 	function hide(){
 		word.innerHTML="";
