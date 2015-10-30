@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" Content="Text/html; charset = utf-8" >
+		<style type="text/css">
+			div {
+				color: red;
+				height: 80px;
+				width: 80px;
+				background-color: yellow;
+				border: solid black 1px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<script type="text/javascript">
+			var element = document.getElementById("body");
+			var n = 10;
+			for(var i=0; i<n; i++){
+				for(var j=1; j<=n; j++){
+					var grid  = document.createElement("div");
+					grid.value = i*10+j;
+					/*grid.onclick = function() {
+						console.log(this.value);
+					}*/
+			 		var node  = document.createTextNode(i*10+j);
+			 		grid.appendChild(node);
+					element.appendChild(grid);
+					if(j == 1) {
+						grid.style.clear = "left";
+					}
+				}
+
+			}
+			//event listener
+			// 获取父节点，并为它添加一个click事件
+			document.getElementById("body").addEventListener("click", function(e) {
+				//不知道为什么加了这一个判断语句反而不正常？
+				//if(e.target && e.target.nodeName.toUpperCase == "DIV") {
+					console.log(e.target.value);
+				//}
+			});
+		 	
+		</script>
+	</body>
+</html>
