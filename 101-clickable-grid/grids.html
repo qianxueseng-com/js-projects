@@ -22,48 +22,37 @@
 		  height: 100px;
 		}
 		#prompt{
-			margin-top: 40px;
-			text-align: center;
+			margin-top: 20px;
+			margin-left: 20px;
 			font-size: 30px;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
-	  <table>
-	    <tr>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	    </tr>
-	    <tr>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	    </tr>
-	    <tr>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	    </tr>
-	    <tr>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	    </tr>
+	  <table id="table">
+	  
 	  </table>
 	  <div id="prompt">  	
 	  </div>
 	</div>
 <script type="text/javascript">
-	var prompt = document.getElementById("prompt");
+	var number = prompt("Please enter the grid number:");
+	var table = document.getElementById("table");
+	var hint = document.getElementById("prompt");
 		function clickHandler(event){  console.log(this.innerText);
 	}
 
+	function generateGrid(number){
+		for (var i = 0; i < number; i++) {
+			var tr = document.createElement('tr');
+			for (var j = 0; j < number; j++) {
+				var td = document.createElement('td');
+				tr.appendChild(td);
+			};
+			table.appendChild(tr);
+		}
+	}
 	function addHandlers(nodes){
 	  function helper(i){
 	    var that = this;
@@ -71,7 +60,7 @@
 	      that.innerText = i;
 	      that.onclick = function(){
 	        console.log("The grid number is " + i);
-	        prompt.innerText = "The grid number is " + i
+	        hint.innerText = "The grid number is " + i
 	      }
 	    }
 	  }
@@ -83,7 +72,7 @@
 
 
 	window.onload = function(){
-	  console.log('run');
+	  generateGrid(number);
 	  var grids = document.getElementsByTagName("td");
 	  addHandlers(grids);	 
 	}
