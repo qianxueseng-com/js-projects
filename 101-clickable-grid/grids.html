@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>grids</title>
+	<style type="text/css">
+		.container{
+			width: 100%;
+			height: 100%;
+		}
+		table{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		table td{
+		  padding: -1px;
+		  border: 1px solid #222;
+		  text-align: center;
+		  width: 100px;
+		  height: 100px;
+		}
+		#prompt{
+			margin-top: 40px;
+			text-align: center;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	  <table>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	  </table>
+	  <div id="prompt">  	
+	  </div>
+	</div>
+<script type="text/javascript">
+	var prompt = document.getElementById("prompt");
+		function clickHandler(event){  console.log(this.innerText);
+	}
+
+	function addHandlers(nodes){
+	  function helper(i){
+	    var that = this;
+	    return function(){
+	      that.innerText = i;
+	      that.onclick = function(){
+	        console.log("The grid number is " + i);
+	        prompt.innerText = "The grid number is " + i
+	      }
+	    }
+	  }
+	  for(var i = 0; i < nodes.length; i++){
+	    (helper.call(nodes[i],i+1))();
+	  }
+	}
+
+
+
+	window.onload = function(){
+	  console.log('run');
+	  var grids = document.getElementsByTagName("td");
+	  addHandlers(grids);	 
+	}
+</script>
+</body>
+</html>
