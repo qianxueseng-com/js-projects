@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+<script>
+    function $ (id) {
+        return document.getElementById(id)
+   }
+   
+   function oClick(i){
+                console.log(i+1);
+            }
+   
+   function set(){
+   	if($("box").innerHTML!=""){
+   		$("box").innerHTML=" ";
+   	}
+        var num=$("txt").value;
+        $("box").style.width=num*30+'px';
+        $("box").style.height=num*30+'px';
+        for (var i = 0; i < num*num; i++) {
+            $("box").innerHTML+="<div></div>"    
+        };
+        var aDiv=$('box').getElementsByTagName('div');
+        var len=aDiv.length;
+        for (var i = 0; i < len; i++) {
+            aDiv[i].setAttribute("onclick","oClick("+i+")");
+        };
+   }
+   function reset(){
+        $("txt").value=" ";
+        $("box").innerHTML=" ";
+   }
+</script>
+<style>
+
+    #box{
+        width: 0;
+        height:0;
+        background-color: lightgray;
+        display: flex;
+        flex-flow:row wrap;
+    }
+    
+    #box div{
+        width: 26px;
+        height: 26px;
+        margin:2px;
+        background-color: black;
+    }
+    
+    #box div:hover{
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+<div id="parent">
+    <div id="child">
+        <label for="txt">输入数量:</label>
+        <input type="text" id="txt" name="txt">    
+        <button id="set" onclick="set()">set</button>
+        <button id="reset" onclick="reset()">reset</button>
+    <div id="box"></div>        
+    </div>
+    
+</div>
+</body>
+</html>
