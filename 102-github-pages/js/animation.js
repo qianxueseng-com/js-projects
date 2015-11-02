@@ -1,5 +1,6 @@
 // 管理背景粒子动画
 // 两层粒子动画，作为背景
+// 手机端去掉一层背景动画
 particlesJS("particles-after-filter", {
     "particles": {
         "number": {

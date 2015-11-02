@@ -7,7 +7,8 @@
     "build": "webpack  --display-error-details",
     "start": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compress": "webpack -p"
+    "compress": "webpack -p",
+    "watch": "webpack -watch"
   },
   "author": "",
   "license": "MIT",

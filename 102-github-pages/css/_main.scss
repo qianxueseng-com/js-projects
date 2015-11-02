@@ -1,0 +1,286 @@
+// 变量声明
+$fontStack: Helvetica, Tahoma, Arial, STXihei, 'Microsoft YaHei', '微软雅黑', Heiti, '黑体', sans-serif;
+$themeColor: #25a8e0;
+$containerWidth: 800px;
+
+// 代码片段
+@mixin filter($parameter) {
+    // 多浏览器兼容模糊处理
+    -webkit-filter: $parameter;
+    -moz-filter: $parameter;
+    -o-filter: $parameter;
+    -ms-filter: $parameter;
+    filter: $parameter;
+}
+
+@mixin transtion($parameter...) {
+    // 多浏览器兼容过渡
+    -webkit-transition: $parameter;
+    -moz-transition: $parameter;
+    -ms-transition: $parameter;
+    -o-transition: $parameter;
+    transition: $parameter;
+}
+
+@mixin animation($parameter...) {
+    // 多浏览器兼容动画
+    -webkit-animation: $parameter;
+    -o-animation: $parameter;
+    animation: $parameter;
+}
+
+@mixin box-shadow($parameter...) {
+    // 多浏览器兼容动画
+    -webkit-box-shadow: $parameter;
+    -moz-box-shadow: $parameter;
+    box-shadow: $parameter;
+}
+
+%center_block {
+    // 块元素居中对齐
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*------------主样式开始------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontStack;
+
+    color: white;
+    background: $themeColor;
+}
+
+#container {
+    width: $containerWidth;
+    @extend %center_block;
+
+    text-align: center;
+}
+
+#particles-after-filter {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    @include filter(blur(5px));
+}
+
+#particles {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+
+    color: #fff;
+}
+
+#title {
+    font-size: 70px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+    .iconfont {
+        font-size: .95em;
+
+        position: relative;
+        top: -4px;
+    }
+}
+
+#description {
+    font-size: 18px;
+    line-height: 18px;
+
+    width: 100%;
+    margin-top: 20px;
+
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 10px;
+}
+
+#social-link {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+
+    .social-link-cell {
+        font-size: 60px;
+
+        position: relative;
+
+        float: left;
+
+        width: 33.3333%;
+
+        text-align: center;
+
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 5px;
+
+        span {
+            @include transtion(opacity 350ms);
+        }
+    }
+
+    .project-caption {
+        margin-top: 20px;
+    }
+}
+
+.hiden-caption {
+    font-size: 18px;
+    top: 0;
+    left: 0;
+
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+
+    transition: opacity 350ms, transform 350ms;
+
+    opacity: 0;
+}
+
+.hover-animation {
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    .inner-cell {
+        transition: opacity 350ms, filter 3s;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            content: '';
+
+            @include transtion(opacity 650ms, transform 350ms);
+
+            transform: scale(0);
+            opacity: 0;
+
+            border-radius: 5px;
+            background: #000;
+        }
+    }
+}
+
+.project-caption {
+    font-size: 20px;
+    clear: both;
+
+    .iconfont {
+        font-size: 11px;
+        line-height: 20px;
+    }
+}
+
+#project-link {
+    .project-caption {
+        margin-top: 110px;
+    }
+
+    .project-link-cell {
+        float: left;
+        position: relative;
+
+        width: 33.33%;
+        padding-top: 5px;
+
+        border: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 5px;
+    }
+
+    .caption {
+        line-height: 0;
+    }
+}
+
+/*------------悬停动画部分------------*/
+
+#description:hover {
+    @include animation(pulse 700ms);
+}
+
+.hover-animation:hover .inner-cell::before {
+    transform: scale(1);
+
+    opacity: 0.5;
+}
+
+.hover-animation:hover {
+    transform: scale(1.08);
+    @include box-shadow(0 0 8px rgba(255, 255, 255, .2));
+
+    .inner-cell > img,
+    .inner-cell,
+    .inner-cell p.caption {
+        opacity: 0.4;
+    }
+
+    .hiden-caption {
+        opacity: 1;
+    }
+}
+
+/*------------移动适配部分------------*/
+
+@media only screen and (max-width: 480px) {
+
+    #container {
+        padding: 1px;
+        width: 96%;
+    }
+
+    .social-link-cell {
+        width: 100%;
+        margin-bottom: 10px;
+
+        .hiden-caption {
+            opacity: 1;
+            position: static;
+        }
+    }
+
+    #project-link {
+        .project-link-cell {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            line-height: 20px;
+            font-size: 18px;
+        }
+
+        &::after {
+            display: block;
+            font-size: 10px;
+            content: '@newraina';
+            padding: 20px 0 20px 0;
+            clear: both;
+        }
+    }
+}
+
+@media only screen and (min-height: 900px) {
+    #container {
+        margin-top: 100px;
+    }
+}
