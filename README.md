@@ -3,6 +3,7 @@ javascript projects
 
 ### 前学僧学员的个人网页(完成102项目请提交一个Pull request到这儿)
 - [我是占座的](http://baidu.com)
+- [newraina的个人介绍页](http://about.newraina.com)
 
 ### 资源链接
 - [前端资源的祖师级列表](https://github.com/sindresorhus/awesome#front-end-development)
