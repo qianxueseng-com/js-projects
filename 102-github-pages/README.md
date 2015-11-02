@@ -37,6 +37,9 @@ git push origin gh-pages
 - 了解`npm start`和`npm run build`的工作方式，加入一个自己的`npm run abc`命令
 - 买个域名并指向这个网站
 
+## 提交办法
+- 把网站链接作为pull request提交到`js-projects/README.md`
+
 ## 参考链接
 - http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
 - https://github.com/webpack/webpack/issues/1548
