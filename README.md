@@ -5,6 +5,7 @@ javascript projects
 - [我是占座的](http://baidu.com)
 
 ### 资源链接
+- [如果只看一本英文书来做JavaScript入门](http://eloquentjavascript.net/)。注意，例子是可以在线运行的。
 - [前端资源的祖师级列表](https://github.com/sindresorhus/awesome#front-end-development)
 
 ### 链接
