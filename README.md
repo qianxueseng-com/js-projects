@@ -10,8 +10,12 @@ javascript projects
 - 改代码，push到你自己fork完的repo
 - 然后在你自己fork完的repo里面点Pull requests -> New pull request
 
-### 资源链接
+### 如果觉得自己还需要巩固基本的javascript
 - [如果只看一本英文书来做JavaScript入门](http://eloquentjavascript.net/)。注意，例子是可以在线运行的。
+- [这个练习巩固语法](https://github.com/qianxueseng-com/javascript-koans)
+- [这个练习一些underscore的基本功能](https://github.com/qianxueseng-com/underbar)
+
+### 资源链接
 - [前端资源的祖师级列表](https://github.com/sindresorhus/awesome#front-end-development)
 
 ### 链接
