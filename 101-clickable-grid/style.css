@@ -1,0 +1,49 @@
+html {
+	margin: 0; 
+	padding: 0;
+}
+
+body {
+	width: 800px;
+	margin: 20px auto;
+	text-align: center;
+}
+.control {
+	margin: 10px 0;
+}
+.control input {
+	height: 32px;
+	width: 130px;
+	padding: 5px;
+	font-size: 16px;
+}
+.control button {
+	height: 32px;
+	padding: 5px;
+	font-size: 16px;
+}
+#result {
+	margin: 20px 0;
+	font-size: 32px;
+	color: #03b5bf;
+}
+#grid {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 50px;
+	border:solid 1px #ccc;	
+}
+.row {
+	display: flex;
+	width: 400px;
+	height: 100%;
+}
+.item{
+	flex: 1;
+	align-items:center;
+	border: 1px solid #ccc;
+	background-color: #03b5bf;
+}
