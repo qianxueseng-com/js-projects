@@ -4,6 +4,12 @@ javascript projects
 ### 前学僧学员的个人网页(完成102项目请提交一个Pull request到这儿)
 - [我是占座的](http://baidu.com)
 
+### 提交Pull request的办法
+- fork这个repo，看见右上方的fork按钮了吗？点它。
+- 去你自己fork完的repo，点"Clone in Desktop"，或者你用命令行也可
+- 改代码，push到你自己fork完的repo
+- 然后在你自己fork完的repo里面点Pull requests -> New pull request
+
 ### 资源链接
 - [如果只看一本英文书来做JavaScript入门](http://eloquentjavascript.net/)。注意，例子是可以在线运行的。
 - [前端资源的祖师级列表](https://github.com/sindresorhus/awesome#front-end-development)
