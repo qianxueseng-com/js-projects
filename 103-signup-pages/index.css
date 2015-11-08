@@ -1,0 +1,153 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.header_logo {
+	width: 250px;
+	height: 65px;
+	position: relative;
+	left: 160px;
+
+}
+.header_logo img {
+	float: left;
+
+}
+.header_logo p {
+	font-size: 23px;
+	font-weight: bold;
+	padding: 15px 5px;
+}
+#header_process {
+	width: 1200px;
+	border-bottom: 1px solid rgb(230,230,230);
+	text-align: center;
+	margin:0 auto;
+}
+#header_process #steps{
+	display: inline-block;
+}
+#header_process #steps ul li{
+	list-style-type: none;
+	display: inline-block;
+	font:bold 16px "Microsoft YaHei", Verdana, Geneva, sans-serif ;
+	padding: 13px 25px;
+}
+#header_process #steps ul li span{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 5px;
+	background-color: rgb(255,64,0);
+	border:2px solid rgb(255,64,0);
+	border-radius: 25px;
+	color: #ffffff;
+}
+#header_process #steps ul #step1 {
+	border-bottom:2px solid rgb(255,65,2);
+}
+#header_process #languages {
+	float: right;
+	font-size: 12px;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+#header_process #languages a{
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	padding: 3px;
+} 
+#content {
+	margin: 80px 36%;
+}
+#content form label {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+}
+#content form #slide {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+
+}
+#content #selector {
+	margin-top: -176px;
+	z-index: 10;
+	position: relative;
+}
+#content #selector select{
+	display: none;
+	position: relative;
+	left: 65px;
+	width: 160px;
+	font-size: 16px;
+}
+
+#content form #slide #slideDown {
+	width: 160px;
+	height: 33px;
+	border: 1px solid rgb(204,204,204);
+}
+#content form #slide #slideDown span{
+	display: inline-block;
+	font-weight: bold;
+	font-size: 9px;
+	margin: 8px 13px;
+}
+#content form input {
+	color: rgb(204,204,204);
+	border-color: rgb(220,220,220);
+	vertical-align: top;
+	height: 33px;
+	width: 160px;
+	margin-left: -8px;
+}
+#content #confirmation #slider{
+	width: 240px;
+	height: 30px;
+	border: 1px solid rgb(220,220,220);
+	display: inline-block;
+	background-color: rgb(232,232,232);
+}
+
+#content #confirmation #slider #div1{	
+	float: left;
+	left: 0px;
+}
+#content #confirmation #slider {
+	font-size: 8px;
+	color: rgb(156,156,156);
+	text-align: center;
+	line-height: 33px;
+}
+#content #confirmation p{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 18px;
+	margin-right: 9px;
+	padding-top: 5px;
+}
+#content #nextStep {
+	width: 130px;
+	height: 33px;
+	background-color: rgb(232,232,232);
+	position: relative;
+	left: 65px;
+}
+#content #nextStep  p{
+	padding: 8px 35px;
+	color: rgb(153,153,153);
+}
+
+#content #emailReg a{
+ 	text-decoration: none;
+ 	font-size: 8px;
+ 	color: rgb(255,91,32);
+ 	position: relative;
+	left: 65px;
+}
+.row{
+	margin-top: 30px;
+}
