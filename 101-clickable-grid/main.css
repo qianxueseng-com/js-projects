@@ -1,0 +1,32 @@
+#container {
+    width: 500px;
+    height: 800px;
+    margin: 0 auto;
+}
+#inputNum {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#box {
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #8C8F8E;
+}
+.columnDiv {
+    flex: 1 1 100%;
+    display: flex;
+}
+.item {
+    display: flex;
+    flex: 1;
+    margin: 2px;
+    align-items: center;
+    justify-content: center;
+    background: #fee7c3;
+    color: #000;
+    cursor: pointer;
+}
