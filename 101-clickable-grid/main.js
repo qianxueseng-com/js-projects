@@ -1,8 +1,8 @@
-var box = document.getElementById('box');
-var value = document.getElementById('inputVal').value;
-var btn = document.getElementsByTagName('button')[0];
 // 生成格子
-function createGrid(value) {
+function createGrid(value, box, btn) {
+    var box = document.getElementById('box');
+    var value = parseInt(document.getElementById('inputVal').value, 10).toFixed(0);
+    var btn = document.getElementsByTagName('button')[0];
     box.innerHTML = '';
     for (var i = 0; i < value; i++) {
         // 创建行
@@ -18,26 +18,28 @@ function createGrid(value) {
             item.appendChild(numNode);
             columnDiv.appendChild(item);
             changeFontSize(item, value);
-            item.addEventListener('click', function(){
-                console.log(this.innerHTML);
-            });
         }
     }
 }
+var firstOpen = function() {
+    var btn = document.getElementsByTagName('button')[0];
+    createGrid('3', box, btn);
+};
+window.onload = firstOpen;
 function changeFontSize(element, value) {
     element.style.fontSize = (200 / value).toString() + 'px';
 }
-window.onload = function () {
-    createGrid(3);
-};
-// 事件委托
 var container = document.getElementById('container');
 container.addEventListener('click',function(event) {
-    var tar = event.target.className;
-    switch(tar) {
+    var tar = event.target;
+    var tarName = tar.className;
+    switch(tarName) {
         case 'btn':
             var value = document.getElementById('inputVal').value;
             createGrid(value);
+            break;
+        case 'item':
+            console.log(tar.innerHTML);
             break;
     }
 }, false);
