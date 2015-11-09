@@ -1,0 +1,30 @@
+{
+  "name": "103-signup-pages",
+  "version": "1.0.0",
+  "description": "103-signup-pages",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --display-error-details",
+    "start": "webpack-dev-server --progress --colors",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compress": "webpack -p",
+    "watch": "webpack -watch"
+  },
+  "author": "newraina",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.21.0",
+    "del": "^2.0.2",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "html-webpack-plugin": "^1.6.2",
+    "jsx-loader": "^0.13.2",
+    "node-sass": "^3.4.1",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
