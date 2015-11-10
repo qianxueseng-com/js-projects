@@ -1,4 +1,4 @@
 require('./hello');
 require('./world');
-require('./style.css');
-// require('../sass/HelloForm.scss');
+// require('./style.css');
+require('../sass/HelloForm.scss');

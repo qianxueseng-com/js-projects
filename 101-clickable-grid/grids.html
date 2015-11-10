@@ -1,136 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>grids</title>
-	<style type="text/css">
-		*{
-			padding: 0;
-			margin: 0;
-		}
-
-		.container{
-			width: 100%;
-			height: 100%;
-		}
-		table{
-			position: absolute;
-			left: 50%;
-			top: 500px;
-			width: 404px;
-			height: 400px;
-			transform: translate(-50%, -50%);
-			background: #bbada0;
-			padding: 5px;
-		}
-	
-
-		table td{
-		  text-align: center;
-		  line-height: 100px;
-		  margin-right: 5px;
-		  margin-bottom: 5px;
-		  float: left;
-		  background: rgba(238, 228, 218, 0.35);  
-		}
-
-		table td:last-child{
-			margin-right: 0;
-		}
-
-		table tr:last-child td{
-			margin-bottom: 0px
-		}
-
-		#prompt{
-			margin-top: 100px;
-			text-align: center;
-			font-size: 30px;
-		}
-		
-		#input-num, #select-number{
-			font-size:  30px;
-			margin-top: 30px;
-			text-align: center;
-		}
-
-		#select-number{
-			width: 80px;
-			margin-left: 5px;
-		}
-
-	</style>
+    <meta charset="UTF-8">
+    <title>grids</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    table {
+        position: absolute;
+        left: 50%;
+        top: 500px;
+        width: 404px;
+        height: 400px;
+        transform: translate(-50%, -50%);
+        background: #bbada0;
+        padding: 5px;
+    }
+    
+    table td {
+        text-align: center;
+        line-height: 100px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        float: left;
+        background: rgba(238, 228, 218, 0.35);
+    }
+    
+    table td:last-child {
+        margin-right: 0;
+    }
+    
+    table tr:last-child td {
+        margin-bottom: 0px
+    }
+    
+    #prompt {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 30px;
+    }
+    
+    #input-num,
+    #select-number {
+        font-size: 30px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    #select-number {
+        width: 80px;
+        margin-left: 5px;
+    }
+    </style>
 </head>
+
 <body>
-	<div class="container">
-	  <div id="input-num">
-	  	<label for="input">Please input grid number per column:  <input id="select-number" type="number" value = "2"></label>
-	  </div>
-	  <div id="prompt">  	
-	  </div>
-	  <table id="table">
-	  
-	  </table>
-	
-	</div>
-<script type="text/javascript">
-	var table = document.getElementById("table");
-	var hint = document.getElementById("prompt");
-	var selectNumber = document.getElementById("select-number");
-	selectNumber.addEventListener("change",function(){
-		hint.innerText = "";
-		updateGrid(selectNumber.value);
-	});
+    <div class="container">
+        <div id="input-num">
+            <label for="input">Please input grid number per column:
+                <input id="select-number" type="number" value="2">
+            </label>
+        </div>
+        <div id="prompt">
+        </div>
+        <table id="table">
+        </table>
+    </div>
+    <script type="text/javascript">
+    var table = document.getElementById("table");
+    var hint = document.getElementById("prompt");
+    var selectNumber = document.getElementById("select-number");
+    selectNumber.addEventListener("change", function() {
+        hint.innerText = "";
+        updateGrid(selectNumber.value);
+    });
 
-	//更新网格
-	function updateGrid(count){
-			if( 0 <= count && count <= 10 ){   //控制有效格子数输入范围
-				while (table.childElementCount) { //清除原来网格
-	      			  table.removeChild(table.children[0]);
-	   			 }
+    //更新网格
+    function updateGrid(count) {
+        if (0 <= count && count <= 10) { //控制有效格子数输入范围
+            while (table.childElementCount) { //清除原来网格
+                table.removeChild(table.children[0]);
+            }
 
-	   			if(typeof(cnt) != Number){
-					var cnt = Number(count);  //若参数非数字需要转换为数字
-				}
-
-			
-			for (var i = 0; i < cnt; i++) {
-				var tr = document.createElement("tr");
-				for (var j = 0; j < cnt; j++) {
-					var td = document.createElement("td");  //新建格子以及格子的样式
-					var num = i * cnt + j + 1;   			//格子号码
-					var size = (400 -  5 * (cnt + 1)) / cnt;  //计算格子的大小
-					td.style.height = size + "px";  
-					td.style.width = size + "px";
-					td.style.lineHeight = size + "px";  //数字居中
-					td.style.fontSize = changeFontSize(size) + "px";  //数字随格子大小变化
-					td.innerText = num.toString();
-					td.onclick = function(n){
-						return function(){
-							// console.log("The tile number is " + n);
-		        			hint.innerText = "The tile number is " + n;
-		        		};
-			        }(num);
-	  				tr.appendChild(td);
-				} 
-				table.appendChild(tr);
-			};
-		}
-		else{
-			alert("Input 0 <= number  &&   number  <= 10 .");   
-		}
-	}
+            if (typeof(cnt) != Number) {
+                var cnt = Number(count); //若参数非数字需要转换为数字
+            }
 
 
-	function changeFontSize(size){
-		return size / 3;
-	}
+            for (var i = 0; i < cnt; i++) {
+                var tr = document.createElement("tr");
+                for (var j = 0; j < cnt; j++) {
+                    var td = document.createElement("td"); //新建格子以及格子的样式
+                    var num = i * cnt + j + 1; //格子号码
+                    var size = (400 - 5 * (cnt + 1)) / cnt; //计算格子的大小
+                    td.style.height = size + "px";
+                    td.style.width = size + "px";
+                    td.style.lineHeight = size + "px"; //数字居中
+                    td.style.fontSize = changeFontSize(size) + "px"; //数字随格子大小变化
+                    td.innerText = num.toString();
+                    td.onclick = function(n) {
+                        return function() {
+                            // console.log("The tile number is " + n);
+                            hint.innerText = "The tile number is " + n;
+                        };
+                    }(num);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            };
+        } else {
+            alert("Input 0 <= number  &&   number  <= 10 .");
+        }
+    }
 
-	//初始化为2
-	window.onload = function(){
-		updateGrid(2);
-	}
 
-</script>
+    function changeFontSize(size) {
+        return size / 3;
+    }
+
+    //初始化为2
+    window.onload = function() {
+        updateGrid(2);
+    }
+    </script>
 </body>
+
 </html>
