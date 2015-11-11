@@ -33,7 +33,7 @@
 	font:bold 16px "Microsoft YaHei", Verdana, Geneva, sans-serif ;
 	padding: 13px 25px;
 }
-#header_process #steps ul li span{
+#header_process #steps ul .onStep span {
 	width: 20px;
 	height: 20px;
 	display: inline-block;
@@ -43,8 +43,21 @@
 	border-radius: 25px;
 	color: #ffffff;
 }
-#header_process #steps ul #step1 {
+#header_process #steps ul .outStep span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 5px;
+	background-color: rgb(204,204,204);
+	border:2px solid rgb(204,204,204);
+	border-radius: 25px;
+	color: #ffffff;
+}
+#header_process #steps ul .onStep {
 	border-bottom:2px solid rgb(255,65,2);
+}
+#header_process #steps ul .outStep {
+	color: rgb(204,204,204);
 }
 #header_process #languages {
 	float: right;
@@ -52,6 +65,12 @@
 	margin-top: 10px;
 	padding-top: 10px;
 }
+#header_process #languages a:hover{
+	text-decoration: underline;
+	color: rgb(255,64,0);
+	border: 1px solid black;
+	padding: 3px;
+} 
 #header_process #languages a{
 	text-decoration: none;
 	color: black;
