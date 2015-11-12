@@ -1,9 +1,9 @@
-// function getEntrySources(sources){
-// 	if(process.env.NODE_ENV !== 'production'){
-// 		sources.push('webpack-dev-server/client?http://localhost:8080')  // not deploy our dev server in production
-// 	}
-// 	 return sources;
-// }
+function getEntrySources(sources){
+	if(process.env.NODE_ENV !== 'production'){
+		sources.push('webpack-dev-server/client?http://localhost:8080'); // not deploy our dev server in production
+	}
+	 return sources;
+}
 
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -11,9 +11,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		'helloWorld': ['webpack-dev-server/client?http://localhost:8080',
-					 './js/helloWorld',
-					]
+		'helloWorld': getEntrySources(['./js/helloWorld.js'])
 		// 'bundle_css': './sass/HelloForm.scss'
 	},
 	output:{
@@ -21,7 +19,8 @@ module.exports = {
 	},
 	module: {
         loaders: [
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") }
+            { test: /\.scss$/, loader: ExtractTextPlugin.extract("css!sass") },
+            {test: /\.(png|jpg|jpeg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
 	 plugins: [

@@ -4,6 +4,9 @@
   "description": "testing",
   "main": "hello.js",
   "scripts": {
+  "build": "webpack",
+    "compress": "webpack -p",
+    "start": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
