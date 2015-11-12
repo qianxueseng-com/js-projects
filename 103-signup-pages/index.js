@@ -15,6 +15,7 @@ $(document).ready(function(){
 		}
 	});
 	/***
+	 //还没完成
 	$("selector").on("mouseover", "option", function(){
 		$("option").css("background-color","rgb(255,64,0)");
 	});
