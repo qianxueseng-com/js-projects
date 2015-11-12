@@ -11,7 +11,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		'helloWorld': getEntrySources(['./js/helloWorld.js'])
+		'helloWorld': './js/helloWorld.js'
 		// 'bundle_css': './sass/HelloForm.scss'
 	},
 	output:{
