@@ -1,38 +1,35 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: {
-//    'main': './js/main.js',
-    'style': './css/main.scss'
-  },
+    entry: './src/js/main.js',
 
-  output: {
-  	path: 'out',
-    filename: '[name].js'
-  },
+    output: {
+        filename: 'main.js'
+    },
 
-module: {
-    loaders: [
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
-      },
-      //.js æ–‡ä»¶ä½¿ç”¨ jsx-loader æ¥ç¼–è¯‘å¤„ç†
-      { 
-      	test: /\.js$/, 
-      	loader: 'jsx-loader?harmony' 
-      },
-      //å›¾ç‰‡æ–‡ä»¶ä½¿ç”¨ url-loader æ¥å¤„ç†ï¼Œå°äº8kbçš„ç›´æ¥è½¬ä¸ºbase64
-      { 
-      	test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/, 
-      	loader: 'url-loader?limit=8192'
-      }
+    module: {
+        loaders: [
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+            },
+            //.js ÎÄ¼şÊ¹ÓÃ jsx-loader À´±àÒë´¦Àí
+            {
+                test: /\.js$/,
+                loader: 'jsx-loader?harmony'
+            },
+            //Í¼Æ¬ÎÄ¼şÊ¹ÓÃ url-loader À´´¦Àí£¬Ğ¡ÓÚ8kbµÄÖ±½Ó×ªÎªbase64
+            {
+                test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=8192'
+            }
+        ]
+    },
+
+
+    plugins: [
+        new ExtractTextPlugin('[name].css', {
+            allChunks: true
+        })
     ]
-  },
-
-  plugins: [
-    new ExtractTextPlugin('[name].css', {
-      allChunks: true
-    })
-  ]
 };

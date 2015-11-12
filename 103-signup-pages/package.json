@@ -4,27 +4,23 @@
   "description": "103-signup-pages",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --display-error-details",
-    "start": "webpack-dev-server --progress --colors",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compress": "webpack -p",
-    "watch": "webpack -watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "newraina",
   "license": "MIT",
   "devDependencies": {
-    "css-loader": "^0.21.0",
-    "del": "^2.0.2",
-    "extract-text-webpack-plugin": "^0.8.2",
-    "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
-    "html-webpack-plugin": "^1.6.2",
-    "jsx-loader": "^0.13.2",
-    "node-sass": "^3.4.1",
-    "sass-loader": "^3.1.1",
-    "style-loader": "^0.13.0",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^1.1.0",
+    "gulp-htmlmin": "^1.2.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-webpack": "^1.5.0",
+    "run-sequence": "^1.1.4",
+    "script-loader": "^0.6.1"
   }
 }

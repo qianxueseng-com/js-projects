@@ -1,0 +1,525 @@
+@import "normalize";
+@import "iconfont";
+
+//variable
+$headerColor: #f5f5f5;
+$defaultColorForTagA: #6c6c6c;
+
+//snippet
+%center_block {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+//main style start
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: tahoma, arial, "Hiragino Sans GB", sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+
+    color: $defaultColorForTagA;
+}
+
+.red {
+    color: #f22e00;
+}
+
+header {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    height: 35px;
+
+    line-height: 35px;
+
+    background: $headerColor;
+
+    #nav-bar {
+        &::after {
+            display: table;
+            clear: both;
+
+            content: "";
+        }
+
+        .iconfont {
+            width: 10px;
+
+            color: #9c9c9c;
+        }
+
+        .red {
+            color: #f22e00;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        a {
+            margin-right: 7px;
+        }
+
+        .nav-bar-menu {
+            padding: 0 6px;
+
+            .arrow {
+                position: relative;
+                left: -4px;
+            }
+        }
+
+        #nav-bar-right {
+            display: inline;
+            float: right;
+
+            .separator {
+                color: #ddd;
+            }
+
+            .nav-bar-menu {
+                //为什么这里浮动之后元素之间的间距就比不浮动要小？
+                float: left;
+            }
+
+            a {
+                //选用的图标字体偏大，这里必须覆盖之前7px的右外边距才能有原网页差不多的视觉效果
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.container {
+    width: 1190px;
+
+    color: #3c3c3c;
+
+    @extend %center_block;
+
+    .logo {
+        padding: 20px 0;
+
+        .iconfont {
+            position: relative;
+            top: 10px;
+            //字体大小为53px时淘宝logo宽度为106px，与原网页相同
+
+            font-size: 53px;
+        }
+
+        .register {
+            margin-left: 6px;
+
+            font-family: "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
+            font-size: 22px;
+            //43的行高使.logo的高度为83px
+            line-height: 43px;
+        }
+    }
+
+    .step-area {
+        position: relative;
+        top: -9px;
+
+        border-bottom: 2px solid #e6e6e6;
+        height: 46px;
+        ol {
+            list-style: none;
+
+            width: 800px;
+
+            font-family: "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
+
+            @extend %center_block;
+
+            li {
+                float: left;
+
+                padding-left: 30px;
+                width: 180px;
+                height: 46px;
+
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 46px;
+
+                color: #999;
+
+                i {
+                    //inline-block到底有什么不同？
+                    display: inline-block;
+
+                    position: relative;
+                    //top: -5px;
+
+                    width: 24px;
+                    height: 24px;
+
+                    font-size: 14px;
+                    font-style: normal;
+                    line-height: 24px;
+                    text-align: center;
+
+                    color: #fff;
+                    background: url("../images/ico-circle2.png") no-repeat 0 0;
+
+                    .iconfont {
+                        position: relative;
+                        top: 1px;
+
+                        font-size: 17px;
+                    }
+                }
+
+                &.active {
+                    border-bottom: 2px solid #ff4700;
+
+                    color: #3e3e3e;
+                    i {
+                        background: url("../images/ico-circle1.png") no-repeat 0 0;
+                    }
+                }
+
+                &::after {
+                    display: table;
+                    clear: both;
+
+                    content: "";
+                }
+            }
+
+            &.in-mail-reg li {
+                padding-left: 60px;
+                width: 240px;
+            }
+        }
+
+        .language {
+            //float: right;
+            display: inline-block;
+
+            position: absolute;
+            top: 15px;
+            right: 0;
+
+            .cell {
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                padding: 3px 5px;
+            }
+        }
+    }
+
+    .content {
+        padding: 40px 0 50px 59px;
+        width: 320px;
+
+        font-size: 14px;
+
+        @extend %center_block;
+
+        .content-item {
+            padding: 10px 0;
+        }
+
+        form {
+            padding: 12px 0;
+            .hide {
+                display: none;
+            }
+            .phone,
+            .email {
+                position: relative;
+
+                width: 162px;
+                height: 56px;
+
+                line-height: 34px;
+                .label {
+                    position: absolute;
+                    right: 180px;
+
+                    width: 60px;
+
+                    text-align: right;
+                }
+                .contry-code {
+                    border: 1px solid #ccc;
+                    border-right: 2px solid #ccc;
+
+                    font-weight: bold;
+                    .contry {
+                        padding-left: 10px;
+                    }
+                    .code {
+                        position: absolute;
+                        right: 27px;
+                    }
+                    .arrow {
+                        float: right;
+
+                        margin-right: 6px;
+
+                        font-weight: 100;
+
+                        color: #888;
+                    }
+                }
+                input {
+                    position: absolute;
+                    top: 10px;
+                    left: 161px;
+
+                    border: 1px solid #dedede;
+                    padding-left: 8px;
+                    width: 160px;
+                    height: 36px;
+
+                    &.err {
+                        border-color: #ff3f13;
+                    }
+
+                    &#email {
+                        left: 0;
+
+                        width: 220px;
+                    }
+                }
+                .errMsg {
+                    position: absolute;
+                    top: 10px;
+                    left: 330px;
+
+                    width: 200px;
+
+                    font-size: 12px;
+
+                    color: #ff3f13;
+
+                    .iconfont {
+                        margin-right: 2px;
+                    }
+                }
+            }
+
+            .verify {
+                position: relative;
+
+                width: 300px;
+                height: 56px;
+
+                line-height: 36px;
+                .label {
+                    position: absolute;
+                    left: -48px;
+                }
+
+                .verify-area {
+                    text-align: center;
+
+                    background: #e8e8e8;
+
+                    .bg {
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+
+                        width: 0;
+                        height: 36px;
+
+                        color: #fff;
+                        background: rgba(122, 194, 60, .8);
+                    }
+
+                    .arrow {
+                        display: inline-block;
+
+                        position: absolute;
+                        left: 0;
+
+                        border: 1px solid #ccc;
+                        width: 41px;
+                        height: 36px;
+
+                        color: rgba(122, 194, 60, .8);
+                        background: url("../images/rt.png") no-repeat center #fff;
+
+                        cursor: move;
+
+                        &::before {
+                            font-size: 22px;
+                        }
+                    }
+
+                    .verify-area-text {
+                        display: block;
+
+                        font-size: 12px;
+
+                        color: #9c9c9c;
+                        background: transparent;
+                    }
+
+                    #captcha-area {
+                        position: absolute;
+                        top: 47px;
+
+                        border: 1px solid #ccc;
+                        width: 301px;
+
+                        font-size: 12px;
+
+                        background: #fff;
+                        .captcha-text {
+                            display: inline-block;
+
+                            padding-left: 25px;
+                            width: 100%;
+                            height: 26px;
+
+                            text-align: left;
+
+                            color: #ff3f13;
+                        }
+                        .captcha-refesh {
+                            position: absolute;
+                            top: 0;
+                            right: 25px;
+
+                            font-size: 10px;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .next {
+                margin-top: 20px;
+                border-radius: 3px;
+                padding: 0;
+                width: 180px;
+
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 36px;
+                text-align: center;
+
+                background-color: #ededed;
+
+                a {
+                    display: block;
+
+                    color: #999;
+
+                    transition: all 600ms;
+                }
+
+                &.succeed {
+                    background-color: #f73500;
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .mail-reg {
+                font-size: 12px;
+                line-height: 36px;
+                a {
+                    color: #ff5b20;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .suggest {
+        padding: 10px 0;
+
+        text-align: right;
+        img {
+            vertical-align: middle;
+        }
+        a {
+            color: #ff5b20;
+        }
+    }
+
+    footer {
+        border-top: 1px solid #ddd;
+
+        .alibaba-link {
+            margin-left: 3px;
+            padding-top: 11px;
+
+            & > * {
+                margin: 0 5px 0 0;
+            }
+            & > a + a::before {
+                margin-right: 7px;
+
+                color: #ddd;
+
+                content: "|";
+            }
+        }
+
+        .about-tb {
+            margin-top: 12px;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+
+            a {
+                float: left;
+
+                margin: 0 4px;
+            }
+
+            span {
+                margin-left: 30px;
+
+                color: #9c9c9c;
+            }
+        }
+
+        .law {
+            margin-top: 8px;
+            margin-left: 2px;
+
+            color: #9c9c9c;
+
+            span {
+                margin-right: 2px;
+                span {
+                    color: #6c6c6c;
+                }
+            }
+            & > span + span::before {
+                margin-right: 7px;
+
+                color: #ddd;
+
+                content: "|";
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    .container {
+        width: 990px;
+    }
+}
