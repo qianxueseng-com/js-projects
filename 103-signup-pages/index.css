@@ -102,6 +102,7 @@
 	left: 65px;
 	width: 160px;
 	font-size: 16px;
+	-webkit-appearance: none;
 }
 
 #content form #slide #slideDown {

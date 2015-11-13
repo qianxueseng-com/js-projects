@@ -14,10 +14,15 @@ $(document).ready(function(){
 			$("#selector select").hide();
 		}
 	});
-	/***
-	$("selector").on("mouseover", "option", function(){
-		$("option").css("background-color","rgb(255,64,0)");
+	//当鼠标悬浮在option上时，背景颜色为橙色
+	$("select").on("mouseover","option", function(e){
+			$(this).css("background-color","rgb(255,63,0)");		
 	});
-	***/
+	$("select").on("mouseout","option", function(e){
+			$(this).css("background-color","white");		
+	});
+	//select中被选中的背景颜色为橙色
+	$("[selected='true']").css("background-color", "rgb(255,63,0)");
+	
 
 });
