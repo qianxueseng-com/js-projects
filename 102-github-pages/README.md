@@ -41,6 +41,7 @@ git push origin gh-pages
 - 把网站链接作为pull request提交到`js-projects/README.md`
 
 ## 参考链接
+- http://www.infoq.com/cn/articles/react-and-webpack
 - http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
 - https://github.com/webpack/webpack/issues/1548
 - https://github.com/ampedandwired/html-webpack-plugin
