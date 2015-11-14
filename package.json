@@ -4,7 +4,7 @@
   "description": "testing",
   "main": "hello.js",
   "scripts": {
-  "build": "webpack",
+    "build": "webpack",
     "compress": "webpack -p",
     "start": "webpack-dev-server --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,10 +13,14 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.22.0",
+    "css-resources": "^0.2.0",
     "extract-text-webpack-plugin": "^0.9.1",
+    "jquery": "^2.1.4",
     "node-sass": "^3.4.1",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.3"
+    "webpack": "^1.12.3",
+    "webpack-core": "^0.6.8",
+    "webpack-dev-server": "^1.12.1"
   }
 }

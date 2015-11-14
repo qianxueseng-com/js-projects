@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="public/style.css">
-	<!-- <link rel="stylesheet" href="http://localhost:8080/public/_boostrap.css"> -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/bundle-css.css">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, user-scalable=no"/>
 </head>
+
 <body class="hello-form">
-	<div class="container clearfix">
-  <section id="intro-description">
-    <img src="" alt=""id="intro-icon">
-    <h1 id="name">Don</h1>
-    <p>I love Front-end</p>
-  </section>
-  <section class="row intro-container">
-    <div class="col-xs-4 intro-div" id="social">
-      <h3>Social Links</h3>
-      <ul>
-        <li><a href="http://weibo.com/dongdongwontonnoodle/">Weibo</a></li>
-        <li><a href="http://www.zhihu.com/people/cai-dong-018">Zhihu</a></li>
-        <li><a href="http://www.github.com/dontry/">Github</a></li>
-        <li><a href="http://codepen.io/dontry018">Codepen</a></li>
-      </ul>
+    <div class="container clearfix">
+        <section id="intro-description">
+            <div class="flip-container">
+                <div class="flipper">
+                    <img src="" alt="" id="front-intro-icon" class="front img-circle">
+                    <img src="" alt="" id="back-intro-icon" class="back img-circle">
+                </div>
+            </div>
+            <h1 id="name">Don</h1>
+            <p>I love Front-end</p>
+        </section>
+        <section class="row intro-container">
+            <div class="col-xs-4 intro-div" id="social">
+                <h3>Social Links</h3>
+                <ul>
+                    <li><a href="http://weibo.com/dongdongwontonnoodle/">Weibo</a></li>
+                    <li><a href="http://www.zhihu.com/people/cai-dong-018">Zhihu</a></li>
+                    <li><a href="http://www.github.com/dontry/">Github</a></li>
+                    <li><a href="http://codepen.io/dontry018">Codepen</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 intro-div" id="education">
+                <h3>Education</h3>
+                <ul>
+                    <li>South China University of Technology</li>
+                    <li>South China Agriculture University</li>
+                    <li>Guangzhou No.2 Middle School</li>
+                </ul>
+            </div>
+            <div class="col-xs-4 intro-div" id="project">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="https://dontry.github.io">My Personal Blog</a><span> - A personal blog based on Github Pages</span></li>
+                    <li>
+                        <a href="https://github.com/dontry/ImageDIY">Image DIY</a><span> - Android image editor application</span></li>
+                    <li>
+                        <a href="https://github.com/dontry/donlock">Donlock </a><span> - Android cartoon screenlock</span></li>
+                </ul>
+            </div>
+        </section>
     </div>
-    <div class="col-xs-4 intro-div" id="education">
-      <h3>Education</h3>
-      <ul>
-        <li>South China University of Technology</li>
-        <li>South China Agriculture University</li>
-        <li>Guangzhou No.2 Middle School</li>
-      </ul>
-    </div>
-    <div class="col-xs-4 intro-div" id="project">
-      <h3>Projects</h3>
-      <ul>
-        <li><a href="https://dontry.github.io">My Personal Blog</a><span> - A personal blog based on Github Pages</span></li>
-        <li>
-          <a href="https://github.com/dontry/ImageDIY">Image DIY</a><span> - Android image editor application</span></li>
-        <li>
-          <a href="https://github.com/dontry/donlock">Donlock </a><span> - Android cartoon screenlock</span></li>
-      </ul>
-    </div>
-  </section>
-</div>
-	<script type="text/javascript"  src="public/helloWorld.js"></script>
+    <script type="text/javascript" src="dist/bundle-js.js"></script>
 </body>
+
 </html>
