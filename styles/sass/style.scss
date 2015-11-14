@@ -10,7 +10,7 @@ body {
     perspective: 2000;
 }
 
-.flip-container:hover .flipper {
+.flipper:hover {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
