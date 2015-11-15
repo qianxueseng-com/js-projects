@@ -3,7 +3,7 @@
  - [我是占座的](http://baidu.com)
  - [newraina的个人介绍页](http://about.newraina.com)
  - [淡苍的个人介绍页](http://page.blackganglion.com)
- - [dontry的个人介绍页](http://dontry.github.io）
+ - [dontry个人介绍页](http://dontry.github.io/gh-pages)
  
 
  ### 提交Pull request的办法
