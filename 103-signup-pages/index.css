@@ -78,7 +78,7 @@
 	padding: 3px;
 } 
 #content {
-	margin: 80px 36%;
+	margin: 80px 31%;
 }
 #content form label {
 	display: inline-block;
@@ -116,15 +116,27 @@
 	font-size: 9px;
 	margin: 8px 13px;
 }
-#content form input {
-	color: rgb(204,204,204);
+#content form #input {
+	display: inline-block;
+}
+#content form #input p {
+	color: red;
+	font-size: 2px;
+	padding-left: 5px;
+	display: inline-block;
+	display: none;
+}
+#content form #input input{
+	color: black;
 	border-color: rgb(220,220,220);
 	vertical-align: top;
 	height: 33px;
 	width: 160px;
 	margin-left: -8px;
+	margin-top: -7px;
+
 }
-#content #confirmation #slider{
+#content #confirmation #prove{
 	width: 240px;
 	height: 30px;
 	border: 1px solid rgb(220,220,220);
@@ -132,11 +144,11 @@
 	background-color: rgb(232,232,232);
 }
 
-#content #confirmation #slider #div1{	
+#content #confirmation #pove #div1{	
 	float: left;
 	left: 0px;
 }
-#content #confirmation #slider {
+#content #confirmation #prove {
 	font-size: 8px;
 	color: rgb(156,156,156);
 	text-align: center;

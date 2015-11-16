@@ -4,7 +4,8 @@
 	<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
 	<title>账户注册|淘宝</title>
 	<link rel="stylesheet" type="text/css" href="./index.css">
-	<script src="./jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./jquery-ui.min.js"></script>
 	<script type="text/javascript" src="./index.js"></script>
 	
 </head>
@@ -33,31 +34,33 @@
 				<div id="slide">
 					<div id="slideDown"><span id="span1">中国大陆</span><span id="span2">+86</span></div>
 				</div>	
-				<input type="textarea" value=" 请输入你的手机号">
+				<div id="input">
+					<input type="textarea" placeholder="请输入你的手机号码"><p><span>×</span>请输入你的电话号码</p>
+				</div>
 			</form>
 		</div>
 		
 		
 		<div id="confirmation" class="row">
 			<p>验证</p>
-			<div id="slider"><div draggable="true" id="div1"><img src="./rt.png"></div>请按住滑块，拖动到右边</div>
+			<div id="prove"><div draggable="true"><img src="./rt.png"  id="slider"></div>请按住滑块，拖动到右边</div>
 		</div>
 		<div id="nextStep" class="row"><p>下一步</p></div>
 		<p id="emailReg" class="row"><a href="">需要通过邮箱注册</a></p>
 		<div id="selector">
-			<select size="7">
+			<select size="7" >
 					<option value="国家1    +855" selected>中国大陆   +855</option>
 					<option value="国家2    +855" >国家2   +855</option>
-					<option value="国家3    +855">国家3   +855</option>
-					<option value="国家4    +855">国家4   +855</option>
-					<option value="国家5    +855">国家5   +855</option>
-					<option value="国家6    +855">国家6   +855</option>
-					<option value="国家7    +855">国家7   +855</option>
-					<option value="国家8    +855">国家8   +855</option>
-					<option value="国家9    +855">国家9   +855</option>
-					<option value="国家10   +855">国家10   +855</option>
-					<option value="国家11   +855">国家11   +855</option>
-					<option value="国家12   +855">国家12   +855</option>
+					<option value="国家3    +855" >国家3   +855</option>
+					<option value="国家4    +855" >国家4   +855</option>
+					<option value="国家5    +855" >国家5   +855</option>
+					<option value="国家6    +855" >国家6   +855</option>
+					<option value="国家7    +855" >国家7   +855</option>
+					<option value="国家8    +855" >国家8   +855</option>
+					<option value="国家9    +855" >国家9   +855</option>
+					<option value="国家10   +855" >国家10   +855</option>
+					<option value="国家11   +855" >国家11   +855</option>
+					<option value="国家12   +855" >国家12   +855</option>
 			</select>
 		</div>
 	</div>

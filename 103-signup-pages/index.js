@@ -22,7 +22,35 @@ $(document).ready(function(){
 			$(this).css("background-color","white");		
 	});
 	//select中被选中的背景颜色为橙色
-	$("[selected='true']").css("background-color", "rgb(255,63,0)");
+	$(":selected").css("background-color","rgb(255,63,0)");
+	//电话号码正则表达式
+	var rePhoneNumber = /(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/g;
+	//提示输入是否是电话号码
+	$("input").change(function(){
+		var phoneNumber = $("input").val();
+		if(!rePhoneNumber.test(phoneNumber)){
+			$("#input p").css("display","inline-block")
+		}else{
+			$("#input p").css("display","none");
+		}
+	});
+	//滑块验证
+	$(funtion(){
+		$("slider").slider({
+			range:false,
+			min:0,
+			max:500,
+			values:0;
+		});
+	});
+	
 	
 
+
+	$("#nextStep p").mouseover(function(){
+		$(this).css("color","white");
+	});
+	$("#nextStep p").mouseout(function(){
+		$(this).css("color","rgb(153,153,153)");
+	});
 });
