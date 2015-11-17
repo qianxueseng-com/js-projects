@@ -1,18 +1,21 @@
-var $box = $('.slide-box');
-var $picture = $('.show-picture');
-//可随机的照片数
-var pictureCount = 3;
-//当前显示图片编号
-var pid = 0;
-//标记，是否已通过图片验证
-var flag = 0;
-//当前验证方式
-var method = 1;
+'use strict';
+
+var $box = $('.slide-box'),
+    $picture = $('.show-picture'),
+    pictureCount = 3,     //可随机的照片数
+    pid = 0,              //当前显示图片编号
+    flag = 0,             //标记，是否已通过图片验证
+    method = 1,           //当前验证方式
+    usePhoneNumber = 1,   //使用手机号验证
+    useEmail = 2,         //使用邮箱验证
+    clickRange = 8;       //点击文件范围
 
 //当验证码点击错误或要求更换时不再随机(数量大可以再选择随机), 直接选择下一张
 var nextPicture = function(){
   pid = pid + 1;
-  if(pid > pictureCount) pid = 1;
+  if(pid > pictureCount){
+    pid = 1;
+  }
   getPictureAndWord();
 };
 
@@ -20,8 +23,8 @@ var nextPicture = function(){
 var checkPictureSuccess = function(){
   $picture.hide();
   $box.html('<img src="./dist/images/yes.png" />');
-  $('#boxhint').css('margin-left', '24%').text('验证成功');
-  $('#submit').css('background-color', 'red').css('color', '#fff');
+  $('#boxhint').addClass('boxhint-success').text('验证成功');
+  $('#submit').addClass('submit-success');
 };
 
 //随机图片和文字，注册相应事件
@@ -29,12 +32,12 @@ var getPictureAndWord = function(){
   var pictureX, pictureY;
 
   $('#boxhint').text('验证图片生成中...');
-  
+
   //清除之前的点击事件
   $('#verify').unbind("click");
 
   //当前还未获取过验证图片
-  if(pid == 0){
+  if(pid === 0){
     pid = Math.floor(Math.random() * 100) % pictureCount + 1;
     $('#changepicture').on('click', nextPicture);
   }
@@ -46,7 +49,7 @@ var getPictureAndWord = function(){
     var y = e.offsetY;
 
     //设置一定的点击范围
-    if(Math.abs(pictureX - x) <= 8 && Math.abs(pictureY - y) <= 8){
+    if(Math.abs(pictureX - x) <= clickRange && Math.abs(pictureY - y) <= clickRange){
       flag = 1;
       $(this).unbind("click");
       checkPictureSuccess();
@@ -58,7 +61,7 @@ var getPictureAndWord = function(){
 
   //读取文字数据
   var dataPath = './data/picture/' + pid + '.json';
-  $.getJSON(dataPath, function(data){
+  $.getJSON(dataPath).done(function(data){
     var wordCount = data[0]['count'];
     var wordData = data[0]['data'];
 
@@ -73,8 +76,7 @@ var getPictureAndWord = function(){
 
 //显示图片
 var showPicture = function(){
-  $('#boxhint').css('margin-left', '3%')
-      .css('color', 'white');
+  $('#boxhint').addClass('boxhint-show');
   $box.html('<img src="./dist/images/no.png" />');
   getPictureAndWord();
   $picture.show();
@@ -121,32 +123,32 @@ var moveSlideBox = function(){
 };
 
 var checkPhoneNumber = function(number){
-  if(number == ''){
+  if(number === ''){
     $('#numberHint').show().text('请输入您的手机号码');
     return;
   }
   var phoneReg = /^1[358]\d{9}$/;
   if(phoneReg.test(number)){
     $('#numberHint').hide();
-    return 1;
+    return true;
   }else{
     $('#numberHint').show().text('手机号码格式不正确, 请重新输入');
-    return 0;
+    return false;
   }
 };
 
 var checkEmail = function(email){
-  if(email == ''){
+  if(email === ''){
     $('#emailHint').show().text('请输入您的邮箱');
     return;
   }
   var emailReg = /^[._\-a-z0-9]+@[._\-a-z0-9]+(\.[._\-a-z0-9]+)+$/;
   if(emailReg.test(email)){
     $('#emailHint').hide();
-    return 1;
+    return true;
   }else{
     $('#emailHint').show().text('邮箱格式不正确, 请重新输入');
-    return 0;
+    return false;
   }
 };
 
@@ -160,18 +162,18 @@ $(document).ready(function(){
 
   $('#submit').on('click', function(){
     if(flag){
-      if(method == 1){
+      if(method === usePhoneNumber){
         var number = $('#phoneNumber').val();
         if(checkPhoneNumber(number) && flag){
           $('#numberHint').hide();
-          alert('第一步成功!');
+          window.alert('第一步成功!');
         }
       }
-      if(method == 2){
+      if(method === useEmail){
         var email = $('#email').val();
         if(checkEmail(email) && flag){
           $('#numberHint').hide();
-          alert('第一步成功!');
+          window.alert('第一步成功!');
         }
       }
     }
@@ -179,7 +181,7 @@ $(document).ready(function(){
 
   //验证方式的切换
   $('#regMethod').on('click', function(){
-    if(method == 1){
+    if(method === usePhoneNumber){
       $('#show-phone').hide();
       $('#show-email').show();
       $('#phoneNumber').unbind('blur');
@@ -188,9 +190,9 @@ $(document).ready(function(){
         checkEmail(email);
       });
       $(this).text('个人用户可以使用手机号注册>>');
-      method = 2;
+      method = useEmail;
     } else {
-      if(method == 2){
+      if(method === useEmail){
         $('#show-email').hide();
         $('#show-phone').show();
         $('#email').unbind('blur');
@@ -199,7 +201,7 @@ $(document).ready(function(){
           checkPhoneNumber(number);
         });
         $(this).text('需要通过邮箱注册');
-        method = 1;
+        method = usePhoneNumber;
       }
     }
   });

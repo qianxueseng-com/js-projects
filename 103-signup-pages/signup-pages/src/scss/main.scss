@@ -162,7 +162,7 @@ li[class="active"] i{
   cursor: default;
 }
 
-#boxhint{
+.boxhint{
   position: absolute;
   z-index: 2;
   font-size: 14px;
@@ -211,7 +211,7 @@ li[class="active"] i{
   padding: 20px 0px 10px 223px;
 }
 
-#submit{
+.submit{
   height: 38px;
   width: 200px;
   font-weight: bold;
@@ -225,7 +225,7 @@ li[class="active"] i{
   opacity: 0.8;
 }
 
-#submit:hover{
+.submit:hover{
   color: #fff;
   opacity: 1;
 }
@@ -237,4 +237,18 @@ li[class="active"] i{
   color: $activeColor;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.boxhint-success{
+  margin-left: 24%;
+}
+
+.boxhint-show{
+  margin-left: 3%;
+  color: white;
+}
+
+.submit-success{
+  background-color: red;
+  color: #fff;
 }
