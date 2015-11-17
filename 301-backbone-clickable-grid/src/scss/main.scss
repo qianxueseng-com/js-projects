@@ -1,0 +1,171 @@
+@import "normalize.min";
+@import "iconfont";
+
+$fontStack: Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
+$bodyBgcolor: #faf8ef;
+$bgColor: #bbada0;
+$textColor: #554c47;
+$itemBgcolor: #ede0c8;
+$itemTextColor: #776e65;
+
+%center_block {
+    // 块元素居中对齐
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin transition($parameter...) {
+    // 多浏览器兼容过渡
+    -webkit-transition: $parameter;
+       -moz-transition: $parameter;
+        -ms-transition: $parameter;
+         -o-transition: $parameter;
+            transition: $parameter;
+}
+
+@mixin box-shadow($parameter...) {
+    // 多浏览器兼容阴影
+    -webkit-box-shadow: $parameter;
+       -moz-box-shadow: $parameter;
+            box-shadow: $parameter;
+}
+
+@mixin  appearance($parameter...) {
+    // 多浏览器appearance
+    -webkit-appearance: $parameter;
+       -moz-appearance: $parameter;
+            appearance: $parameter;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontStack;
+    background-color: $bodyBgcolor;
+}
+
+#container {
+    border-radius: 4px 4px 8px 8px;
+    width: 960px;
+
+    background-color: $bgColor;
+
+    @extend %center_block;
+    @include box-shadow(0 0 5px #111);
+
+    &.max-width {
+        width: 98%;
+    }
+
+    #selnum {
+        display: flex;
+
+        position: relative;
+
+        margin-top: 16px;
+        padding-top: 16px;
+
+        color: $textColor;
+
+        align-items: center;
+        @extend %center_block;
+        justify-content: center;
+
+        #row-num {
+            border: solid 1px rgba(100, 100, 100, .3);
+            border-radius: 4px;
+            width: 60px;
+
+            text-align: center;
+
+            @include appearance(none);
+            @include box-shadow(0 0 1px rgba(0, 0, 0, .1));
+
+            &:hover {
+                @include box-shadow(0 0 2px rgba(0, 0, 0, .2));
+            }
+        }
+
+        .auto-play {
+            margin-left: 40px;
+            border: solid 1px rgba(100, 100, 100, .3);
+            border-radius: 4px;
+
+            font-size: 14px;
+
+            background: #ede0c8;
+
+            @include transition(all 100ms);
+            @include appearance(none);
+
+            &:hover,
+            &:focus {
+                background: #ede7d4;
+
+                outline: none;
+            }
+
+            &:active {
+                color: #a9a09a;
+
+                @include box-shadow(inset 1px 1px 1px rgba(20, 20, 20, .4));
+            }
+        }
+    }
+
+    .message {
+        margin-bottom: 16px;
+        border-bottom: dashed 1px #ede0c8;
+        padding: 8px 0;
+        height: 26px;
+
+        font-size: 10px;
+        text-align: center;
+
+        color: $textColor;
+    }
+
+    #box {
+        display: flex;
+
+        padding: 3px;
+        min-height: 675px;
+
+        flex-wrap: wrap;
+
+        .column {
+            display: flex;
+
+            flex: 1 1 100%;
+
+            .item {
+                display: flex;
+
+                margin: 1px;
+                border-radius: 2px;
+
+                text-align: center;
+
+                color: $itemTextColor;
+                background-color: $itemBgcolor;
+
+                text-shadow: 1px 1px 1px #fff2da;
+
+                align-items: center;
+                flex: 1;
+                justify-content: center;
+                @include transition(transform 200ms);
+
+                &:hover {
+                    transform: scale(1.02, 1.03);
+
+                    cursor: pointer;
+
+                    @include box-shadow(0 0 5px rgba(10, 10, 10, .5));
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>301 backbone clickable grid</title>
+    <link rel="stylesheet" href="./dist/css/main.min.css"/>
+</head>
+<body>
+<div id="container">
+    <!-- 行数输入区-->
+    <div id="selnum">
+        <label for="row-num"><i class="iconfont">&#xe649;</i>请输入方块行数：</label>
+        <input type="number" id="row-num" value="5" min="1" max="50" checked/>
+        <button class="auto-play"><i class="iconfont">&#xe737;</i>自动演示</button>
+    </div>
+    <!-- 提示消息显示区-->
+    <div class="message"></div>
+    <!-- flex格子区-->
+    <div id="box"></div>
+</div>
+
+<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/json2/20140204/json2.min.js"></script>
+<script src="http://cdn.staticfile.org/underscore.js/1.7.0/underscore-min.js"></script>
+<script src="http://cdn.staticfile.org/backbone.js/1.1.2/backbone-min.js"></script>
+<script type="text/javascript" src="./dist/js/main.js"></script>
+
+<script type="text/template" id="template">
+    <% for(var i = 0; i < rowNum; i++) { %>
+    <div class="column">
+        <% for(var j = 0; j < rowNum; j++) { %>
+            <div class="item"><%= i * rowNum + j + 1 %></div>
+        <% }; %>
+    </div> <% }; %>
+</script>
+
+</body>
+</html>

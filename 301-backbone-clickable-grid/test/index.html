@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mocha-test-301</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css"/>
+</head>
+<body>
+<div id="mocha"></div>
+<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+<!--引入断言库和测试框架-->
+<script src="http://cdn.staticfile.org/chai/1.10.0/chai.min.js"></script>
+<script src="mocha.js"></script>
+<!--mocha初始化，bdd模式-->
+<script>mocha.setup('bdd');</script>
+<!--引入待测试的module-->
+<script src="dist/tests-app.convert.js"></script>
+<!--引入测试用例文件-->
+<script src="tests-in-browser.js"></script>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
