@@ -1,6 +1,15 @@
-// 使用浏览器进行mocha test
+// 不使用浏览器进行mocha test
+var chai = require('chai');
 var expect = chai.expect;
+var sinon = require('sinon');
 var tool = require('../src/js/tool');
+
+// jsdom 模拟DOM
+var jsdom = require("jsdom").jsdom;
+var document = jsdom("<html><body></body></html>");
+var window = document.defaultView;
+var jquery = $ = require('jquery')(window);
+
 
 describe('tool 模块测试', function () {
     describe('tool.isNumKey', function () {

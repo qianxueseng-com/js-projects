@@ -1,10 +1,9 @@
 {
   "name": "103-signup-pages",
   "version": "1.0.0",
-  "description": "103-signup-pages",
-  "main": "index.js",
+  "description": "301 project",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test/tests-in-cmd.js"
   },
   "author": "newraina",
   "license": "MIT",
@@ -20,8 +19,9 @@
     "gulp-sass": "^2.1.0",
     "gulp-uglify": "^1.4.2",
     "gulp-webpack": "^1.5.0",
+    "jsdom": "^7.0.2",
     "jsx-loader": "^0.13.2",
-    "run-sequence": "^1.1.4",
-    "script-loader": "^0.6.1"
+    "mocha": "^2.3.4",
+    "run-sequence": "^1.1.4"
   }
 }

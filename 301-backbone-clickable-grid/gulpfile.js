@@ -73,7 +73,7 @@ gulp.task('clean', function () {
 
 // webpack处理js， 与 gulp 配合使用
 gulp.task('webpack', function () {
-    return gulp.src('src/js/main.js')
+    return gulp.src('./src/js/main.js')
         .pipe(webpack(webpackConfig))
         .pipe(rename('main.js'))
         .pipe(gulp.dest('./dist/js/'));
@@ -84,6 +84,7 @@ gulp.task('default', function () {
     runSequence('clean', ['eslint', 'minifyImages', 'minifyScripts', 'minifyCss', 'copyFonts']);
     // 监听js文件变化
     gulp.watch('./src/js/*', ['minifyScripts']);
+    gulp.watch('./test/*.js', ['convertTestJs']);
     // 监听scss文件变化
     gulp.watch('./src/scss/*.scss', ['minifyCss']);
     // 监测图片变化
@@ -94,8 +95,8 @@ gulp.task('default', function () {
 
 // 转换待测试模块js
 gulp.task('convertTestJs', function () {
-    return gulp.src('test/tests-app.js')
+    return gulp.src('test/tests-in-browser.js')
         .pipe(webpack())
-        .pipe(rename('tests-app.convert.js'))
+        .pipe(rename('tests.convert.js'))
         .pipe(gulp.dest('test/dist/'));
 });
