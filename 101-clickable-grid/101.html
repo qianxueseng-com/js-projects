@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>创建cell</title>
+  <script src="jquery.min.js"></script>
+  <style>
+  .box{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #CCC;
+    flex-direction: column;
+  }
+  .row{
+    flex: 1;
+    display: flex;
+  }
+  .item{
+    background-color: #000;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    border: 1px solid #FFF;
+  }
+</style>
+</head>
+<body>
+  <!-- <div class="box">
+    <div class="row">
+      <span class="item">1</span>
+      <span class="item">2</span>
+      <span class="item">3</span>
+    </div>
+    <div class="row">
+      <span class="item">4</span>
+      <span class="item">5</span>
+      <span class="item">6</span>
+    </div>
+    <div class="row">
+      <span class="item">7</span>
+      <span class="item">8</span>
+      <span class="item">9</span>
+    </div>
+  </div> -->
+  <script>
+    function CreateCell(n){
+      this.n = n;
+      this.init();
+    }
+
+    CreateCell.prototype.init = function(){
+      //创建DOM元素
+      var box = $('<div class="box"></div>');
+      //插入DOM元素
+      $('body').prepend(box);
+      //循环row元素
+      var num = 0;        //创建cell内的数字
+      for(var i = 1; i<= this.n; ++i){
+        $('.box').append('<div id="row' + i + '" class="row"></div>');
+        for(var j = 1; j<= this.n; ++j){
+          $('#row'+ i +'').append('<span class="item">'+ num +'</span>');
+          ++num;
+        }
+      }
+      //绑定点击事件
+      $('span').on('click', function(e){
+        console.log($(this).html());
+      });
+    };
+
+  $(function(){
+    var createCell = new CreateCell(40);
+  })
+  </script>
+</body>
+</html>
