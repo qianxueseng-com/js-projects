@@ -1,0 +1,23 @@
+#box {
+    position: absolute;
+    left: 32%;
+    top: 9%;
+    width: 495px;
+    height: 500px;
+    background-color: #1240AB;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.item {
+    width: 45px;
+    height: 45px;
+    margin: 2px;
+    background-color: #FFFE73;
+}
+
+.item-border {
+    background-color:#FFFF00;
+    border: 1px solid #FFFF00
+}

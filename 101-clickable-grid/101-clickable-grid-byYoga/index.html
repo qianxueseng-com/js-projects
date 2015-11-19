@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div id="box">
+
+</div>
+<script>
+    $(document).ready(function() {
+        var $box = $("#box");
+        for(var i = 0; i < 100; i++) {
+            var $item = $("<div></div>");
+            $item.addClass('item');
+            $item.attr('value', i+1);
+            $box.append($item);
+        }
+
+        $box.delegate(".item", "mouseover", function() {
+            $(this).addClass("item-border");
+        });
+
+        $box.delegate(".item", "mouseout", function() {
+            $(this).removeClass("item-border");
+        });
+
+        $box.delegate(".item", "click", function() {
+            console.log($(this).attr("value"));
+        })
+    })
+
+</script>
+</body>
+</html>
