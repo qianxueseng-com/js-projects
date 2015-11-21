@@ -28,7 +28,7 @@
             $(this).removeClass("item-border");
         });
 
-        $box.delegate(".item", "click", function() {
+        $box.delegate("click",".item", function() {
             console.log($(this).attr("value"));
         })
     })
