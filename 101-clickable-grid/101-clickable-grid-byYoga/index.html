@@ -20,15 +20,15 @@
             $box.append($item);
         }
 
-        $box.delegate(".item", "mouseover", function() {
+        $box.on("mouseover", ".item", function() {
             $(this).addClass("item-border");
         });
 
-        $box.delegate(".item", "mouseout", function() {
+        $box.on("mouseout",".item", function() {
             $(this).removeClass("item-border");
         });
 
-        $box.delegate("click",".item", function() {
+        $box.on("click",".item", function() {
             console.log($(this).attr("value"));
         })
     })
