@@ -22,6 +22,10 @@ git commit
 git push origin gh-pages
 ```
 
+## 答疑
+### 如果访问不了，请把master和gh-pages下都放上index.html
+> username.github.io仓库的内容要在master下面，如果是其他项目仓库想用username.github.io/project地址访问，就要把内容放在gh-pages下面～ (thanks to @newraina)
+
 ## 基本要求
 - 创建一个repo名字叫username.github.io，[github page官方文档](https://pages.github.com/)
 - 写很多html，一些css，一些js。主要将来用这个页面来展示你的项目和教育状况。从上到下分为，github名字，教育状况，项目。在项目部分，用类似于101的格子来展示你的个人项目。例如[这样](http://www.nancygarciafashion.com/)
