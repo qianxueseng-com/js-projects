@@ -37,11 +37,12 @@ var data = {
 };
 
 ```
-- [ ]三种View, StartView, CardView 和 EndView
+- [ ]至少三种View, StartView, CardView 和 EndView
+- [ ]至少一个model
+- [ ]至少一个collection来处理所有的card
 - [ ]StartView有开始按钮和简单介绍
 - [ ]EndView有重新开始和分享按钮
 - [ ]CardView有一个图片，一个问题，两个答案
-- [ ]CardView的数据用一个collection来实现
 
 ## 额外要求
 - [ ]使用Backbone router
