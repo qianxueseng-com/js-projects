@@ -1,0 +1,241 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0; }
+  * a {
+    text-decoration: none; }
+  * ol,
+  * ul {
+    list-style: none; }
+
+header {
+  background-color: #f5f5f5;
+  height: 35px;
+  line-height: 35px; }
+
+.nav-bar {
+  height: 35px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #6c6c6c; }
+  .nav-bar .nav-bar-l {
+    float: left; }
+  .nav-bar .nav-bar-r {
+    float: right; }
+  .nav-bar .nav-bar-l,
+  .nav-bar .nav-bar-r {
+    display: inline; }
+    .nav-bar .nav-bar-l .menu,
+    .nav-bar .nav-bar-r .menu {
+      margin-right: 7px;
+      display: inline-block; }
+      .nav-bar .nav-bar-l .menu a,
+      .nav-bar .nav-bar-r .menu a {
+        padding: 0 6px; }
+  .nav-bar .highlight {
+    color: #f22e00; }
+
+.container {
+  margin: 0 auto; }
+  .container .banner {
+    height: 43px;
+    padding: 20px 0;
+    width: 990px; }
+    .container .banner .logo {
+      display: inline-block; }
+      .container .banner .logo h1 {
+        background-color: #f22e00; }
+      .container .banner .logo h2 {
+        height: 43px;
+        line-height: 43px;
+        margin-left: 6px;
+        font-size: 22px;
+        vertical-align: middle;
+        font-weight: 400; }
+  .container .steps {
+    height: 46px;
+    border-bottom: 2px solid #e6e6e6; }
+    .container .steps ol {
+      width: 720px;
+      margin: 0 auto; }
+      .container .steps ol li {
+        float: left;
+        display: inline;
+        height: 46px;
+        width: 150px;
+        line-height: 46px;
+        padding-left: 30px;
+        border-bottom: 2px solid #e6e6e6;
+        font-size: 16px;
+        font-weight: 700; }
+        .container .steps ol li i {
+          display: inline-block;
+          text-align: center;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          border-radius: 12px;
+          font-size: 14px;
+          margin-right: 10px;
+          background: #e6e6e6;
+          color: #fff; }
+      .container .steps ol li.active {
+        border-bottom: 2px solid #f22e00; }
+        .container .steps ol li.active i {
+          background-color: #f22e00; }
+  .container .content {
+    padding: 50px 0; }
+    .container .content form .form-list .form-group {
+      padding: 10px 0; }
+      .container .content form .form-list .form-group .form-item {
+        padding: 10px 0 10px 260px;
+        line-height: 36px; }
+        .container .content form .form-list .form-group .form-item .form-label {
+          display: inline;
+          float: left;
+          width: 240px;
+          margin-left: -260px;
+          width: 240px;
+          height: 37px;
+          line-height: 37px;
+          text-align: right; }
+        .container .content form .form-list .form-group .form-item .mobile-text .mobile-select {
+          cursor: pointer;
+          border: 1px solid #dedede;
+          width: 150px;
+          height: 35px;
+          float: left;
+          padding-left: 10px;
+          font-weight: 700; }
+          .container .content form .form-list .form-group .form-item .mobile-text .mobile-select .text {
+            float: left;
+            width: 85px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 35px; }
+          .container .content form .form-list .form-group .form-item .mobile-text .mobile-select .code {
+            float: right;
+            margin-right: 25px; }
+        .container .content form .form-list .form-group .form-item .mobile-text .form-text {
+          border: 1px solid #dedede;
+          height: 17px;
+          line-height: 17px;
+          padding: 9px;
+          font-size: 14px;
+          color: #e6e6e6; }
+        .container .content form .form-list .form-group .form-item .mobile-text .form-text:focus {
+          border-color: #229bf9; }
+        .container .content form .form-list .form-group .form-item .mobile-text .tip {
+          font-size: 12px;
+          color: #f22e00; }
+        .container .content form .form-list .form-group .form-item .verify_container {
+          position: relative; }
+          .container .content form .form-list .form-group .form-item .verify_container .verify_scale {
+            position: relative;
+            width: 300px;
+            height: 34px;
+            background-color: #e8e8e8;
+            margin: 0;
+            padding: 0; }
+            .container .content form .form-list .form-group .form-item .verify_container .verify_scale div {
+              position: absolute;
+              background: #7ac23c;
+              height: 100%; }
+            .container .content form .form-list .form-group .form-item .verify_container .verify_scale span {
+              left: 0;
+              width: 40px;
+              height: 32px;
+              line-height: 32px;
+              border: 1px solid #ccc;
+              position: absolute;
+              cursor: move;
+              background-color: #fff;
+              z-index: 2;
+              text-align: center;
+              color: #9c9c9c; }
+            .container .content form .form-list .form-group .form-item .verify_container .verify_scale .scale_text {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              position: absolute;
+              z-index: 1;
+              background-color: transparent;
+              color: #9c9c9c;
+              line-height: 34px;
+              font-size: 12px;
+              cursor: pointer; }
+              .container .content form .form-list .form-group .form-item .verify_container .verify_scale .scale_text span.nc-lang-cnt {
+                width: auto;
+                height: auto;
+                border: none;
+                z-index: 0;
+                display: inline;
+                background: none;
+                position: static; }
+          .container .content form .form-list .form-group .form-item .verify_container .captcha-area {
+            display: none;
+            position: absolute;
+            top: 35px;
+            width: 200px;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 0 20px 20px 20px; }
+            .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-text {
+              display: inline-block;
+              width: 200px;
+              margin: 0 auto; }
+              .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-text .captcha-hint {
+                font-size: 14px;
+                float: left;
+                color: #f22e00; }
+              .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-text .captcha-reload {
+                float: right;
+                color: #6c6c6c; }
+            .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-img {
+              width: 200px;
+              height: 200px; }
+        .container .content form .form-list .form-group .form-item a {
+          font-size: 12px; }
+        .container .content form .form-list .form-group .form-item a:hover {
+          color: #f22e00; }
+      .container .content form .form-list .form-group .form-item-short {
+        padding-top: 0;
+        padding-bottom: 0; }
+        .container .content form .form-list .form-group .form-item-short .btn {
+          min-width: 180px;
+          display: inline-block;
+          height: 36px;
+          padding: 0 20px;
+          font-weight: 700;
+          font-size: 16px;
+          text-align: center;
+          background-color: #f22e00;
+          border: 0;
+          border-radius: 3px; }
+        .container .content form .form-list .form-group .form-item-short .btn-disabled {
+          background-color: #ededed;
+          border-color: #ededed;
+          color: #999; }
+        .container .content form .form-list .form-group .form-item-short .btn:hover {
+          color: #fff; }
+        .container .content form .form-list .form-group .form-item-short .btn-enabled {
+          background-color: #f22e00;
+          color: #fff;
+          border-color: #f22e00; }
+
+.clearfix:after {
+  font-size: 0;
+  clear: both;
+  height: 0;
+  content: "";
+  display: block;
+  visibility: hidden; }
+
+@media only screen and (max-width: 1190px) {
+  .container,
+  .nav-bar {
+    width: 990px;
+    padding: 0 20px; } }

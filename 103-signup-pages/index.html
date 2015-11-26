@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>taobao signup</title>
+    <link rel="stylesheet" href="dist/style.min.css">
+    <script src="dist/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar container clearfix">
+            <ul class="nav-bar-l">
+                <li class="menu login-area">
+                    <a class="highlight" href="#">亲，请登录</a>
+                    <a href="#">免费注册</a>
+                </li>
+                <li class="menu mobile">手机逛淘宝</li>
+            </ul>
+            <ul class="nav-bar-r">
+                <li class="menu home">
+                    <a class="highlight" href="#">淘宝首页</a>
+                </li>
+                <li class="menu my-taobao">
+                    <a href="#">我的淘宝</a>
+                </li>
+                <li class="menu mini-cart">
+                    <a href="#">购物车</a>
+                </li>
+                <li class="menu favorite">
+                    <a href="#">收藏夹</a>
+                </li>
+                <li class="menu category">
+                    <a href="#">商品分类</a>
+                </li>
+                <li class="menu seller-center">
+                    <a href="#">卖家中心</a>
+                </li>
+                <li class="menu service">
+                    <a href="#">联系客服</a>
+                </li>
+                <li class="menu site-map">
+                    <a href="#">网站导航</a>
+                </li>
+            </ul>
+            </div>
+    </header>
+    <div class="container">
+        <div class="banner">
+            <h1><a href="#"></a></h1>
+            <h2>用户注册</h2>
+        </div>
+        <div class="steps">
+            <ol>
+                <li class="active"><i>1</i><span>设置用户名</span></li>
+                <li><i>2</i><span>填写账号信息</span></li>
+                <li><i>3</i><span>设置支付方式</span></li>
+                <li><span>注册成功</span></li>
+            </ol>
+        </div>
+        <div class="content">
+            <form action="#" method="post" id="mobile-form">
+                <div class="form-list form-main-list">
+                    <div class="form-group">
+                        <div class="form-item">
+                            <span class="form-label">手机号</span>
+                            <div class="mobile-text">
+                                <div class="mobile-select">
+                                    <span class="text">中国大陆</span>
+                                    <span class="code">+86</span>
+                                </div>
+                                <input type="hidden" name="mobile_area" value="1">
+                                <input type="text" autocomplete="off" name="mobile" class="form-text mobile-input" value="请输入你的手机号码" id="mobile" maxlength="11" required pattern="^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$">
+                                <span class="tip">请输入11位正确手机号码</span>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <span class="form-label">验证</span>
+                            <div class="verify_container" id="verify_captcha">
+                                <div class="verify_scale" id="n1t">
+                                    <div id="slide-bg" style="width: 0px;"></div>
+                                    <span id="slide-box" style="left: 0px;">>></span>
+                                    <div id="_n1z" class="scale_text scale_text2">
+                                        <span class="nc-lang-cnt">
+											请按住滑块，拖到最右边
+										</span>
+                                    </div>
+                                </div>
+                                <div class="captcha-area">
+                                	<span class="captcha-text">
+                                    <span class="captcha-hint">你好你好</span>
+                                	<a href="" class="captcha-reload">看不清？换一张</a>
+                                	</span>
+                                	<div class="captcha-img">
+                                		<img src="" alt="captcha">
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-item form-item-short">
+                                <button class="btn btn-disabled" type="submit" id="btn-next">下一步</button>
+                            </div>
+                            <div class="form-item">
+                                <a href="">需要通过邮箱注册</a>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
+	<script src="http://localhost:8080/entry.js"></script>
+</body>
+
+</html>
