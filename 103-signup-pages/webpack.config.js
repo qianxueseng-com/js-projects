@@ -1,9 +1,11 @@
 module.exports = {
+	watch: true,
 	entry: {
 		index: [ 'webpack-dev-server/client?http://localhost:8080',
-		'entry.js'],
+		'./entry.js'],
 	},
 	output: {
-		filename: 'public/[name].js'
+		path: require('path').resolve('dist/'),
+		filename: 'dist/[name].js'
 	}
 }

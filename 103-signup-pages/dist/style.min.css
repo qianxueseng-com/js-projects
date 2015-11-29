@@ -1,12 +1,25 @@
-* {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0; }
-  * a {
-    text-decoration: none; }
-  * ol,
-  * ul {
-    list-style: none; }
+@font-face {
+  font-family: 'iconfont';
+  src: url("../assets/fonts/iconfont.eot");
+  src: url("../assets/fonts/iconfont.eot?iefix") format("embedded-opentype"), url("../assets/fonts/iconfont.woff") format("woff"), url("../assets/fonts/iconfont.ttf") format("truetype"), url("../assets/fonts/iconfont.svg#iconfont") format("svg"); }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-textstroke-width: 0.2px; }
+
+.taobaowanglogo {
+  font-size: 50px;
+  color: #f22e00; }
+
+.more {
+  font-size: 8px; }
+
+* ol,
+* ul {
+  list-style: none; }
 
 header {
   background-color: #f5f5f5;
@@ -17,8 +30,7 @@ header {
   height: 35px;
   width: 100%;
   margin: 0 auto;
-  font-size: 12px;
-  color: #6c6c6c; }
+  font-size: 12px; }
   .nav-bar .nav-bar-l {
     float: left; }
   .nav-bar .nav-bar-r {
@@ -32,27 +44,32 @@ header {
       display: inline-block; }
       .nav-bar .nav-bar-l .menu a,
       .nav-bar .nav-bar-r .menu a {
+        color: #6c6c6c;
         padding: 0 6px; }
-  .nav-bar .highlight {
-    color: #f22e00; }
+      .nav-bar .nav-bar-l .menu .highlight,
+      .nav-bar .nav-bar-r .menu .highlight {
+        color: #f22e00; }
 
 .container {
+  width: 990px;
   margin: 0 auto; }
   .container .banner {
     height: 43px;
     padding: 20px 0;
-    width: 990px; }
-    .container .banner .logo {
-      display: inline-block; }
-      .container .banner .logo h1 {
-        background-color: #f22e00; }
-      .container .banner .logo h2 {
-        height: 43px;
-        line-height: 43px;
-        margin-left: 6px;
-        font-size: 22px;
-        vertical-align: middle;
-        font-weight: 400; }
+    display: inline-block; }
+    .container .banner h1 {
+      display: inline-block;
+      height: 65px;
+      overflow: hidden;
+      vertical-align: middle; }
+    .container .banner h2 {
+      display: inline-block;
+      height: 43px;
+      line-height: 43px;
+      font-size: 22px;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-weight: 400; }
   .container .steps {
     height: 46px;
     border-bottom: 2px solid #e6e6e6; }
@@ -118,18 +135,22 @@ header {
           .container .content form .form-list .form-group .form-item .mobile-text .mobile-select .code {
             float: right;
             margin-right: 25px; }
-        .container .content form .form-list .form-group .form-item .mobile-text .form-text {
+        .container .content form .form-list .form-group .form-item .form-text {
           border: 1px solid #dedede;
           height: 17px;
           line-height: 17px;
           padding: 9px;
           font-size: 14px;
-          color: #e6e6e6; }
-        .container .content form .form-list .form-group .form-item .mobile-text .form-text:focus {
+          /*color: $step-unactive-color;*/ }
+        .container .content form .form-list .form-group .form-item .form-text.email-input {
+          width: 260px; }
+        .container .content form .form-list .form-group .form-item .form-text:focus {
           border-color: #229bf9; }
-        .container .content form .form-list .form-group .form-item .mobile-text .tip {
+        .container .content form .form-list .form-group .form-item .tip {
+          display: none;
           font-size: 12px;
-          color: #f22e00; }
+          color: #f22e00;
+          margin-left: 10px; }
         .container .content form .form-list .form-group .form-item .verify_container {
           position: relative; }
           .container .content form .form-list .form-group .form-item .verify_container .verify_scale {
@@ -178,11 +199,14 @@ header {
             display: none;
             position: absolute;
             top: 35px;
+            left: 30px;
             width: 200px;
             font-size: 12px;
             border: 1px solid #ccc;
             background-color: #fff;
-            padding: 0 20px 20px 20px; }
+            padding: 0 20px 20px 20px;
+            text-align: center;
+            z-index: 100; }
             .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-text {
               display: inline-block;
               width: 200px;
@@ -197,6 +221,9 @@ header {
             .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-img {
               width: 200px;
               height: 200px; }
+            .container .content form .form-list .form-group .form-item .verify_container .captcha-area .captcha-answer {
+              display: inline-block;
+              color: #f22e00; }
         .container .content form .form-list .form-group .form-item a {
           font-size: 12px; }
         .container .content form .form-list .form-group .form-item a:hover {
@@ -225,17 +252,46 @@ header {
           background-color: #f22e00;
           color: #fff;
           border-color: #f22e00; }
+  .container .form-email {
+    display: none; }
+  .container .clearfix:after {
+    font-size: 0;
+    clear: both;
+    height: 0;
+    content: "";
+    display: block;
+    visibility: hidden; }
+  @media only screen and (max-width: 1190px) {
+    .container .container,
+    .container .nav-bar {
+      width: 990px;
+      padding: 0 20px; } }
 
-.clearfix:after {
-  font-size: 0;
-  clear: both;
-  height: 0;
-  content: "";
-  display: block;
-  visibility: hidden; }
-
-@media only screen and (max-width: 1190px) {
-  .container,
-  .nav-bar {
-    width: 990px;
-    padding: 0 20px; } }
+footer {
+  width: 990px;
+  position: relative;
+  margin: 0 auto;
+  padding: 7px 0 9px;
+  border-top: 1px solid #ddd; }
+  footer a {
+    white-space: nowrap;
+    margin: 0 4px;
+    color: #6c6c6c; }
+  footer b {
+    color: #9c9c9c; }
+  footer ul {
+    display: inline; }
+    footer ul li {
+      display: inline-block; }
+  footer .footer-hd {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+    line-height: 27px; }
+  footer .footer-bd p {
+    margin-left: 4px;
+    color: #6c6c6c; }
+    footer .footer-bd p span {
+      color: #9c9c9c; }
+  footer .footer-bd em {
+    margin-left: 40px;
+    color: #9c9c9c; }
