@@ -6,34 +6,9 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     webpack = require('webpack'),
     WebpackDevServer = require('webpack-dev-server'),
-    webpackStream = require('webpack-stream'),
     webpackConfig = require('./webpack.config.js'),
-    inject = require('connect-livereload')(),
-    path = require('path'),
-    serve = require('gulp-serve'),
-    gutil = require('gulp-util'),
-    paths = {
-        scripts: ['entry.js'],
-        // file list for watching
-        asserts: ['*.css', 'index.html']
-    };
+    minifycss = require('gulp-minify-css');
 
-//static server
-gulp.task('serve', serve({
-        root: [__dirname],
-        //inject livereload script to html
-        middleware: inject
-    }))
-
-
-gulp.task('webpack', function(cb) {
-    webpack(webpackConfig, function(err, stats) {
-        if (err) throw new gutil.PluginError('webpack', err);
-        gutil.log("[webpack]", stats.toString({
-            colors: true
-        }));
-    })
-});
 
 gulp.task('webpack-dev-server', function(cb) {
     var myConfig = Object.create(webpackConfig);
@@ -65,22 +40,23 @@ gulp.task('webpack-dev-server', function(cb) {
     });
 });
 
-gulp.task('webpack-stream', function() {
-    return gulp.src('./entry.js')
-        .pipe(webpackStream(webpackConfig))
-        .pipe(gulp.dest('dist/'));
-});
-
 
 gulp.task('sass', function() {
     return gulp.src('styles/*.scss')
         .pipe(sass())
+        .pipe(gulp.dest('dist'))
+        .pipe(livereload());
+});
+
+gulp.task('minifycss', function(){
+    return gulp.src('dist/*.scss')
+        .pipe(minifycss({compatibility: 'ie8'}))
         .pipe(rename({
             suffix: ".min"
         }))
         .pipe(gulp.dest('dist'))
         .pipe(livereload());
-});
+})
 
 gulp.task('uglify', function() {
     return gulp.src('js/*.js')
@@ -103,7 +79,12 @@ gulp.task('watch:sass', function() {
 });
 
 
-gulp.task('default', function() {
+gulp.task('dev-server', function() {
     console.log('rebuild the page');
-    gulp.start('clean', 'sass', 'watch:sass', 'webpack-dev-server');
+    gulp.start('clean', 'sass', 'watch:sass', 'minifycss','webpack-dev-server');
+})
+
+gulp.task('product', function(){
+    console.log('production version');
+    gulp.start('clean', 'minifycss', 'uglify');
 })
