@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+	<head>
+  		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			#hint {
+				width: 500px;
+				height: 40px;
+				display: inline;
+			}
+			#input {
+				width: 20px;
+				height: 20px;
+			}
+			#top {
+				margin-right: auto;
+				margin-left: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				justify-content: space-around;
+				align-item: stretch;
+			}
+			.inner {
+				margin: 30px;
+				padding: 5px;
+				width: 20px;
+				height: 20px;
+				background: #bbada0;
+				overflow: hidden;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<div id="hint">请输入一个数字</div>
+			<input type="text" id="input">
+			<hr />
+			<div id="top"></div>
+		</div>
+		<script type="text/javascript">
+
+		window.onload = function() {
+			var top = document.getElementById("top");
+			var getInput = document.getElementById('input');
+			getInput.addEventListener('change', function(){
+				var inputValue = getInput.value;
+				if(isNaN(inputValue)){
+					alert("输入非法")
+						return;
+				}
+				if(inputValue > 14 || inputValue < 1){
+					alert("不在范围内")
+					return;
+				}
+				while(top.children.length){
+					top.removeChild(top.children[0]);
+				}
+				//定义文档碎片，先创建一个row的div，再在其中插入n个内部展示的div
+				var docFragment = document.createDocumentFragment();
+				for(var i=0; i<inputValue; ++i){
+					var rowDiv = document.createElement("div");
+					rowDiv.className = "row";
+					for(var j=0 ;j<inputValue; ++j){
+						var innerDiv = document.createElement("div");
+						innerDiv.className = "inner";
+						innerDiv.innerHTML = (inputValue * i + j + 1);
+						rowDiv.appendChild(innerDiv);
+					}
+					docFragment.appendChild(rowDiv);
+				}
+				//将文档碎片插入top div。
+				top.appendChild(docFragment);
+			});
+			//在top的div上定义监听事件
+			top.addEventListener('click', function(e){
+				if(e.target && e.target.nodeName.toLowerCase() == "div"){
+					console.log(e.target.innerHTML);
+				}
+			})
+		}
+
+		</script>
+	</body>
+</html>
