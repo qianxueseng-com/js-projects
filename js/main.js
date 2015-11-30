@@ -43,10 +43,11 @@ pid = 0,
     getCaptcha = function() {
         if (0 === pid) {
             pid = Math.floor(100 * Math.random()) % CAPTCHA_COUNT + 1;
-            $(".captcah-reload").on("click", function(){
+            $(".captcha-reload").on("click", function(){
                 reloadImg();
                 getCaptcha();
-            );   
+                return false;
+            });   
         }
 
         var img = "assets/captcha0" + pid + ".jpg";
@@ -54,7 +55,7 @@ pid = 0,
         var captcha = {};
         $captcha_img.attr("src", img);
         $.getJSON(json, function(result) {
-            console.log("get JSON: " + json);
+            // console.log("get JSON: " + json);
             var n = result.count,
                 idx = Math.floor(100 * Math.random()) % n,
                 d = result.data[idx],
@@ -69,14 +70,6 @@ pid = 0,
         //update captcha
         $captcha_img.on("click", function(event) {
             checkCaptcha(event, captcha);
-            // if (Math.abs(event.offsetX - captcha.x) <= CLICK_RANGE && Math.abs(event.offsetY - captcha.y) <= CLICK_RANGE) {
-            //     $(this).off("click");
-            //     captchaVerified();
-            // } else {
-            //     $(".captcha-answer").text("验证码错误,请重试!");
-            //     reloadImg();
-            //     // $(".captcha-hint").show().text("验证码错误，请重试！"), reloadImg();
-            // }
         });
     },
 
@@ -85,7 +78,6 @@ pid = 0,
             $(this).off("click");
             captchaVerified();
         } else {
-            console.log("验证码错误");
             $captcha_img.off("click");
             reloadImg();
             getCaptcha();
@@ -138,8 +130,6 @@ initSlideBox = function() {
                 }
                 $box.css("left", i + "px");
                 $slide_bg.css("width", i + "px");
-                console.log(i + "px");
-
             })
         });
         $(document).on("mouseup", function() {

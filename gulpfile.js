@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     webpack = require('webpack'),
     WebpackDevServer = require('webpack-dev-server'),
     webpackConfig = require('./webpack.config.js'),
-    minifycss = require('gulp-minify-css');
+    minifycss = require('gulp-minify-css'),
+    gutil = require('gulp-util');
 
 
 gulp.task('webpack-dev-server', function(cb) {
@@ -35,8 +36,6 @@ gulp.task('webpack-dev-server', function(cb) {
         //server listening
         gutil.log("[webpack-dev-server]", "http://localhost:8080/");
 
-        //keep the sever alive or continue?
-        //callback();
     });
 });
 
