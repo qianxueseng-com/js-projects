@@ -43,7 +43,10 @@ pid = 0,
     getCaptcha = function() {
         if (0 === pid) {
             pid = Math.floor(100 * Math.random()) % CAPTCHA_COUNT + 1;
-            $(".captcah-reload").on("click", reloadImg);
+            $(".captcah-reload").on("click", function(){
+                reloadImg();
+                getCaptcha();
+            );   
         }
 
         var img = "assets/captcha0" + pid + ".jpg";
