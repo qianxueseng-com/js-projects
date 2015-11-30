@@ -92,7 +92,7 @@
 
 }
 #content #selector {
-	margin-top: -176px;
+	margin-top: -181px;
 	z-index: 10;
 	position: relative;
 }
@@ -102,58 +102,76 @@
 	left: 65px;
 	width: 160px;
 	font-size: 16px;
-	-webkit-appearance: none;
-}
 
-#content form #slide #slideDown {
+}
+#content #selector select .selected {
+	background-color: rgb(255,63,0);
+}
+#content form #slideDown {
 	width: 160px;
 	height: 33px;
 	border: 1px solid rgb(204,204,204);
-}
-#content form #slide #slideDown span{
 	display: inline-block;
+}
+#content form #slideDown p{
+	line-height: 33px;
 	font-weight: bold;
-	font-size: 9px;
-	margin: 8px 13px;
+	font-size: 10px;
+	position: relative;
+	left: 5px;
+	
 }
-#content form #input {
-	display: inline-block;
-}
-#content form #input p {
-	color: red;
+#content form  #alert {
 	font-size: 2px;
-	padding-left: 5px;
+	color: red;
 	display: inline-block;
+	position: relative;
+	top: -13px;
+	left: 5px;
 	display: none;
 }
-#content form #input input{
+#content form  input{
 	color: black;
 	border-color: rgb(220,220,220);
 	vertical-align: top;
 	height: 33px;
 	width: 160px;
 	margin-left: -8px;
-	margin-top: -7px;
-
 }
 #content #confirmation #prove{
 	width: 240px;
 	height: 30px;
+	color: rgb(156,156,156);
 	border: 1px solid rgb(220,220,220);
 	display: inline-block;
 	background-color: rgb(232,232,232);
-}
+	position: relative;
 
-#content #confirmation #pove #div1{	
+}
+#content #confirmation #prove #div1{
+	height: 32px;
+	width: 0px;
+	display: inline-block;
+	background-color: rgb(122,194,0);
+	position: absolute;
+	z-index: 1;
 	float: left;
+}
+#content #confirmation #prove img{
+	position: absolute;
+	float: left;
+	z-index: 3;
 	left: 0px;
 }
-#content #confirmation #prove {
+#content #confirmation #prove #div2{	
+	z-index: 2;
+	position: absolute;
 	font-size: 8px;
-	color: rgb(156,156,156);
 	text-align: center;
-	line-height: 33px;
+	margin-left: 50px;
+	line-height: 32px;
 }
+
 #content #confirmation p{
 	display: inline-block;
 	vertical-align: top;
@@ -161,8 +179,19 @@
 	margin-right: 9px;
 	padding-top: 5px;
 }
+#content #confirmPic {
+	display: none;
+}
+#content #confirmPic img{
+	width: 150px;
+	height: 200px;
+	position: absolute;
+	z-index: 8;
+	left: 570px;
+	top: 298px;
+}
 #content #nextStep {
-	width: 130px;
+	width: 150px;
 	height: 33px;
 	background-color: rgb(232,232,232);
 	position: relative;
