@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 101 Clickable Grid </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<style>
+	.grid {
+		margin-top: 100%;
+	}
+	.thumbnail {
+		position: absolute;
+	  top: 15px;
+    bottom: 0;
+	  left: 15px;
+	  right: 0;
+	  text-align:center;
+    padding-top:calc(50% - 30px);
+	}
+	.gridrow {
+		clear: left;  /* put grid row below previous row rather than next to it */
+	}
+</style>
+</head>
+<body class="container">
+	<div id="content" align="center"></div>
+	<script type="text/babel">
+	var Grid = React.createClass({
+		handleClick: function(e){
+			e.preventDefault();  // prevent the page from reposition to the top when on click
+			console.log(this.props.gridValue);
+		},
+	  render: function() {
+	    return (
+	    	<div className="col-md-3 col-sm-4 col-xs-6" id={this.props.gridValue}>
+        <div className="grid"></div>
+        <a href="#" className="thumbnail" onClick={this.handleClick}>{this.props.gridValue}</a>
+				</div>
+	    );
+	  }
+	});
+	var GridRow = React.createClass({
+	  render: function() {
+			var grids = [];
+			for (var i=0; i < this.props.value; i++) {
+				grids.push(<Grid gridValue={this.props.rowNumber*this.props.value+i+1} key={i} />);
+			};
+	    return (
+	    	<div className="gridrow">{grids}</div>
+	    );
+	  }
+	});
+	var GridBox = React.createClass({
+	  render: function() {
+			var rows = [];
+			for (var i=0; i < this.props.value; i++) {
+				rows.push(<GridRow value={this.props.value} rowNumber={i} key={i} />);
+			};
+			return (
+				<div>{rows}</div>
+	    );
+	  }
+	});
+	var Grids = React.createClass({
+		getInitialState: function() {
+			return {value: 0};
+		},
+		handleKeyDown: function(e) {
+			var ENTER = 13;
+			if(e.keyCode == ENTER) {
+				this.setState({value: this.refs.input_field.value});
+			}
+		},
+		handleClick: function(){
+			this.setState({value: this.refs.input_field.value});
+		},
+		render: function() {
+			return (
+				<div>
+						<input type="number" ref="input_field" placeholder="Give me a number." onKeyDown={this.handleKeyDown}/>
+						<button type="submit" onClick={this.handleClick}>Enter</button>
+						<GridBox value={this.state.value}/>
+					</div>
+			);
+		}
+	});
+	ReactDOM.render(
+	  <Grids />,
+	  document.getElementById('content')
+	);
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>
