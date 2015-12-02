@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Creat Boxes</title>
+	<style>
+		.parent {
+			display: flex;
+			flex-wrap: wrap;
+			width: 400px;
+			height: 400px;
+			border: 2px solid red;
+			visibility: hidden;
+		}
+		.parent > div {
+			border: 1px solid black;
+			flex: 1 1 auto;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<label for="txt1">输入数字n，生成n*n个格子：</label><input type="text" id="txt1" name="txt1">
+	<input type="button" value="立即生成" id="btn1">
+	<div class="parent"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$('#btn1').click(function(){
+
+				//清空父div的内容；
+				$('.parent').html('');
+
+				//根据输入的数字设置n的值；
+				var n = parseInt($('#txt1').val());
+
+				//判断n值是否在规定范围之内；
+				if ((n<1)||isNaN(n)) {
+					alert('请重新输入大于0的整数');
+					return false;
+				};
+
+				//生成n*n个带序号的子div；
+				for (var i = 1; i < n*n+1; i++) {
+					$('<div>'+i+'</div>').appendTo('.parent');
+				};
+
+				//设置子div的宽度；
+				$('.parent>div').css('width',($('.parent').width())/n);
+
+				//显示生成内容；
+				$('.parent').css('visibility', 'visible');
+
+				//为每个子div绑定点击事件。
+				$(".parent").delegate('div','click',function(){
+					console.log($(this).html());
+				});
+
+			});
+		});
+
+
+	</script>
+</body>
+</html>
