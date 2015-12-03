@@ -67,7 +67,7 @@
 			},
 			handleKeyDown: function(e) {
 				var ENTER = 13;
-				if(e.keyCode == ENTER) {
+				if(e.keyCode === ENTER) {
 					this.setState({value: this.refs.input_field.value});
 				}
 			},
