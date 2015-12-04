@@ -28,8 +28,9 @@
 		$(function() {
 			$('#btn1').click(function(){
 
+				$parent = $('.parent');
 				//清空父div的内容；
-				$('.parent').html('');
+				$parent.html('');
 
 				//根据输入的数字设置n的值；
 				var n = parseInt($('#txt1').val());
@@ -40,19 +41,21 @@
 					return false;
 				};
 
-				//生成n*n个带序号的子div；
+				//生成n*n个带序号的子div并添加到父div；
+				var newHTML = '';
 				for (var i = 1; i < n*n+1; i++) {
-					$('<div>'+i+'</div>').appendTo('.parent');
+					newHTML += '<div>'+i+'</div>'
 				};
+				$(newHTML).appendTo($parent);
 
 				//设置子div的宽度；
-				$('.parent>div').css('width',($('.parent').width())/n);
+				$('.parent>div').css('width',($parent.width())/n);
 
 				//显示生成内容；
-				$('.parent').css('visibility', 'visible');
+				$parent.css('visibility', 'visible');
 
 				//为每个子div绑定点击事件。
-				$(".parent").delegate('div','click',function(){
+				$parent.on('click','div',function(){
 					console.log($(this).html());
 				});
 
