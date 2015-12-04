@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
 <head>
 	<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
 	<title>账户注册|淘宝</title>
-	<link rel="stylesheet" type="text/css" href="./index.css">
+	<link rel="stylesheet" type="text/css" href="./taobao_register_main.css">
 	<script type="text/javascript" src="./jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="./jquery-ui.min.js"></script>
-	<script type="text/javascript" src="./index.js"></script>
-	
+	<script type="text/javascript" src="./taobao_register_main.js"></script>	
 </head>
 <body>
-	<div class="header_logo">
+	<div class="header-logo">
 		<a href="https://www.taobao.com/?spm=a2145.7268393.0.0.KdVSmL"><img src="./logo.png" ></a>
 		<p>用户注册</p>
 	</div>
-	<div id="header_process">
+	<div id="headerProcess">
 		<div id="steps">
 			<ul>
 				<li class="onStep"><span>1</span>  设置用户名</li>
@@ -30,23 +28,31 @@
 	<div id="content">
 		<div class="row">
 			<form>
-				<label>手机号</label>
+				<label >手机号</label>
 				<div id="slideDown"><p>中国大陆&nbsp;&nbsp;&nbsp;&nbsp;+86</p></div>
-				<input type="textarea" placeholder="请输入你的手机号码"><p id="alert"><span>×</span>请输入你的电话号码</p>
+				<input type="text" placeholder="请输入你的手机号码"><p id="alert"><span>×</span>请输入你的电话号码</p>
 			</form>
 		</div>
-		
-		
-		<div id="confirmation" class="row">
+		<div class="row" id="confirmation">
 			<p>验证</p>
-			<div id="prove"><div id="div1"></div><img src="./rt.png"  id="img" ><div id="div2">按住滑块，滑动到最右边</div>
+			<div id="prove">
+				<div id="div1"></div>
+				<img id="img" src="./rt.png" alt="dragableIMG">
+				<div id="div2">按住滑块，滑动到最右边</div>
+			</div>
 		</div>
-		<div id="confirmPic" ><img src="./confirm1.png"></div>
-		<div id="nextStep" class="row"><p>下一步</p></div>
-		<p id="emailReg" class="row"><a href="">需要通过邮箱注册</a></p>
+		<div id="confirmPic" >
+			<img src="./confirm1.png" alt="confirmIMG">
+		</div>
+		<div class="row" id="nextStep">
+			<p>下一步</p>
+		</div>
+		<p class="row" id="emailReg">
+			<a href="">需要通过邮箱注册</a>
+		</p>
 		<div id="selector">
 			<select size="7" >
-					<option value="国家1    +855" selected>中国大陆   +855</option>
+					<option value="国家1    +855" >中国大陆&nbsp;&nbsp;&nbsp;&nbsp;+855</option>
 					<option value="国家2    +855" >国家2&nbsp;&nbsp;&nbsp;&nbsp;+855</option>
 					<option value="国家3    +855" >国家3&nbsp;&nbsp;&nbsp;&nbsp;+855</option>
 					<option value="国家4    +855" >国家4&nbsp;&nbsp;&nbsp;&nbsp;+855</option>
@@ -61,6 +67,5 @@
 			</select>
 		</div>
 	</div>
-	
 </body>
 </html>
