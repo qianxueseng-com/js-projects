@@ -6,6 +6,7 @@ javascript projects
 - [newraina的个人介绍页](http://about.newraina.com)
 - [淡苍的个人介绍页](http://page.blackganglion.com)
 - [dontry个人介绍页](http://dontry.github.io/js-projects)
+- [heeefei个人介绍页](http://heeefei.com)
 
 ### 提交Pull request的办法
 - fork这个repo，看见右上方的fork按钮了吗？点它。
