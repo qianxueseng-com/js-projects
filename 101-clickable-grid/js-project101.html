@@ -78,7 +78,7 @@
 			});
 			//在top的div上定义监听事件
 			top.addEventListener('click', function(e){
-				if(e.target && e.target.nodeName.toLowerCase() === "div"){
+				if(e.target && e.target.nodeName.toLowerCase() === "div" && e.target.children.length === 0){
 					console.log(e.target.innerHTML);
 					document.getElementById("consoleValue").innerText = e.target.innerHTML;
 				}
