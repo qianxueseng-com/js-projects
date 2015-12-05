@@ -1,0 +1,286 @@
+/* 所有注释都用这种，与下行 */
+*{
+    margin: 0px;
+	padding: 0px;
+}
+
+.header-logo {
+	position: relative;
+	left: 160px;
+
+	width: 250px;
+	height: 65px;
+}
+
+.header-logo img {
+	float: left;
+}
+
+.header-logo p {
+	padding: 15px 5px;
+
+	font-size: 23px;
+	font-weight: bold;
+	
+}
+
+#headerProcess {
+	width: 1200px;
+	margin:0 auto;
+	border-bottom: 1px solid rgb(230, 230, 230);
+
+	text-align: center;
+}
+
+#steps {
+	display: inline-block;
+}
+
+#steps ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 13px 25px;
+	font:bold 16px "Microsoft YaHei", Verdana, Geneva, sans-serif ;
+}
+
+#steps ul .onStep span {
+	display: inline-block;
+
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	border:2px solid rgb(255, 64, 0);
+	border-radius: 25px;
+
+	color: #ffffff;
+	background-color: rgb(255, 64, 0);
+}
+
+#steps ul .outStep span {
+	display: inline-block;
+
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	border:2px solid rgb(204, 204, 204);
+	border-radius: 25px;
+
+	color: rgb(204, 204, 204);
+	background-color: rgb(204, 204, 204);
+}
+
+#steps ul .onStep {
+	border-bottom:2px solid rgb(255, 65, 2);
+}
+
+#steps ul .outStep {
+	color: rgb(204, 204, 204);
+}
+
+#languages {
+	float: right;
+
+	margin-top: 10px;
+	padding-top: 10px;
+
+	font-size: 12px;
+}
+
+#languages a:hover {
+	border: 1px solid black;
+	padding: 3px;
+
+	text-decoration: underline;
+	color: rgb(255, 64, 0);
+} 
+
+#languages a {
+	border: 1px solid black;
+	padding: 3px;
+
+	text-decoration: none;
+	color: black;
+} 
+
+#content {
+	margin: 80px 31%;
+}
+
+#content form label {
+	display: inline-block;
+	padding: 5px;
+	vertical-align: top;
+}
+
+#slide {
+	display: inline-block;
+}
+
+
+#selector {
+	margin-top: -181px;
+	z-index: 10;
+	position: relative;
+}
+
+#selector select {
+	display: none;
+
+	position: relative;
+	left: 65px;
+
+	width: 160px;
+
+	font-size: 16px;
+}
+
+#selector select .selected {
+	background-color: rgb(255, 63, 0);
+}
+
+#slideDown {
+	display: inline-block;
+
+	width: 160px;
+	height: 33px;
+	border: 1px solid rgb(204, 204, 204);
+}
+
+#slideDown p {
+	position: relative;
+	left: 5px; 
+
+	line-height: 33px;
+
+	font-weight: bold;
+	font-size: 10px;
+}
+
+#alert {
+	display: none;
+
+	position: relative;
+	left: 5px;
+
+	font-size: 2px;
+	color: red;
+}
+
+#alert.notCorrect {
+	display: inline-block;
+}
+
+form  input {
+	height: 33px;
+	width: 160px;
+	margin-left: -8px;
+		   color: black;
+	border-color: rgb(220, 220, 220);
+}
+
+form  input.notCorrect {
+	border-color: rgb(255, 63, 0);
+}
+
+#prove {
+	display: inline-block;
+	position: relative;
+
+	width: 240px;
+	height: 30px;
+	
+	border: 1px solid rgb(220, 220, 220);
+	
+			   color: rgb(156, 156, 156);
+	background-color: rgb(232, 232, 232);
+	
+
+}
+
+#div1 {
+	display: inline-block;
+	float: left;
+
+	position: absolute;
+	z-index: 1;
+
+	height: 32px;
+	width: 0px;
+	
+	background-color: rgb(122, 194, 0);
+
+	
+
+}
+
+#prove img {
+	float: left;
+
+	position: absolute;
+	left: 0;
+	z-index: 3;	
+}
+
+#div2 {	
+	position: absolute;
+	z-index: 2;
+
+	margin-left: 50px;
+	font-size: 8px;
+
+	text-align: center;
+	line-height: 32px;
+}
+
+#confirmation p {
+	display: inline-block;
+	
+	margin-left: 18px;
+	margin-right: 9px;
+	padding-top: 5px;
+
+	vertical-align: top;
+}
+
+#confirmPic {
+	display: none;
+}
+
+#confirmPic img {
+	position: absolute;
+	z-index: 5;
+	left: 570px;
+	top: 298px;
+
+	width: 150px;
+	height: 200px;
+}
+
+#nextStep {
+	position: relative;
+	left: 65px;
+
+	width: 150px;
+	height: 33px;
+
+	background-color: rgb(232, 232, 232);
+}
+
+#nextStep  p {
+	padding: 8px 35px;
+	color: rgb(153, 153, 153);
+}
+
+#emailReg a {
+	position: relative;
+	left: 65px;
+
+ 	text-decoration: none;
+ 	font-size: 8px;
+
+ 	color: rgb(255, 91, 32);
+}
+
+.row {
+	margin-top: 30px;
+}
