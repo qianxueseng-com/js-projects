@@ -37,3 +37,4 @@ javascript projects
 - 基本数据库
 - 用react或者angular或者ember写过一个几千行的应用
 - 良好的工作习惯，使用工具来编译js (gulp/webpack) 和css (gulp/sass)，严肃的对待测试 (mocha/chai)
+test
