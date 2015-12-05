@@ -7,15 +7,18 @@
 		.parent {
 			display: flex;
 			flex-wrap: wrap;
-			width: 400px;
-			height: 400px;
-			border: 2px solid red;
+			width: 40%;
+			border: 1px solid black;
 			visibility: hidden;
+			margin: 10px auto;
 		}
 		.parent > div {
 			border: 1px solid black;
 			flex: 1 1 auto;
 			box-sizing: border-box;
+		}
+		body {
+			text-align: center;
 		}
 	</style>
 </head>
@@ -26,17 +29,18 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
 		$(function() {
+			$parent = $('.parent');
 			$('#btn1').click(function(){
-
-				$parent = $('.parent');
+				
 				//清空父div的内容；
 				$parent.html('');
 
 				//根据输入的数字设置n的值；
 				var n = parseInt($('#txt1').val());
 
-				//判断n值是否在规定范围之内；
+				//判断n值是否在规定范围之内,若不在则弹出警告并退出；
 				if ((n<1)||isNaN(n)) {
+					$parent.css('visibility', 'hidden')
 					alert('请重新输入大于0的整数');
 					return false;
 				};
@@ -48,8 +52,12 @@
 				};
 				$(newHTML).appendTo($parent);
 
-				//设置子div的宽度；
-				$('.parent>div').css('width',($parent.width())/n);
+				//设置子div样式；
+				$parent.find('div').css({
+					'width': (1/n)*100+'%',
+					'lineHeight':$parent.width()/n-2+'px',
+					'font-size':$parent.width()/(n*1.4)+'px'
+				});
 
 				//显示生成内容；
 				$parent.css('visibility', 'visible');
@@ -61,8 +69,6 @@
 
 			});
 		});
-
-
 	</script>
 </body>
 </html>
