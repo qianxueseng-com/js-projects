@@ -9,13 +9,14 @@
  - jquery还没学，简单了看下API，还是要好好努力学啊。
  - 关于生成grid直接 
  
- ```var i;
+```
+var i;
 	for (i = 1; i <= this.n*this.n; i++) {
 		$('<div class="grid">'
 		+ '<p>' + i + '</p>'
 		+ '</div>' ).appendTo('#gridWrap');
 	}
- ```
+```
 
  - 设置了字体大小、grid宽度自动变化
  - 还为了省事，设置了只能输入1~9
