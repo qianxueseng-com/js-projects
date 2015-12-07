@@ -2,42 +2,49 @@ var Grid = function() {}
 
 Grid.prototype.init = function(id) {
 	var that = this;
+
 	this.n = null;
 	this.id = $(id);
+	this.gridinput = $('#gridInput');
+	this.gridtips = $('.grid-tips');
+	this.gridwrap = $('#gridWrap');
+
 	this.id.click(function() {
 		that.changeGrid();
 		that.changeStyle();
 	})
-	$('#gridInput').click(function() {
-		$('#gridInput').val('');
-		$('.grid-tips').html('');
+	this.gridinput.click(function() {
+		that.gridinput.val('');
+		that.gridtips.html('');
 	})
 }
 
 Grid.prototype.changeGrid = function() {
-	$('#gridWrap').html('');
+	this.gridwrap.html('');
 
-	this.n = parseInt($('#gridInput').val())
+	this.n = parseInt(this.gridinput.val())
 
 	if (this.n > 9 || this.n < 1) {
-		$('.grid-tips').html('Please input the number between 1~9!')
+		this.gridtips.html('Please input the number between 1~9!')
 		return false;
 	}
 
 	var i;
+
+
 	for (i = 1; i <= this.n*this.n; i++) {
-		$('<div class="grid">'
-		+ '<p>' + i + '</p>'
-		+ '</div>' ).appendTo('#gridWrap');
+		var appendGrid = '<div class="grid">'+ '<p>' + i + '</p>'+ '</div>';
+		$(appendGrid).appendTo(this.gridwrap);
 	}
 }
 
 Grid.prototype.changeStyle = function() {
-	$('.grid').css('width', $('#gridWrap').width() / this.n);
+	var grids = $('.grid');
+	grids.css('width', this.gridwrap.width() / this.n);
 
-	$('.grid').css('font-size', $('#gridWrap').width() / [this.n*2]);
+	grids.css('font-size', this.gridwrap.width() / [this.n*2]);
 
-	$('#gridWrap').delegate('div', 'click', function() {
+	this.gridwrap.on('click', 'div', function() {
 		console.log(this.innerText);
 	})
 }

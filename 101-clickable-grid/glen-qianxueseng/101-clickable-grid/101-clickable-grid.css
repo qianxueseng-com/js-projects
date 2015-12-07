@@ -1,22 +1,23 @@
 * {	
-	font-family: "MicroSoft Yahei";
 	padding: 0;
 	margin: 0;
 	border: none;
 }
+body { font-family: "MicroSoft Yahei", Helvetica,Arial,sans-serif;}
+
 .project-wrap {
 	width: 980px;
 	margin: 10px auto;
 	padding: 10px;
-	text-align: center;
 	background: #f0ffff;
+	text-align: center;
 }
 .grid-input {
 	height: 30px;
-	outline: none;
 	background: #FFFAFA;
 	color: #999;
 	text-indent: 12px;
+	outline: none;
 }
 .grid-submit {
 	height: 30px;
@@ -28,32 +29,31 @@
 
 }
 .grid-wrap {
-	width: 500px;
-	height: 500px;
-	margin: 10px auto;
 	display: flex;
 	display: -webkit-flex;
 	flex-wrap: wrap;
+	width: 500px;
+	height: 500px;
+	margin: 10px auto;
 }
 .grid {
-	cursor: pointer;
-	flex: 1 1 auto;
-	display: flex;
 	display: -webkit-flex;
+	flex: 1 1 auto;
 	justify-content: center;
 	-webkit-align-items: center;
 	-webkit-justify-content: center;
 	align-items: center;
+	box-sizing: border-box;
+	border: 2px solid #fff;
+	border-radius: 2px;
 	background: #c1f3f3;
 	color: #fff;
 	text-align: center;
 	vertical-align: middle;
-	box-sizing: border-box;
-	border: 2px solid #fff;
-	border-radius: 2px;
+	cursor: pointer;
 }
 .grid-tips {
-	padding: 10px;
 	height: 14px;
+	padding: 10px;
 	color: #FF6A6A;
 }
