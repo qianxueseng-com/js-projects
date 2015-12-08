@@ -1,0 +1,13 @@
+form{
+  width:500px;
+  height:40px;
+  margin-top:20px;
+  margin-left:20px;
+}
+#main{
+  width:600px;
+  height:600px;
+  margin:20px;
+  border:2px solid #555;
+
+}

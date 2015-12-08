@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <head>
+  <meta name="author" content="minjiepei">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="grid.css">
 </head>
 
 <body>
+  <form role="form">
+    <div class="col-sm-8">
+      <div class="input-group-sm">
+        <input type="text" class="form-control" id="integer" placeholder="select an integer between 1 to 20">
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" id="generate" class="btn btn-sm btn-success">Generate</button>
+      <button type="reset" id="clear" class="btn btn-sm btn-danger">Clear</button>
+    </div>
+  </form>
+  <canvas id="main">Please upgrade your browser!</canvas>
+  <script src="grid.js"></script>
 
-  
 </body>
