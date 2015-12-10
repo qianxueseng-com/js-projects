@@ -1,14 +1,31 @@
+body{
+  background-color: #CCC;
+}
+#box{
+  width:650px;
+  height:700px;
+  margin:0px auto;
+}
 form{
-  width:500px;
+  width:550px;
   height:40px;
   margin-top:20px;
   margin-left:80px;
 }
+#generate, #clear{
+  background-color:#777;
+  color:#EEE;
+  width:80px;
+  margin-right:15px;
+}
+#generate:hover,#clear:hover{
+  background-color:#555;
+  width:80px;
+  box-shadow: 3px 3px 5px #555;
+}
 #main{
-  width:600px;
-  height:600px;
-  margin:20px;
-  margin-top: 10px;
-  border:2px solid #555;
-
+  border:2px solid #999;
+  margin-top:5px;
+  margin-left: 20px;
+  background-color:#92A8D1;
 }
