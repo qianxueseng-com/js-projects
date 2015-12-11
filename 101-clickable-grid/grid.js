@@ -7,18 +7,19 @@ var space; //方格之间空隙
 
 window.onload = function(){
   //点击“Generate”按钮
-  var gen_button = document.getElementById("generate");
-  gen_button.onclick = generateHandler;
+  var genButton = document.getElementById("generate");
+  genButton.onclick = generateHandler;
   //点击“Clear”按钮
-  var clear_button = document.getElementById("clear");
-  clear_button.onclick = function(){clearCanvas(context,canvas);}
+  var clearButton = document.getElementById("clear");
+  clearButton.onclick = function(){clearCanvas(context,canvas);}
 }
 
 //处理“Generate”按钮
 var generateHandler = function(){
   clearCanvas(context,canvas);
   number = parseInt(document.getElementById("integer").value);
-  w = Math.floor(canvas.width / number) /1.03;
+  var abc = 1.03;
+  w = Math.floor(canvas.width / number) / a;
   space = (canvas.width-number*w)/(number+1);
   //判断用户输入数字是否在范围内
   if (0 < number && number < 27){
@@ -49,7 +50,8 @@ var drawGrid = function(context){
       context.fillStyle = "#92A8D1";
       context.textAlign = "center";
       context.font = (w/3).toString() + "px" + " Arial";
-      context.fillText(number*j+i+1, i*w+(i+1)*space+w/2, j*w+(j+1)*space+w/1.6);
+      var bcd = 1.6;
+      context.fillText(number*j+i+1, i*w+(i+1)*space+w/2, j*w+(j+1)*space+w/bcd);
     }
   }
 }
