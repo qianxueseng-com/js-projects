@@ -1,22 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PersonalPage</title>
   <meta name="description" content="PersonalPage">
   <meta name="author" content="PersonalPage">
 
-  <link rel="stylesheet" href="bundle-css.css">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+  <link rel="stylesheet" type="text/css" href="bundle-css.css">
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
 <body>
-  <div class="container"><div>
+  <div class="container center-block">
+    <div class="row">
+      <div class="top">
+        <img src="img/me.jpg" class="img-responsive img-circle myimg" id="myimg1">
+        <img src="img/me2.jpg" class="img-responsive img-circle myimg" id="myimg2">
+        <h1>heeefei</h1>
+        <p>前端初学者一枚，喜欢瞎折腾</p>
+      </div>
+    </div>
+    <div id="summary">
+      <h4>熟悉html/css/js等前端技术，熟悉jquery库，能够熟练使用DIV和CSS设计网页。</h4>
+      <h4>对于前端开发有浓厚兴趣。具有良好的沟通能力和团队合作精神。</h4> 
+      <h4>希望自己可以在前端这条路上走下去</h4>  
+    </div>
+    <div class="row addEvent" id="items">
+      <h3>项目</h3>
+      <br/>
+      <div class="col-md-3 col-xs-6 trans">
+       <a href="http://136645138.github.io/toDolist/"><img class="img-responsive img-circle" src="img/github.jpg">jquery实现的todo</a>
+      </div>
+      <div class="col-md-3 col-xs-6 trans">
+        <a href="http://136645138.github.io/js-projects/"><img class="img-responsive img-circle" src="img/github.jpg"> js监听事件</a>
+      </div>
+      <div class="col-md-3 col-xs-6 trans">
+        <a href="#/"><img class="img-responsive img-circle" src="img/github.jpg"> React练习（未完成）</a>
+      </div>
+      <div class="col-md-3 col-xs-6 trans">
+        <a href="#/"><img class="img-responsive img-circle" src="img/github.jpg">占位的</a>
+      </div>
+    </div>
+    <div class="row addEvent" id="foot">
+      <h3>联系我</h3>
+      <br/>
+      <div class="col-md-4 col-xs-4 trans">
+        <a href="http://github.com/136645138"><img class="img-responsive img-circle" src="img/git.jpg">github</a>
+      </div>
+      <div class="col-md-4 col-xs-4 trans">
+        <a href="http://www.weibo.com/u/1935864023/home?wvr=5"><img class="img-responsive img-circle" src="img/weibo.jpg">weibo</a>
+      </div>
+      <div class="col-md-4 col-xs-4 trans">
+       <a href="http://segmentfault.com/u/heeefei"><img class="img-responsive img-circle" src="img/sg.jpg">segmentfault</a>
+      </div>
+    </div>
+  <div>
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="bundle-js.js"></script>
 </body>
 </html>
