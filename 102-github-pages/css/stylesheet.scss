@@ -1,0 +1,47 @@
+$bgColor : #FFF;
+$conColor : #FAFAFA;
+$topColor : #00A6B6;
+
+body {
+	background-color : $bgColor;
+	text-align : center;
+}
+
+img {
+	width : 100px;
+	height : 100px;
+	margin : auto; 
+}
+.container {
+	background-color : $conColor;
+	border : 1px #F2F2F2 solid;
+	.top {
+		margin : 0;
+		padding : 0;
+		background-color : $topColor;
+		text-align : center;
+		#myimg1 {
+			display : none;
+		}
+	}
+	#summary {
+		height : 100px;
+		margin-top : 50px;
+		border-bottom : 1px #FFF solid;
+	}
+	#items {
+		padding-bottom : 50px;
+		border-bottom : 1px #FFF solid;
+	}
+
+	#foot {
+		padding-top : 10px;
+	}
+
+	.trans {
+		transition : All 0.4s ease-in-out;
+		-webkit-transition : All 0.4s ease-in-out;
+		-moz-transition : All 0.4s ease-in-out;
+		-o-transition : All 0.4s ease-in-out;		
+	}
+}	

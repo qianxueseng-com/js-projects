@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+	<head>
+  		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			#num {
+				width: 30px;
+				height: 30px;
+			}
+			#top {
+				margin-right: auto;
+				margin-left: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				justify-content: space-around;
+				align-item: stretch;
+			}
+			.inner {
+				margin: 30px;
+				padding: 5px;
+				width: 20px;
+				height: 20px;
+				background: #bbada0;
+				overflow: hidden;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<h3>请输入一个数字</h3>
+			<input type="text" id="num">
+			<p>输入一个数字n（1--14），会生成n * n个小方格，一次显示1到n的平方。点击小方格，console里会打印对应数字</p>
+			<p>console打印：<span id="consoleValue"></span></p>
+			<hr />
+			<div id="top"></div>
+		</div>
+		<script type="text/javascript">
+
+		window.onload = function() {
+			var top = document.getElementById("top");
+			var getInput = document.getElementById('num');
+			getInput.addEventListener('change', function(){
+				var inputValue = getInput.value;
+				if(inputValue >0 && inputValue < 15){
+					while(top.children.length){
+						top.removeChild(top.children[0]);
+					}
+					//定义文档碎片，先创建一个row的div，再在其中插入n个内部展示的div
+					var docFragment = document.createDocumentFragment();
+					for(var i=0; i<inputValue; ++i){
+						var rowDiv = document.createElement("div");
+						rowDiv.className = "row";
+						for(var j=0 ;j<inputValue; ++j){
+							var innerDiv = document.createElement("div");
+							innerDiv.className = "inner";
+							innerDiv.innerHTML = (inputValue * i + j + 1);
+							rowDiv.appendChild(innerDiv);
+						}
+						docFragment.appendChild(rowDiv);
+					}
+				//将文档碎片插入top div。
+				top.appendChild(docFragment);
+			}else {
+				alert("输入错误，重新输入！")
+			}
+			});
+			//在top的div上定义监听事件
+			top.addEventListener('click', function(e){
+				if(e.target && e.target.nodeName.toLowerCase() === "div" && e.target.children.length === 0){
+					console.log(e.target.innerHTML);
+					document.getElementById("consoleValue").innerText = e.target.innerHTML;
+				}
+			})
+		}
+
+		</script>
+	</body>
+</html>

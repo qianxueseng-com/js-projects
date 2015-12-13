@@ -1,0 +1,32 @@
+body {
+  background-color: #FFF;
+  text-align: center; }
+
+img {
+  width: 100px;
+  height: 100px;
+  margin: auto; }
+
+.container {
+  background-color: #FAFAFA;
+  border: 1px #F2F2F2 solid; }
+  .container .top {
+    margin: 0;
+    padding: 0;
+    background-color: #00A6B6;
+    text-align: center; }
+    .container .top #myimg1 {
+      display: none; }
+  .container #summary {
+    height: 100px;
+    margin-top: 50px;
+    border-bottom: 1px #FFF solid; }
+  .container #foot {
+    padding-top: 50px; }
+  .container .trans {
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out; }
+
+/*# sourceMappingURL=stylesheet1.css.map */

@@ -1,0 +1,28 @@
+body {
+	margin: auto;
+	padding: auto;
+	font-family: arial;
+	text-align: center;
+}
+#logo {
+}
+
+#logo a {
+}
+#logo h2 {
+    vertical-align: middle;
+}
+#logo img {
+	width: 100px;
+	height: 50px;
+	vertical-align: middle;
+}
+
+#step ol{
+	text-align: center;
+}
+
+#step ol li {
+	display: inline-block;
+	width: 200px;
+}
