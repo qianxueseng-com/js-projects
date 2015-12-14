@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha-301-backbone-test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/main.min.css" media="screen">
+    <link rel="stylesheet" href="mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <div class="container">
+      <div class="input-n">
+        <input type="text" id="n-size" value="" placeholder="请输入n的值">
+        <button value="submit" id="n-submit">submit</button>
+      </div>
+      <div class="message">
+        <h3></h3>
+      </div>
+      <div class="main">
+      </div>
+    </div>
+
+    <script type="text/template" id="grids">
+      <% for(var i = 0; i < n; i++) { %>
+      <ul>
+        <% for(var j = 0; j < n; j++) { %>
+          <li id="<%= i * n + j + 1 %>"><%= i * n + j + 1 %></li>
+        <% }; %>
+      </ul>
+      <% }; %>
+    </script>
+    <script src='../dist/js/chai.js'></script>
+    <script src="../dist/js/jquery.min.js"></script>
+    <script src="../dist/js/underscore-min.js"></script>
+    <script src="../dist/js/backbone-min.js"></script>
+    <script src="../dist/js/main.min.js"></script>
+    <script src="mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
