@@ -4,7 +4,13 @@ body {
 	font-family: arial;
 	text-align: center;
 }
+div {
+	margin: 10px;
+	padding: 10px;
+}
 #logo {
+	text-align: left;
+	margin-left: 100px;
 }
 
 #logo a {
@@ -20,9 +26,35 @@ body {
 
 #step ol{
 	text-align: center;
+	font-size: 1.5em;
+
 }
 
 #step ol li {
 	display: inline-block;
 	width: 200px;
+}
+
+#phoneWrong {
+	color: red;
+	display: none;
+}
+
+#verifyImg {
+	margin: 0;
+	padding-top: 3;
+}
+
+#login {
+	margin-left: 450px;
+	text-align: left;
+}
+
+#showleft {
+	display: inline;
+	width: 0;
+}
+
+#showbox {
+	display: inline;
 }
