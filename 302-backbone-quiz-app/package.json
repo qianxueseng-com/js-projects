@@ -1,0 +1,37 @@
+{
+  "name": "302-backbone-quiz-app",
+  "version": "1.0.0",
+  "description": "- [ ]Backbone基本，包括view, model, collection",
+  "main": "webpack.config.js",
+  "babel": {
+    "ignore": [
+      "node_modules"
+    ],
+    "presets": [
+      "es2015"
+    ]
+  },
+  "scripts": {
+    "build": "babel src/js -d dist/js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "newraina",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-webpack": "^1.5.0",
+    "jsx-loader": "^0.13.2",
+    "run-sequence": "^1.1.4",
+    "webpack": "^1.12.9"
+  }
+}
