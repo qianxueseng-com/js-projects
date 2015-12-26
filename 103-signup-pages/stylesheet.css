@@ -4,17 +4,11 @@ body {
 	font-family: arial;
 	text-align: center;
 }
-div {
-	margin: 10px;
-	padding: 10px;
-}
 #logo {
 	text-align: left;
 	margin-left: 100px;
 }
 
-#logo a {
-}
 #logo h2 {
     vertical-align: middle;
 }
@@ -24,37 +18,90 @@ div {
 	vertical-align: middle;
 }
 
-#step ol{
+#step ol li {
 	text-align: center;
 	font-size: 1.5em;
-
-}
-
-#step ol li {
 	display: inline-block;
 	width: 200px;
 }
-
+#login {
+	margin-left: 450px;
+	text-align: left;
+	font-size: 18px;
+}
+.form-title {
+	display: inline-block;
+    width: 100px;
+    height: 37px;
+    line-height: 37px;
+    text-align: right;
+    margin-right: 30px;
+}
+select {
+	height: 36px;
+	border: 1px solid #E8E8E8;
+}
+input {
+	height: 30px;
+	border: 1px solid #E8E8E8;
+}
+#phone {
+	margin-top: 100px;
+}
 #phoneWrong {
 	color: red;
 	display: none;
 }
 
-#verifyImg {
-	margin: 0;
-	padding-top: 3;
+#verify {
+	margin-top: 20px;
 }
-
-#login {
-	margin-left: 450px;
-	text-align: left;
-}
-
 #showleft {
-	display: inline;
-	width: 0;
+	display: inline-block;
+	height: 35px;
+	background-color: #7AC23C;
 }
 
 #showbox {
-	display: inline;
+	margin: 0;
+	display: inline-block;
+	position: absolute;
+	width: 37px;
+	height: 35px;
+	background-color: #FFF;
+	border: 1px solid #E8E8E8;
+}
+
+#verifyDiv {
+	display: inline-block;
+	vertical-align: middle;
+	width: 270px;
+	height: 37px;
+	background-color: #E8E8E8;
+
+}
+#verifyHint{
+	position:absolute;
+	left: 660px;
+	z-index: -1;
+}
+#nextStep button {
+	margin-top: 30px;
+	margin-left: 150px;
+	border: 0;
+	width: 150px;
+	height: 37px;
+}
+
+#showImg{
+	position: absolute;
+	margin-top: 20px;
+	left: 585px;
+	width: 248px;
+	display: none;
+	background-color: #fff;
+	border: 1px solid #E8E8E8;
+}
+#freshImg {
+	float: right;
 }

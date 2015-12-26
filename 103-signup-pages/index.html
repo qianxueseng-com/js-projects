@@ -24,7 +24,7 @@
 		</div>
 		<div id="login">
 			<div id="phone">
-				<span>手机号码&nbsp&nbsp</span>
+				<span class="form-title">手机号码</span>
 				<select>
 					<option>中国&nbsp&nbsp&nbsp+86</option>
 					<option>美国&nbsp&nbsp&nbsp+1</option>
@@ -35,11 +35,15 @@
 				<p id="phoneWrong">*手机号码格式错误</p>
 			</div>
 			<div id="verify">
-				<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp验证</span>
+				<span class="form-title">验证</span>
 				<div id="verifyDiv">
 					<div id="showleft"></div>
-					<div id="showbox">>></div>
-					<span>请拖动滑块</span>
+					<div id="showbox"><span>>></span></div>
+					<span id="verifyHint">请拖动滑块</span>
+				</div>
+				<div id="showImg">
+					<div><img id="freshImg" src="img/fresh.png"></div>
+					<div><img id="verifyImg" src="img/1.jpg"></div>
 				</div>
 			</div>
 			<div id="nextStep"><button>下一步</button></div>
