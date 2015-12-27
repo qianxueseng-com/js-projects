@@ -3,6 +3,7 @@ javascript projects
 
 ### 前学僧学员的个人网页(完成102项目请提交一个Pull request到这儿)
 - [我是占座的](http://baidu.com)
+- [Rowan的个人介绍页](http://jingwang88.gitghub.io/)
 
 ### 资源链接
 - [如果只看一本英文书来做JavaScript入门](http://eloquentjavascript.net/)。注意，例子是可以在线运行的。
