@@ -1,13 +1,13 @@
-var gulp = require('gulp'),
-    minifycss = require('gulp-minify-css'),
-    sass = require('gulp-sass'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    clean = require('gulp-clean'),
-    imagemin = require('gulp-imagemin'),
-    runSequence = require('run-sequence'),
-    webpack = require('gulp-webpack'),
+var gulp          = require('gulp'),
+    minifycss     = require('gulp-minify-css'),
+    sass          = require('gulp-sass'),
+    rename        = require('gulp-rename'),
+    concat        = require('gulp-concat'),
+    uglify        = require('gulp-uglify'),
+    clean         = require('gulp-clean'),
+    imagemin      = require('gulp-imagemin'),
+    runSequence   = require('run-sequence'),
+    webpack       = require('gulp-webpack'),
     webpackConfig = require('./webpack.config');
 
 // 编译sass
@@ -57,7 +57,7 @@ gulp.task('webpack', function () {
 // 默认任务
 gulp.task('default', function () {
     runSequence('clean', ['minifyImages', 'minifyScripts', 'minifyCss', 'copyFonts']);
-//    // 监听js文件变化
+    //    // 监听js文件变化
     gulp.watch('./src/js/*', ['minifyScripts']);
     // 监听scss文件变化
     gulp.watch('./src/scss/*.scss', ['minifyCss']);
