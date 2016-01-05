@@ -1,0 +1,60 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-color: #faf8ef;
+}
+
+#inputNum{
+	margin: 0 auto;
+	text-align: center;
+}
+
+button{
+	margin-top: 30px;
+	/*display: inline-block;*/
+	margin-left: 20px;
+}
+
+div{
+	font-size:100%;
+	text-align: center;
+	font-family:"Microsoft YaHei";
+}
+
+#container{
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: #BBADA0;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	border:solid 2px #BBADA0;
+}
+
+.row{
+	width: 400px;
+	height: 100%;
+	display: flex;
+}
+
+.item{
+	flex: 1;
+	margin:4px;
+	background-color: #EDE0C8;
+}
+
+.item:hover{
+	background-color: #EBB27E;
+}
+
+#word{
+	margin-top: 20px;
+	font-size: 50px;
+}
