@@ -1,0 +1,481 @@
+@import'../source/font-awesome/css/font-awesome.min.css';
+@import'../source/bootstrap/css/bootstrap.min.css'; 
+
+// varible, mixin
+
+$fontFamily: "Times New Roman", Arial, Verdana, Sans-serif, Serif;
+$primaryColor: #033E66;
+$showColor: lighten($primaryColor,10%);
+//
+$footerColor: lighten($primaryColor,20%);
+
+@mixin flex {
+    display: box;             // OLD - Android 4.4- 
+    display: -webkit-box;     // OLD - iOS 6-, Safari 3.1-6 
+    display: -moz-box;        // OLD - Firefox 19- (buggy but mostly works) 
+    display: -ms-flexbox;     // TWEENER - IE 10 
+    display: -webkit-flex;    // NEW - Chrome 
+    display: flex;            // NEW, Spec - Opera 12.1, Firefox 20+ 
+} 
+@mixin flexDir($direction: row) {
+  // 默认横向排列
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  -o-flex-direction: $direction;
+  flex-direction: $direction;
+
+}
+
+@mixin flexAlign($align: justify-content, $value: center) {
+  // 默认水平居中
+    -webkit-#{$align}: $value;
+    -moz-#{$align}: $value;
+    -ms-#{$align}: $value;
+    -o-#{$align}: $value;
+    #{$align}: $value;
+
+}
+
+@mixin flexS($grow:1, $shrink:1, $basis: auto) {
+  -webkit-box-flex: $grow $shrink $basis;
+  -moz-box-flex: $grow $shrink $basis;
+  -ms-flex: $grow $shrink $basis;
+  -o-box-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}
+
+@mixin flexO($order) {
+  -webkit-box-ordinal-group: $order;   // OLD - iOS 6-, Safari 3.1-6 
+  -moz-box-ordinal-group: $order;    // OLD - Firefox 19- 
+  -ms-flex-order: $order;        // TWEENER - IE 10 
+  -webkit-order: $order;        // NEW - Chrome 
+  order: $order;            // NEW, Spec - Opera 12.1, Firefox 20+ 
+}
+
+@mixin persp($num) {
+  -webkit-perspective: $num;
+  -moz-perspective: $num;
+  -ms-perspective: $num;
+  -o-perspective: $num;
+  perspective: $num;
+}
+@mixin backv($status) {
+  -webkit-backface-visibility: $status;
+  -moz-backface-visibility: $status;
+  -ms-backface-visibility: $status;
+  backface-visibility: $status;
+}
+
+@mixin transc($center) {
+  -webkit-transform-origin: $center;
+  -moz-transform-origin: $center;
+  -ms-transform-origin: $center;
+  -o-transform-origin: $center;
+  transform-origin: $center; 
+}
+
+@mixin transf($key, $value) {
+  -webkit-transform: $key($value);
+  -moz-transform: $key($value);
+  -ms-transform: $key($value);
+  -o-transform: $key($value);
+  transform: $key($value); 
+}
+
+@mixin transit($pro:all, $dur:0s, $fun:ease, $de:0s) {
+  -webkit-transition: $pro $dur $fun $de;
+  -moz-transition: $pro $dur $fun $de;
+  -ms-transition: $pro $dur $fun $de;
+  -o-transition: $pro $dur $fun $de;
+  transition: $pro $dur $fun $de; 
+}
+
+@mixin anim($name, $value) {
+  -webkit-animation: $name $value; 
+  -moz-animation: $name $value; 
+  -ms-animation: $name $value; 
+  -o-animation: $name $value; 
+  animation: $name $value; 
+}
+
+
+
+// public class
+// .fix{*zoom:1;}
+// .fix:after{
+//   display:block; 
+//   content:"clear"; 
+//   height:0; 
+//   clear:both; 
+//   overflow:hidden; 
+//   visibility:hidden;
+// }
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+.icon{ text-decoration: none;}
+
+.content {
+  padding: 5% 30px 0 ;
+  height: 100%;
+  background-color: transparent;
+}
+.flex-h {
+  @include flex;
+  @include flexDir(row);
+}
+
+.circle {
+  width: 100%;
+
+  border: none;
+  border-radius: 50%;
+}
+
+.inner {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+
+  width: 90%;
+  height: 90%;
+
+  border-radius: 45%;
+  
+  overflow: hidden;
+  @include backv(hidden);
+  img {position: absolute;}
+}
+
+.spin {
+  position: absolute;
+
+  width: 50%;
+  height:100%;
+  border-radius: 50% 0 0 50%;
+  @include transc(right center);
+
+  @include anim(spin, 10s infinite linear);
+}
+
+.filterL {
+  position: absolute;
+
+  width: 51%;
+  height: 100%;
+  border-radius: 50% 0 0 50%;
+  opacity: 0;
+}
+
+.filterR {
+  @extend .filterL; 
+  right: 0;
+  border-radius: 0 50% 50% 0;
+  opacity: 1;
+}
+
+
+// main
+html {
+  overflow: hidden;
+}
+body {
+  font-family: $fontFamily;
+  background-color: $primaryColor;
+}
+
+#warp {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+.header { 
+  height: 520px;
+  @include flexS(1, 1, auto); 
+  background-color: #033E66;
+  
+  .portrait {
+    position: relative;
+    
+
+    width: 200px;
+    height: 200px;
+
+    margin: 0 auto;
+    cursor: pointer ; 
+    //@include persp(800);
+    
+    .outer {
+      position: absolute;
+
+      width: 100%;
+      
+      z-index:1;
+      background: url('../source/img/load.jpg') no-repeat center;
+      background-size: cover; 
+      
+      @include anim(spin, 10s infinite linear);
+    }
+
+    .front {
+      opacity: 1;
+      
+      z-index: 5;
+      background: transparent;
+
+      .spin {
+        background-color: #100200;
+        
+      }
+      .filterL {
+        background-color: #100200;
+        @include anim(show, 20s infinite linear);
+      }
+      .filterR {
+        background-color: #100200;
+        @include anim(hide, 20s infinite linear);
+      }
+
+    }
+  
+    .back {
+      opacity: 0;
+      z-index: 4;
+      background: transparent;
+  
+      @include transf(rotate, 180deg);
+      .spin {
+        background-color: #6ac8fc; 
+         
+      }
+      .filterL {
+        background-color: #6ac8fc;
+        @include anim(show, 20s infinite linear);
+      }
+      .filterR {
+        background-color: #6ac8fc;
+        @include anim(hide, 20s infinite linear);
+      }
+    }
+
+  }
+  .description {
+    text-align: center;
+    color:#eee;
+  }
+}
+
+.show {
+  height: 520px;
+  @include flexS(1, 1, auto); 
+  
+  background-color: $showColor;
+
+    .square {
+      margin: 10px;
+      height: 200px;
+      @include flexS(1, 1, auto); 
+      background-color: darken($showColor, 10%);
+
+      border-radius: 50px;
+      overflow: hidden;
+      
+      h3 {
+        text-align: center;
+        font-size: 40px;
+
+        line-height: 2.5;
+        color:  darken($showColor, 20%);
+        @include transit(all, 1s);
+        
+        .logo {
+
+          @include transit(all, 1s);
+        }
+        .text {
+          @include transit(all, 1s);
+        } 
+
+      }
+      ul {
+        margin-top: 15px;
+        color: white;
+        opacity: 0;
+        @include transit(all, 1s);
+
+        li {
+          padding: 5px;
+          a {
+            color: white;
+          }
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 5px;
+        @include transit(all, 1s);
+
+        h3 {
+          color: darken($showColor, 30%);
+          font-size: 30px;
+          line-height: 1;
+          @include transit(all, 1s);
+          
+          .logo {
+            font-size: 0;
+            @include transit(all, 1s);
+          }
+          .text {
+            @include transit(all, 1s);
+          }
+        }
+        ul {
+          opacity: 1;
+          @include transit(all, 1s);
+        }
+
+      }
+    }
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+
+    color: white;
+    width: 100%;
+    padding: 0 5%;
+
+    background-color: $footerColor;
+    overflow: hidden;
+    
+    .contact{
+      
+      .row {
+        h1 {
+          font-size: 18px;
+        }
+        ul {
+          display: block;
+          list-style: none;
+          li {
+            clear: both;
+            width: 100%;
+            padding: 3px 0;
+            a{
+              font-size: 16px;
+              color: white;
+            }
+          }
+        }
+      } 
+    }
+  &.small {
+    
+
+    .contact {
+      .row {
+        h1 {
+          font-size: 30px;
+          
+        }
+        ul {
+          li {
+            float: left;
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+@-webkit-keyframes spin {
+  0%    {-webkit-transform: rotate(360deg);}
+  100%  {-webkit-transform: rotate(0deg);}
+}
+@-moz-keyframes spin {
+  0%    {-moz-transform: rotate(360deg);}
+  100%  {-moz-transform: rotate(0deg);}
+}
+@-ms-keyframes spin {
+  0%    {-ms-transform: rotate(360deg);}
+  100%  {-ms-transform: rotate(0deg);}
+}
+@-o-keyframes spin {
+  0%    {-o-transform: rotate(360deg);}
+  100%  {-o-transform: rotate(0deg);}
+}
+@keyframes spin {
+  0%    {transform: rotate(360deg);}
+  100%  {transform: rotate(0deg);}
+}
+
+
+@-webkit-keyframes show {
+  0%,50%       {opacity: 0;}
+  50.1%,100%   {opacity: 1;}
+  
+}
+@-moz-keyframes show {
+  0%,50%       {opacity: 0;}
+  50.1%,100%   {opacity: 1;}
+}
+@-ms-keyframes show {
+  0%,50%       {opacity: 0;}
+  50.1%,100%   {opacity: 1;}
+}
+@-o-keyframes show {
+  0%,50%       {opacity: 0;}
+  50.1%,100%   {opacity: 1;}
+}
+@keyframes show {
+  0%,50%       {opacity: 0;}
+  50.1%,100%   {opacity: 1;}
+}
+
+
+@-webkit-keyframes hide {
+  0%,25%        {opacity: 1;}
+  25.1%,75%     {opacity: 0;}
+  75.1%,100%    {opacity: 1;}
+}
+@-moz-keyframes hide {
+  0%,25%        {opacity: 1;}
+  25.1%,75%     {opacity: 0;}
+  75.1%,100%    {opacity: 1;}
+}
+@-ms-keyframes hide {
+  0%,25%        {opacity: 1;}
+  25.1%,75%     {opacity: 0;}
+  75.1%,100%    {opacity: 1;}
+}
+@-o-keyframes hide {
+  0%,25%        {opacity: 1;}
+  25.1%,75%     {opacity: 0;}
+  75.1%,100%    {opacity: 1;}
+}
+@keyframes hide {
+  0%,25%        {opacity: 1;}
+  25.1%,75%     {opacity: 0;}
+  75.1%,100%    {opacity: 1;}
+}
