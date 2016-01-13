@@ -1,0 +1,12 @@
+var mobile = require('./mobile');
+var changeBorder = require('./changeBorder');
+var email = require('./email');
+var slider = require('./slider');
+var switcher = require('./switcher');
+var captcha = require('./captcha');
+captcha();
+switcher();
+slider();
+mobile();
+email();
+changeBorder();

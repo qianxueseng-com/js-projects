@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>103 by glen</title>
+	<link rel="stylesheet" href="bundle-css.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<!--main-->
+	<div class="page">
+		<div class="content">
+				<div class="steps">
+					<ol>
+						<li class="active"><i class="active-s">1</i><span>设置用户名</span></li>
+						<li><i>2</i><span>填写账号信息</span></li>
+						<li><i>3</i><span>设置支付方式</span></li>
+						<li><i class="iconfont">&#xe626;</i><span>注册成功</span></li>
+					</ol>
+				</div>
+				<div class="steps-s">
+					<ol>
+						<li class="active"><i class="active-s">1</i><span>设置用户名</span></li>
+						<li><i>2</i><span>填写账号信息</span></li>
+						<li><i class="iconfont">&#xe626;</i><span>注册成功</span></li>
+					</ol>
+				</div>
+				<form action="#" class="sigh-form">
+					<!--phone input-->
+					<div class="mobile input-item">
+						<span class="mobile-num">手机号</span>
+						<div class="mobile-block">
+							<span class="nation">中国大陆</span>
+							<span class="code">+86</span>
+						</div>
+						<input type="text" class="mobile-text" id="mobile-input" placeholder="请输入你的手机号码">
+						<span class="mobile-tip"></span>
+					</div>
+					<!--email-input-->
+					<div class="email input-item">
+						<span class="email-address">电子邮箱</span>
+						<input type="text" class="email-text" id="email-input" placeholder="请输入邮箱">
+						<span class="email-tip"></span>
+					</div>
+					<!--slide validate-->
+					<div class="slide-validate input-item">
+						<span class="slide-text">验证</span>
+						<div class="slide-validate-block">
+							<span class="slider" id="oSlider"
+							></span>
+							<div class="slide-bg"></div>
+							<span class="slide-tip">按住滑块，拖动到最右边</span>
+						</div>
+						<div class="captcha">
+							<span class="cap-text">请点击[前学僧]的字样</span>
+							<a href=""class="cap-change">看不清？换一张</a>
+							<div class="cap-img">
+								<img src="app/captcha/captcha1.png" alt="captcha-img">
+							</div>
+						</div>
+					</div>
+					<!--next step-->
+					<div class="next-step input-item">
+						<button class="ns-btn">下一步</button>
+					</div>
+					<!--use email to sign up-->
+					<div class="email-sighup input-item">
+						<span class="switch-email" id="sighup-switch"><a href="#">需要通过邮箱注册</a></span>
+					</div>
+				</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="dist/jq.js"></script>
+	<script type="text/javascript" src="dist/bundle-js.js"></script>
+
+</body>
+</html>

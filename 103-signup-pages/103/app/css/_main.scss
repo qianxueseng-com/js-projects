@@ -1,0 +1,278 @@
+body {
+	font: 12px/1.5 tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+}
+.page {
+	width: 1190px;
+	margin: 0 auto;
+}
+
+.content {
+	padding: 50px 0;
+	font-size: 14px;
+}
+
+.sigh-form {
+	width: 720px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.slide-validate {
+	position: relative;
+}
+
+.input-item {
+	padding: 10px 0 10px 260px;
+
+}
+
+.mobile, .email, .slide-validate, .next-step, .email-sighup {
+	line-height: 37px;
+
+	.mobile-num, .email-address, .slide-text {
+		width: 235px;
+		text-align: right;
+		float: left;
+		padding-right: 25px;
+		margin-left: -260px;
+	}
+
+		.mobile-block {
+		float: left;
+		width: 160px;
+		height: 35px;
+		border: 1px solid #ccc;
+
+		.nation {
+			font-weight: bold;
+			margin-left: 10px;
+		}
+
+		.code {
+			float: right;
+			margin-right: 25px;
+			font-weight: bold;
+		}
+	}
+
+	.mobile-text, .email-text {
+		float: left;
+		height: 37px;
+		text-indent: 10px;
+		border: 1px solid #e8e8e8;
+		box-sizing: border-box;
+	}
+
+	.email-text {
+		width: 225px;
+	}
+
+	.captcha {
+		display: none;
+		position: absolute;
+		top: 48px;
+		width: 300px;
+		background: #fff;
+		border: 1px solid #ccc;
+		text-align: center;
+
+		.cap-text {
+			display: inline-block;
+			padding-left: 25px;
+			text-align: left;
+			width: 100%;
+			height: 24px;
+			color: #000;
+		}
+		a {
+				position: absolute;
+				top: 0;
+				right: 24px;
+				font-size: 10px;
+				color: #ff3f13;
+		}
+		.cap-img {
+			position: relative;
+		}
+
+	}
+
+	.slide-validate-block {
+		position: relative;
+		height: 35px;
+		width: 300px;
+		background: #e8e8e8;
+
+		.slider {
+			position: absolute;
+			height: 33px;
+			width: 40px;
+			background: #fff url('../img/rt.png') no-repeat center;
+			border: 1px solid #ccc;
+			cursor: pointer;
+			z-index: 10;
+		}
+		.sliderS {
+			position: absolute;
+			height: 33px;
+			width: 40px;
+			background: #fff url('../img/yes.png') no-repeat center;
+			border: 1px solid #ccc;
+			cursor: pointer;
+			z-index: 10;
+		}
+		.slide-bg {
+			position: absolute;
+			height: 100%;
+			width: 10px;
+			background: #7ac23c;
+			z-index: 1;
+			opacity: 0.7;
+		}
+
+		.slide-tip {
+			position: static;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			font-size: 12px;
+			color: #9c9c9c;
+			z-index: 2;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+	}
+
+		.ns-btn {
+			width: 180px;
+			height: 36px;
+			border: none;
+			border-radius: 2px;
+			font-size: 16px;
+			color: #999;
+			font-weight: bold;
+		}
+
+		.ns-btn:hover {
+			color: #fff;
+		}
+
+		.switch-email, .switch-mobile {
+			a {
+				color: #ff3f13;
+				font-size: 12px;
+				text-decoration: none;
+				}
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+
+}
+
+.email {
+	display: none;
+}
+
+.mobile-tip, .email-tip {
+	padding-left: 5px;
+	font-size: 12px;
+	color: #ff3f13;
+
+}
+//
+.steps-s {
+	display: none;
+}
+@mixin step1 {
+	height: 46px;
+	border-bottom: 2px solid #ccc;
+	ol {
+		width: 720px;
+		margin: 0 auto;
+		padding: 0;
+		.active {
+			color: #3e3e3e;
+			border-bottom: 2px solid #ff4700;
+		}
+		li {
+			display: inline;
+			float: left;
+			width: 170px;
+			height: 46px;
+			line-height: 46px;
+			padding-left: 70px;
+			color: #ccc;
+			font-size: 16px;
+			font-weight: 700;
+			font-family: "\5FAE\8F6F\96C5\9ED1","\534E\6587\7EC6\9ED1","\9ED1\4F53",arial;
+
+			i {
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				text-align: center;
+				font-style: normal;
+				color: #fff;
+				border-radius: 50%;
+				font-size: 14px;
+				margin-right: 5px;
+				background: #ccc;
+			}
+
+			.active-s {
+				background: #ff4000;
+			}
+		}
+	}
+}
+@mixin step {
+	height: 46px;
+	border-bottom: 2px solid #ccc;
+	ol {
+		width: 720px;
+		margin: 0 auto;
+		padding: 0;
+		.active {
+			color: #3e3e3e;
+			border-bottom: 2px solid #ff4700;
+		}
+		li {
+			display: inline;
+			float: left;
+			width: 150px;
+			height: 46px;
+			line-height: 46px;
+			padding-left: 30px;
+			color: #ccc;
+			font-size: 16px;
+			font-weight: 700;
+			font-family: "\5FAE\8F6F\96C5\9ED1","\534E\6587\7EC6\9ED1","\9ED1\4F53",arial;
+
+			i {
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				text-align: center;
+				font-style: normal;
+				color: #fff;
+				border-radius: 50%;
+				font-size: 14px;
+				margin-right: 5px;
+				background: #ccc;
+			}
+
+			.active-s {
+				background: #ff4000;
+			}
+		}
+	}
+}
+.steps {
+	@include step;
+}
+
+.steps-s {
+	@include step1;
+}
