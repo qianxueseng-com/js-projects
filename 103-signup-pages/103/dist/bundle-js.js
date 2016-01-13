@@ -67,9 +67,9 @@
 	module.exports = function() {
 		var $mobileInput = $('#mobile-input');
 		var mobileValidate = function() {
-			var phoneNums = mobileInput.val();
+			var phoneNums = $mobileInput.val();
 			var _true = util.isMobilePhone(phoneNums);
-			
+
 			if (!_true) {
 				$('.mobile-tip').html('请输入正确的电话号码');
 				$('.mobile-text').css('border', '1px solid #ff3f13')
@@ -122,7 +122,7 @@
 		var $emailInput = $('#email-input');
 
 		var emailValidate = function() {
-			var emailAddress = emailInput.val();
+			var emailAddress = $emailInput.val();
 			var _true = util.isEmail(emailAddress);
 			if (!_true) {
 				$('.email-tip').html('请输入正确的邮箱地址');
@@ -188,27 +188,32 @@
 		var $mobile = $('.mobile');
 		var $mobileInput = $('#mobile-input');
 		var $emailInput = $('#email-input');
+		var $step = $('.steps');
+		var $stepS = $('.steps-s');
 
 		$switcher.on('click', function() {
 			if ($switcher.hasClass('switch-email')) {
 				$mobile.hide();
-				$('.steps').hide();
-				$('.steps-s').show();
+				$step.hide();
+				$stepS.show();
 				$email.show();
 				$emailInput.val('')
 						.css('border', '1px solid #e8e8e8');
 				$('.email-tip').text('');
+				$switchText.text('需要通过手机注册');
 				$switcher.addClass('switch-mobile');
 				$switcher.removeClass('switch-email');
+
 			}
 			else if ($switcher.hasClass('switch-mobile')) {
 				$mobile.show();
-				$('.steps-s').hide();
-				$('.steps').show();
+				$stepS.hide();
+				$step.show();
 				$email.hide();
 				$mobileInput.val('')
 						.css('border', '1px solid #e8e8e8');
 				$('.mobile-tip').text('');
+				$switchText.text('需要通过邮箱注册');
 				$switcher.addClass('switch-email');
 				$switcher.removeClass('switch-mobile');
 			}
