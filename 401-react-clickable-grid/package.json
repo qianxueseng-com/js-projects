@@ -1,0 +1,25 @@
+{
+  "name": "401-react-clickable-grid",
+  "version": "1.0.0",
+  "description": "使用React with JSX来重新实现clickable grid(参考101, 301) 把js分成多个基于commonsjs的文件，并用webpack来合并他们(参考102)",
+  "main": "main.js",
+  "scripts": {
+    "compile": "webpack",
+    "compress": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "newraina",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "jsx-loader": "^0.13.2",
+    "webpack": "^1.12.11"
+  },
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}
