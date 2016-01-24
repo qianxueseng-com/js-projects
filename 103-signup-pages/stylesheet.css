@@ -162,3 +162,21 @@
     background: 0 0;
     position: static;
 }
+
+.content .form_group .form_item .showImg {
+	display: none;
+    position: absolute;
+    top: 305px;
+    left: 540px;
+    width: 200px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 0 20px 20px;
+    text-align: center;
+    z-index: 100;
+}
+.content .form_group .form_item .showImg .imgText{
+    width: 200px;
+    margin: 0 auto;
+}
