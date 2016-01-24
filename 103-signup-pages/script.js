@@ -2,7 +2,7 @@
  * @Author: hefei
  * @Date:   2015-12-21 10:09:36
  * @Last Modified by:   hefei
- * @Last Modified time: 2016-01-24 15:22:10
+ * @Last Modified time: 2016-01-24 15:50:06
  */
 'use strict';
 jQuery(document).ready(function($) {
@@ -20,4 +20,5 @@ jQuery(document).ready(function($) {
 			}
 		}
 	});
+	
 });
