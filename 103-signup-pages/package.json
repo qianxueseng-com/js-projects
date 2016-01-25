@@ -1,0 +1,29 @@
+{
+  "name": "103-signup-pages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compress": "webpack -p",
+    "build": "webpack",
+    "start-dev": " npm run compress && npm start",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "description": "- 正则表达式验证手机号\r - 点击图片的某个区域",
+  "dependencies": {
+    "webpack": "^1.12.11"
+  }
+}

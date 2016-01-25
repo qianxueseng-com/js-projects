@@ -1,0 +1,40 @@
+a:link {
+	color: #6C6C6C;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #F22E00;
+}
+li {
+		display: inline-block;
+	}
+
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+input.err {
+	border: 1px solid #F22E00;
+}
+
+div.err {
+	color: #F22E00;
+}
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 1190px;
+}
+body {
+	color: #6C6C6C;
+	font: 400 12px/1.6 arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;
+}
+
+@import 'header.scss';
+@import 'main.scss';
+@import 'footer.scss';

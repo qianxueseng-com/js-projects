@@ -1,17 +1,17 @@
-function CreateSquare(obj) {
+function Square(obj) {
 	this.obj = obj;
 	this.num = 0;
 	
 
 }
 
-CreateSquare.prototype = {
+Square.prototype = {
 
 	setContent: function(target) {
 		
 		
 		// 设置方块内容
-		target.innerHTML = target.info;
+		target.innerHTML = target.index;
 
 		
 		// 设置方块的字体大小
@@ -24,7 +24,7 @@ CreateSquare.prototype = {
 		var i, j, len;
 		var temp, uls, lis;
 
-		if(typeof num != 'number') {
+		if(typeof num !== 'number') {
 			console.log(num + " 不是数字\n"	);
 			return;
 		}
@@ -39,7 +39,7 @@ CreateSquare.prototype = {
 				lis = document.createElement('li');
 
 				// 保存方块当前顺序
-				lis.info = i*num + j+1;
+				lis.index = i*num + j+1;
 
 				this.setContent(lis);
 				

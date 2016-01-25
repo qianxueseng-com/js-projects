@@ -7,22 +7,25 @@ function contain(parent, target) {
 		return !!parent.compareDocumentPosition(target) & 16;
 	}
 }
+function addEvent(ele, type, handler, bubble) {
+	return ele.addEventListener ? ele.addEventListener(type, handler, bubble || false) : 
+	   ele.attachEvent.call(ele, ["on"+type, handler]);
+}
 
-
-function CreateSquare(obj) {
+function Square(obj) {
 	this.obj = obj;
 	this.num = 0;
 	
 
 }
 
-CreateSquare.prototype = {
+Square.prototype = {
 
 	setContent: function(target) {
 		
 		
 		// 设置方块内容
-		target.innerHTML = target.info;
+		target.innerHTML = target.index;
 
 		
 		// 设置方块的字体大小
@@ -35,7 +38,7 @@ CreateSquare.prototype = {
 		var i, j, len;
 		var temp, uls, lis;
 
-		if(typeof num != 'number') {
+		if(typeof num !== 'number') {
 			console.log(num + " 不是数字\n"	);
 			return;
 		}
@@ -50,7 +53,7 @@ CreateSquare.prototype = {
 				lis = document.createElement('li');
 
 				// 保存方块当前顺序
-				lis.info = i*num + j+1;
+				lis.index = i*num + j+1;
 
 				this.setContent(lis);
 				
@@ -67,69 +70,66 @@ CreateSquare.prototype = {
 
 window.onload = function() {
 	
-	(function(){
-		var te = document.getElementById('text'),
-			button = document.getElementById('btn'),
-			message = document.getElementById('message'),
-			square = new CreateSquare(document.getElementById('square'));
 
-		var num;
+	var te = document.getElementById('text'),
+		button = document.getElementById('btn'),
+		message = document.getElementById('message'),
+		square = new Square(document.getElementById('square'));
+
+	var num;
+
+	addEvent(te, 'keydown',function(event) {
+		event = event|| window.event;
+		var code = event.keyCode || event.which;
+		if (code === 13) {
+			button.onclick();
+		}
+	});
+
+	addEvent(button, 'click', function () {
+		var num,
+
+		//  忽略前导零
+			reg = /^(?:0*)(\d{1,2})$/,
+			arr = te.value.match(reg);
 
 
-		te.onkeydown = function(event) {
-			event = event|| window.event;
-			var code = event.keyCode || event.which;
-			if (code == 13) {
-				button.onclick();
-			}
-		};
+		// 输入为空则 arr 为 null
+		num = arr ? parseInt(arr[0]) : null;
 
-		button.onclick = function () {
-			var num,
+		// 每次点击按钮后清空 message
+		message.innerHTML = '';
+		message.style.display = 'none';
 
-			//  忽略前导零
-				reg = /^(?:0*)(\d{1,2})$/,
-				arr = te.value.match(reg);
+		// 提示信息
+		if ( !num) {
+			message.innerHTML = "<h3>要求不高，就两位数以内的正整数</h3>";
+			message.style.display = 'block';
+			te.select();
 
+			return ;
+		} else if(num > 20) {
+			message.innerHTML = "<h4>温馨提示： "+ num +"超过20了</h4>";
+			message.style.display = 'block';
+			te.select();
+			return ;
+		}
 
-			// 输入为空则 arr 为 null
-			num = arr ? parseInt(arr[0]) : null;
-
-			// 每次点击按钮后清空 message
-			message.innerHTML = '';
-			message.style.display = 'none';
-
-			// 提示信息
-			if ( !num) {
-				message.innerHTML = "<h3>要求不高，就两位数以内的正整数</h3>";
-				message.style.display = 'block';
-				te.select();
-
-				return ;
-			} else if(num > 20) {
-				message.innerHTML = "<h4>温馨提示： "+ num +"超过20了</h4>";
-				message.style.display = 'block';
-				te.select();
-				return ;
-			}
-
-			
-			// 对DOM元素 初始化
-			square.init(num);
-
-			document.onclick = function(event) {
-				event = event || window.event;
-				var target = event.target || event.srcElement;
-
-				if ( contain(square.obj, target) || target.nodeName === 'LI') {
-					message.innerHTML = '<p>当前小方块的是第'+target.info+'块，数值是<span>'+target.innerHTML+'</span></p>';
-					message.style.display = 'block';
-					console.log('当前小方块的是第'+target.info+'块，数值是'+target.innerHTML+ '\n');
-				}
-			};
-
-		};
 		
+		// 对DOM元素 初始化
+		square.init(num);
+		addEvent(document, 'click', function(event) {
+			event = event || window.event;
+			var target = event.target || event.srcElement;
+
+			if ( contain(square.obj, target) || target.nodeName === 'LI') {
+				message.innerHTML = '<p>当前小方块的是第'+target.index+'块，数值是<span>'+target.innerHTML+'</span></p>';
+				message.style.display = 'block';
+				console.log('当前小方块的是第'+target.index+'块，数值是'+target.innerHTML+ '\n');
+			}
+		});
+
+
+	})
 		
-	})();
 };
