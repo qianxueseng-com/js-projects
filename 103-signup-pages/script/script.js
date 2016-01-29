@@ -6,7 +6,7 @@
  *
  */
 'use strict';
-$(document).ready(function($) {
+$(document).ready(function ($) {
     var $mobile = $('#mobile'),
         $mobileWrong = $('#mobileWrong'),
         $slide_bg = $('#slide_bg'),
@@ -14,7 +14,7 @@ $(document).ready(function($) {
         $slide_tip = $('#slide_tip');
     var phoneNumPattern = /^\d{11}$/; //简单的手机号码正则
     //当输入框内容改变时出发检测
-    $mobile.change(function(event) {
+    $mobile.change(function (event) {
         var phoneNum = $mobile.val().toString();
         if (phoneNum != '') {
             if (!phoneNumPattern.test(phoneNum)) {
@@ -25,9 +25,9 @@ $(document).ready(function($) {
         }
     });
 
-    $slide_box.on('mousedown', function(e) {
+    $slide_box.on('mousedown', function (e) {
         var t = e.clientX - this.offsetLeft;
-        $slide_box.on("mousemove", function(e) {
+        $slide_box.on("mousemove", function (e) {
             var i = e.clientX - t;
             if (i >= 0) {
                 $slide_box.css("left", i + "px");
@@ -41,7 +41,7 @@ $(document).ready(function($) {
         })
     });
 
-    $slide_box.on('mouseup', function(e) {
+    $slide_box.on('mouseup', function (e) {
         $slide_box.off("mousemove")
         $slide_box.animate({
             left: "0px"
@@ -62,7 +62,7 @@ function showImg() {
     img.attr('src', 'img/0.jpg');
     slide_tip.css("color", "#fff");
     slide_tip.text(tip.replace('target', targetArr[0]));
-    imgContainer.find('a').on('click', function(e) {
+    imgContainer.find('a').on('click', function (e) {
         var num = parseInt(img.attr('src').slice(4, 5)),
             randomNum = Math.floor(Math.random() * 4);
         while (randomNum === num) {

@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 
 <html lang="zh-CN">
+
 <head>
-  <meta charset="utf-8">
-  <title>账户注册</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="utf-8">
+    <title>账户注册</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
+
 <body>
-	<div class="page">
-		<div class="header">
-			<div class="logo">
-				<div><img src="img/logo.jpg" height="60" width="100"></div>
-				<div><h1>用户注册</h1></div>	
-    		</div>
-		</div>
-		<div class="steps">
-			<ol>
-		        <li class="active"><i>1</i><span>设置用户名</span></li>
-				<li><i>2</i><span>填写账号信息</span></li>
-		 		<li><i>3</i><span>设置支付方式</span></li>		
-		 		<li><i>4</i><span>注册成功</span></li>
-			</ol>
-		</div>
-		<div class="content">
-			<div class="form_group">
-				<div class="form_item" id="phone">
-					<span class="itemLabel">手机</span>
-					<div class="phone_text">
-						<select>
-							<option value="中国">中国+86</option>
-							<option value="台湾">台湾+343</option>
-							<option value="美国">美国+1</option>
-							<option value="日本">日本+34</option>
-						</select>
-						<input type="text" placeHolder="请输入手机号码" id="mobile" />
-						<span class="tip" id='mobileWrong'>手机号码格式错误！</span>
-					</div>
-				</div>
-				<div class="form_item" id="verify">
-					<span class="itemLabel">验证</span>
-					<div class="verify">
-						<div id="slide_bg"></div>
-						<span id="slide_box">>></span>
-						<div id="text_content">
-							<span id="slide_tip">请按住滑块，拖到最右边</span>
-						</div>
-					</div>
-					<div class="showImg">
-						<span class="imgText">
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <div><img src="img/logo.jpg" height="60" width="100"></div>
+                <div>
+                    <h1>用户注册</h1></div>
+            </div>
+        </div>
+        <div class="steps">
+            <ol>
+                <li class="active"><i>1</i><span>设置用户名</span></li>
+                <li><i>2</i><span>填写账号信息</span></li>
+                <li><i>3</i><span>设置支付方式</span></li>
+                <li><i>4</i><span>注册成功</span></li>
+            </ol>
+        </div>
+        <div class="content">
+            <div class="form_group">
+                <div class="form_item" id="phone">
+                    <span class="itemLabel">手机</span>
+                    <div class="phone_text">
+                        <select>
+                            <option value="中国">中国+86</option>
+                            <option value="台湾">台湾+343</option>
+                            <option value="美国">美国+1</option>
+                            <option value="日本">日本+34</option>
+                        </select>
+                        <input type="text" placeHolder="请输入手机号码" id="mobile" />
+                        <span class="tip" id='mobileWrong'>手机号码格式错误！</span>
+                    </div>
+                </div>
+                <div class="form_item" id="verify">
+                    <span class="itemLabel">验证</span>
+                    <div class="verify">
+                        <div id="slide_bg"></div>
+                        <span id="slide_box">>></span>
+                        <div id="text_content">
+                            <span id="slide_tip">请按住滑块，拖到最右边</span>
+                        </div>
+                    </div>
+                    <div class="showImg">
+                        <span class="imgText">
 							<a href="#" class="captcha-reload">看不清？换一张</a>
 						</span>
-						<div class="imgArea">
-							<img id="img" src="">
-						</div>
-						<span class="imgAnswer"></span>
-					</div>			
-				</div>
-			</div>
-			<div class="next">
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+                        <div class="imgArea">
+                            <img id="img" src="">
+                        </div>
+                        <span class="imgAnswer"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="next">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="bundle.js"></script>
 </body>
+
 </html>
