@@ -7,14 +7,14 @@ var Grid = React.createClass({
         return {rowNum: defaultRowNum};
     },
 
-    handleInputChange: function () {
-        this.setState({rowNum: this.refs.rowNum.refs.rowNumInput.value});
-    },
+    handleChildChange: function (value) {
+        this.setState({rowNum: value});
+      },
 
     render: function () {
         return (
             <div>
-                <GridInput ref="rowNum" value={this.state.rowNum} handleInputChange={this.handleInputChange}/>
+                <GridInput value={this.state.rowNum} handleInputChange={this.handleChildChange}/>
                 <GridBox rowNum={this.state.rowNum}/>
             </div>
         );
