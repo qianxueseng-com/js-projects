@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .content>div{
+            border:1px solid #ff3300;
+            width:1200px;
+            display:flex;
+            justify-content: left;
+            flex-wrap: wrap;
+        }
+        .content>div>div{
+            display: flex;
+            box-sizing:border-box;
+            margin:5px;
+            height:40px;
+            background:darkgoldenrod;
+            width:40px;
+
+
+        }
+    </style>
+</head>
+<body>
+<button>++</button>
+<span>1</span>
+<button>---</button>
+<div class="content">
+</div>
+<script>
+window.onload = function () {
+    var btns = document.querySelectorAll('button'),
+        addBtn = btns[0],
+        subBtn = btns[1],
+        numSpan = document.querySelector('span'),
+        contentDiv = document.querySelector('.content');
+
+    var currentNum = 1;
+    addBtn.onclick = function () {
+        currentNum++;
+        numSpan.innerText = Math.pow(currentNum,2);
+        updateDiv(numSpan.innerText)
+    }
+    subBtn.onclick = function () {
+        currentNum--;
+        numSpan.innerText = Math.pow(currentNum,2);
+        updateDiv(numSpan.innerText)
+
+    }
+
+
+    function updateDiv(num){
+        var newDiv = null;
+        contentDiv.removeChild(contentDiv.childNodes[0])
+        newDiv = document.createElement('div');
+        for(var i=0;i<num;i++){
+            var divs = document.createElement('div');
+            newDiv.appendChild(divs);
+            divs.innerText = i;
+        }
+        contentDiv.appendChild(newDiv);
+        newDiv.onmouseover = function (e) {
+            if(e.target.childElementCount===0){
+                console.log(e.target.childNodes[0]);
+            }
+        }
+    }
+}
+</script>
+</body>
+</html>
