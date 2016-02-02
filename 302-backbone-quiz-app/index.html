@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>302-backbone-quiz-app</title>
+    <link rel="stylesheet" href="./dist/css/main.min.css" media="screen">
+  </head>
+  <body>
+    <div id="container">
+    </div>
+
+    <script type="text/template" id="start-template">
+      <h3 class="title"><%= question %></h3>
+      <img src="<%= imageURL %>" alt="images" />
+      <div class="bottom-button">
+        <a href="<%= url1 %>" class="card-button"><%= answerA %></a>
+        <a href="<%= url2 %>" class="card-button"><%= answerB %></a>
+      </div>
+    </script>
+
+    <script type="text/template" id="about-template">
+      <h1 class="title"><%= question %></h1>
+      <p class="about"><%= imageURL %></p>
+      <div class="bottom-button">
+        <a href="<%= url1 %>" class="card-button"><%= answerA %></a>
+        <a href="<%= url2 %>" class="card-button"><%= answerB %></a>
+      </div>
+    </script>
+
+    <script type="text/template" id="card-template">
+      <h2 class="title"><%= question %></h2>
+      <img src="<%= imageURL %>" alt="images" />
+      <div class="bottom-button">
+        <a href="<%= url1 %>" class="card-button"><%= answerA %></a>
+        <a href="<%= url2 %>" class="card-button"><%= answerB %></a>
+      </div>
+    </script>
+
+    <script type="text/template" id="end-template">
+      <h2 class="title"><%= question %></h2>
+      <img src="<%= imageURL %>" alt="images" />
+      <div class="bottom-button">
+        <a href="<%= url1 %>" class="card-button"><%= answerA %></a>
+        <a href="<%= url2 %>" class="card-button"><%= answerB %></a>
+      </div>
+    </script>
+
+    <script src="./dist/js/jquery.min.js"></script>
+    <script src="./dist/js/underscore-min.js"></script>
+    <script src="./dist/js/backbone-min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="./dist/js/main.min.js"></script>
+  </body>
+</html>
