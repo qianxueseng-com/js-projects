@@ -6,10 +6,10 @@ import React from 'react'; // Necessary for JSX
 import ReactDOM from 'react-dom';
 
 // Import our JS code
-import InputView from './input-view';
+import AppView from './app-view';
 
 // Attach React to #app-container inside index.html
 ReactDOM.render(
-  <InputView />,
+  <AppView />,
   document.getElementById('app-container')
 );

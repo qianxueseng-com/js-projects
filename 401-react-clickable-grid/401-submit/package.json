@@ -7,7 +7,7 @@
     "web-server": "http-server -p 3000 .",
     "start": "npm run webpack-server & npm run web-server",
     "bulid": "webpack",
-    "test": "mocha --compilers js:babel-register --recursive"
+    "test": "mocha --compilers js:babel-core/register --require ./setup.js"
   },
   "author": "BlackGanglion",
   "devDependencies": {
@@ -27,6 +27,7 @@
     "file-loader": "^0.8.5",
     "http-server": "^0.8.0",
     "img-loader": "^1.2.0",
+    "jsdom": "^8.0.2",
     "mocha": "^2.4.5",
     "node-sass": "^3.2.0",
     "react": "^0.14.7",
