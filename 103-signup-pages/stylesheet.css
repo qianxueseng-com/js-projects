@@ -118,7 +118,7 @@
     height: 34px;
     background-color: #e8e8e8;
     margin: 0;
-    padding: 0;	
+    padding: 0;
     border: 1px solid #dedede;
 }
 .content .form_group .form_item .verify #slide_bg{
@@ -179,4 +179,19 @@
 .content .form_group .form_item .showImg .imgText{
     width: 200px;
     margin: 0 auto;
+}
+
+.next button {
+	min-width: 180px;
+	display: inline-block;
+    height: 36px;
+    line-height: 36px;
+	margin-left: 100px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 3px;
 }
