@@ -259,6 +259,7 @@
 									background: #fff url('../source/img/green.png') no-repeat center;
 								}
 								&.active {
+									cursor: default;
 									background: #fff url('../source/img/yes.png') no-repeat center;
 								}
 							}
