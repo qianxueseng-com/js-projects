@@ -19,7 +19,7 @@ var generateHandler = function(){
   clearCanvas(context,canvas);
   number = parseInt(document.getElementById("integer").value);
   var abc = 1.03;
-  w = Math.floor(canvas.width / number) / a;
+  w = Math.floor(canvas.width / number) / abc;
   space = (canvas.width-number*w)/(number+1);
   //判断用户输入数字是否在范围内
   if (0 < number && number < 27){
