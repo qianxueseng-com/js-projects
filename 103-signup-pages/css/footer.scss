@@ -1,0 +1,32 @@
+.footer {
+	padding: 7px 0 9px;
+
+	border-top: 1px solid #ddd;
+	a {
+		color: #6C6C6C;
+		margin: 0 6px;
+		&:hover {
+			color: #F22E00;
+		}
+	}
+	strong {
+		color: #e6e6e6;
+	}
+	span {
+		margin: 0 6px;
+		color: #9c9c9c;
+	}
+
+	p {
+		padding-bottom: 8px;
+	}
+
+	.footer-linker {
+		p{
+			margin-bottom: 8px;
+
+			line-height: 27px;
+			border-bottom: 1px solid #ccc;
+		}
+	}
+}
