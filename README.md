@@ -7,6 +7,8 @@ javascript projects
 - [淡苍的个人介绍页](http://page.blackganglion.com)
 - [dontry个人介绍页](http://dontry.github.io/js-projects)
 - [Rowan个人介绍页](http://jingwang88.github.io/)
+- [glen的个人介绍页](http://glenye.github.io)
+- [heeefei的个人介绍页](http://heeefei.com)
 
 ### 提交Pull request的办法
 - fork这个repo，看见右上方的fork按钮了吗？点它。
