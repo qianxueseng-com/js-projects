@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>backbone-quiz-app</title>
+	<link rel="stylesheet" href="./dist/bundle-css.css">
+</head>
+<body>
+
+	<div id="warped"></div>
+
+
+	<!-- Template -->
+
+
+	<script id='template' type='text/template'>
+		<% if(title) { %>
+			<h3><%-title%></h3>
+		<% } %>
+		<img src="<%- imageURL %>" >
+		<p><%- question%></p>
+		<div class='btn-area'>
+			<a class="<%- btnClass %>" href="<%- hrefs[0]%>" ><%- answers[0] %></a>
+			<% if (answers[1]) { %>
+				<a class="<%- btnClass %>" href="<%- hrefs[1] %>" ><%- answers[1] %> </a>
+			<%	} %>
+		</div>
+
+	</script>
+	<script src='./dist/bundle-js.js'></script>
+</body>
+</html>
