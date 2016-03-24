@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+    <link rel="stylesheet" href="../dist/index-css.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="warped">
+      
+    </div>
+    <input id='input-text' type="text" placeholder='请输入数值: 1~20' value='3'>
+    <input type="button" id="input-button">
+
+    <div id="message"></div>
+
+    <div id="square"></div>
+
+    <script id='template' type='text/template'>
+      <% for(var i=0; i< rows; i++) { %>
+        <ul>
+        <% for(var j=0; j< rows; j++) { %>
+          <li><%= i * rows + j + 1 %>  </li>
+        <% } %>
+        </ul>
+      <% } %>
+    </script>
+    <script type='text/javascript' src='../dist/index-js.js'></script>
+    <script src="mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script src="../dist/test.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

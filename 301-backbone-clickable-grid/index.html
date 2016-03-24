@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ClickGraid</title>
+
+	<link rel="stylesheet" href="./dist/index-css.css">
+	
+	
+</head>
+<body>
+	
+	<input id='input-text' type="text" placeholder='请输入数值: 1~20' value='3'>
+	<input id='input-button' type="button">
+
+	<div id="message"></div>
+
+	<div id="square"></div>
+
+	<script id='template' type='text/template'>
+		<% for(var i=0; i< rows; i++) { %>
+			<ul>
+			<% for(var j=0; j< rows; j++) { %>
+				<li><%= i * rows + j + 1 %></li>
+			<% } %>
+			</ul>
+		<% } %>
+	</script>
+	<script type='text/javascript' src='./dist/index-js.js'></script>
+
+</body>
+</html>
