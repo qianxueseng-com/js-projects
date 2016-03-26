@@ -1,4 +1,24 @@
 
+
+
+var myDataRef = require('./firebase'),
+	data = null;
+
+
+
+
+myDataRef.on("value", function succeed(snapshot){
+
+						data = snapshot.val();
+						console.log("import data from firebase sucess");
+						app.start();
+					}, function fail(errorObject) {
+						data = require('./data');
+						console.log("ilvaild firebaseData, loading from local data");
+						app.start();
+					});
+
+
 var app = {};
 
 app.View = Backbone.View.extend({
@@ -8,7 +28,8 @@ app.View = Backbone.View.extend({
 		var CardCollection = require('./Collection');
 
 		var OTHER_SCARDS, QUIZ_CARDS;
-		app.list = new CardCollection(require('./data'));
+		app.list = new CardCollection(data);
+
 
 		OTHERS_CARDS = 3;
 		QUIZ_CARDS = app.list.length-OTHERS_CARDS;
@@ -70,12 +91,13 @@ app.Router = Backbone.Router.extend({
 	},
 
 });
+
 app.start = function() {
 
 	new app.View();
 	new app.Router();
 	Backbone.history.start();
 };
-app.start();
+
 
 
