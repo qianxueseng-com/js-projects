@@ -1,0 +1,24 @@
+.gridNumInput {
+	margin: 20px;
+}
+
+.gridContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+
+.grid {
+	background: tomato;
+	padding: 5px;
+	width: 200px;
+	height: 150px;
+
+	line-height: 150px;
+	color: white;
+	font-weight: bold;
+	font-size: 3em;
+	text-align: center;
+}
