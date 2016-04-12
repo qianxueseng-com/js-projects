@@ -13,7 +13,7 @@ function generateGrids() {
 	gridContainer.innerHTML = null;
 	//add new grids
 	var num = gridNumInput.value;
-	for(var i = 0; i < num * num; i++) {
+	for(var i = 1; i <= num * num; i++) {
 		createOneGrid(i);	
 	}
 }
