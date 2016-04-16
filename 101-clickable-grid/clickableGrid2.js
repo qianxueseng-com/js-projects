@@ -4,20 +4,18 @@ var genGridBtn = document.getElementById("genGridBtn");
 var gridContainer = document.getElementsByClassName("gridContainer")[0];
 
 //add event handler for the button
-genGridBtn.addEventListener("click", generateGrids(gridContainer), false);
+genGridBtn.addEventListener("click", generateGrids.bind(genGridBtn, gridContainer), false);
 //add event handler to output the number using event delegation
 gridContainer.addEventListener("click", writeNumber, false);
 
-function generateGrids(gridContainer) {
-	return function(event) {
-		//remove old grids
-		gridContainer.innerHTML = null;
-		//add new grids
-		var num = gridNumInput.value;
-		for(var i = 1; i <= num * num; i++) {
-			createOneGrid(gridContainer, i);	
-		}
-	};
+function generateGrids() {
+	//remove old grids
+	gridContainer.innerHTML = null;
+	//add new grids
+	var num = gridNumInput.value;		
+	for(var i = 1; i <= num * num; i++) {
+		createOneGrid(gridContainer, i);	
+	}
 }
 
 //Create a new grid under "gridContainer" div
