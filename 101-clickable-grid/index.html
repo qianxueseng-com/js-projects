@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>101</title>
+<script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script>
+<style>
+	.container{
+		width:500px;
+		margin: 0 auto;
+		display:flex;
+		justify-content: center;
+		flex-wrap:wrap;
+	}
+	.box{
+		width:90px;
+		height:100px;
+		margin:5px;
+		line-height: 100px;
+		text-align: center;
+		background:#ccc;
+	}
+</style>
+</head>
+<body>
+    
+    <div id="container" class="container">
+    	
+    </div>
+
+    <script>
+    	(function(){
+    		
+    		var N = 5;
+    		var container = document.getElementById('container');
+
+    		var box = []
+
+    		for(var i=0;i<N;i++){
+    			for(var j=0;j<N;j++){
+    				var num = i * N + j + 1;
+    				
+    				box.push('<div class="box">' + num + '</div>')
+    			}
+    		}
+
+    		var boxDom = box.join('')
+
+    		container.innerHTML = boxDom;
+
+    		container.onclick = function(ev){
+    			var oEvent = ev || event;
+    			var target = oEvent.target || oEvent.srcElement;
+    			
+    			if(target.className == 'box'){
+    				console.log(target.innerHTML)	
+    			}
+    			
+    		}
+
+
+    	})()	
+    </script>
+</body>
+</html>
