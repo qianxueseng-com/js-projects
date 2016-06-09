@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+.container {
+  background-color: #bbada0;
+  width: 1000px;
+  margin: 30px auto;
+  padding: 20px 8px 8px 8px;
+}
+
+.data-input {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #554c47;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
+}
+#grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 800px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #bbada0;
+  background-color: #ede0c8;
+  color: #776165;
+}
