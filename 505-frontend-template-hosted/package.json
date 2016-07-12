@@ -1,0 +1,24 @@
+{
+  "name": "frontend-template-hosted-qianxueseng",
+  "version": "1.0.0",
+  "description": "A sample app hosted by LeanCloud",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "LeanCloud",
+    "LeanEngine",
+    "express",
+    "qianxueseng"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.12.3",
+    "leanengine": "^1.0.0-beta"
+  },
+  "engines": {
+    "node": "4.x"
+  }
+}
