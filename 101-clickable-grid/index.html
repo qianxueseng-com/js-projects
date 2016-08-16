@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      border: 1px solid #111;
+      background-color: antiquewhite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+  const n = 10
+  let grid = document.createElement('div')
+  grid.className += 'grid'
+  grid.style.width = (n * 62 + 10).toString() + 'px'
+  grid.addEventListener("click", (e)=> {
+    if (e.target && e.target.nodeName === 'DIV') {
+      console.log(e.target.textContent)
+    }
+  })
+
+  for (let i = 0; i < n * n; i++) {
+    let item = document.createElement('div')
+    item.className += 'item'
+    item.textContent = (i * i).toString()
+//    item.addEventListener("click", ()=>console.log(i * i))
+    grid.appendChild(item)
+  }
+
+  document.getElementsByTagName('body')[0].appendChild(grid)
+</script>
+</html>
