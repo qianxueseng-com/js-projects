@@ -1,0 +1,23 @@
+{
+  "name": "403-react-hello-plus",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.1.0"
+  },
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "express": "4.12.3",
+    "leanengine": "^1.0.0-beta"
+  },
+  "scripts": {
+    "start": "node ./server/server.js",
+    "start-react": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "4.x"
+  }
+}
