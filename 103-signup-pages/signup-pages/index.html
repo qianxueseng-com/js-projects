@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Taobao Reg Demo</title>
+    <link href="./dist/css/normalize.min.css" rel="stylesheet">
+    <link href="./dist/css/main.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+
+      <div class="logo">
+        <img src="./dist/images/logo.png" alt="logo" />
+        <h1>用户注册</h1>
+      </div>
+
+      <div class="nav">
+        <ul>
+          <li class="active">
+            <i>1</i> 设置用户名
+          </li>
+          <li>
+            <i>2</i> 填写账号信息
+          </li>
+          <li>
+            <i>3</i> 设置支付方式
+          </li>
+          <li>
+            <i>4</i>注册成功
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <form action="" method="post">
+          <div class="form-list">
+            <div class="form-group">
+              <div class="form-item" id="show-phone">
+                <span>手机号</span>
+                <div>
+                  <div class="areaNumber">
+                    <p>中国大陆</p><p>+86&nbsp&nbsp</p>
+                  </div>
+                  <input type="text" name="phoneNumber" id="phoneNumber" placeholder="请输入你的手机号码" value="">
+                  <span class="hint" id="numberHint"></span>
+                </div>
+              </div>
+
+              <div class="form-item" id="show-email">
+                <span>邮箱</span>
+                <div>
+                  <input type="text" name="email" id="email" placeholder="请输入邮箱" value="">
+                  <span class="hint" id="emailHint"></span>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <span>验证</span>
+                <div class="slide-main">
+                  <div class="slide-show"></div>
+                  <div class="slide-box">>></div>
+                  <span id="boxhint" class="boxhint">请按住滑块，拖动到最右边</span>
+                  <div class="slide-area">
+                    &nbsp
+                  </div>
+                  <div class="show-picture">
+                    <div>
+                      <span class="hint" id="pictureHint"></span>
+                      <img id="changepicture" src="./dist/images/btn2.png" alt="btn" />
+                    </div>
+                    <img id="verify" src="" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-submit">
+                <button type="button" name="button" id="submit" class="submit">
+                  下一步
+                </button>
+                <span id="regMethod">需要通过邮箱注册</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./dist/js/jquery.min.js"></script>
+    <script src="./dist/js/lodash.js"></script>
+    <script src="./dist/js/main.min.js"></script>
+  </body>
+</html>
