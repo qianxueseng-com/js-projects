@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绍华前端项目第一个</title>
+    <style>
+        #ulNode li {
+            list-style:none;
+            height: 40px;
+            width: 40px;
+            border: 1px solid;
+            text-align: center;
+            line-height: 40px;
+            flex:auto;
+        }
+        #ulNode{
+
+            display: flex;
+            flex-flow:row wrap;
+            align-items: stretch;
+
+        }
+
+
+    </style>
+</head>
+<body>
+ <ul id="ulNode"></ul>
+ <script>
+     //设置n的值
+     var n = 10;
+     //添加n*n个格子
+     for(i = 1;i <= n*n;i++){
+        document.getElementById('ulNode').innerHTML+='<li>'+i+'</li>';
+     }
+     //设置ul的宽度使得他是n*n排列
+     var ulwidth = n*42+'px';
+     document.getElementById('ulNode').style.width=ulwidth;
+     //使用JS事件代理来给每个LI添加点击事件
+
+     document.getElementById('ulNode').addEventListener("click",function(e){
+
+        if(e.target.nodeName == "LI") {
+
+            console.log(e.target.innerHTML);
+     }
+
+     });
+
+
+
+
+
+ </script>
+
+</body>
+</html>
