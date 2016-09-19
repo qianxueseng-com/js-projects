@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>n x n的格子</title>
+  <style type="text/css">
+    #wrap { display: -webkit-flex; display: flex; flex-wrap: wrap; }
+    .box { width: 50px; height: 50px; margin: 10px; border: 1px solid #000; text-align: center; line-height: 50px;  }
+  </style>
+</head>
+<body>
+  <div id="wrap"></div>
+  <script type="text/javascript">
+    var oWrap = document.getElementById('wrap');
+    createBox(oWrap, 12, function(n, iw){
+      oWrap.style.width = n*iw + 'px';
+    })
+    wrapClick(oWrap);
+
+    //封装生成box函数
+    function createBox(parent, n, callback){
+      for(var i=0; i<n; i++){
+        for(var j=0; j<n; j++){
+          var oDiv = document.createElement('div');
+          oDiv.className = 'box';
+          // oDiv.style.left = 10 + 60*j + 'px';
+          // oDiv.style.top = 10 + 60*i + 'px';
+          oDiv.innerHTML = n*i + j + 1;
+          oWrap.appendChild(oDiv);
+        }
+      }
+      if(typeof callback == 'function'){
+        var iw = oWrap.getElementsByTagName('div')[0].offsetWidth + 20;
+        callback(n, iw);
+      }
+    }
+    //给父元素加上点击事件
+    function wrapClick(oParent){
+      oParent.onclick = function(ev){
+        var ev = ev || event;
+        var target = ev.target || ev.srcElement;
+        console.log(target.innerHTML);
+      }
+    }
+  </script>
+</body>
+</html>
