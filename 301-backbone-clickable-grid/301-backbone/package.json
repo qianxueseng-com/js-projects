@@ -1,0 +1,35 @@
+{
+  "name": "301-backbone",
+  "version": "1.0.0",
+  "description": "301-backbone",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "BlackGanglion",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.18",
+    "backbone": "^1.2.3",
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^1.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "gulp-webpack": "^1.5.0",
+    "jquery": "^2.1.4",
+    "mocha": "^2.3.4",
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.12.2",
+    "webpack-core": "^0.6.8"
+  }
+}
