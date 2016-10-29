@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>clickableGrid</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        width: 450px;
+        height: 500px;
+        margin: 100px auto;
+    }
+    
+    h3 {
+        width: 450px;
+        height: 35px;
+        margin-bottom: 15px;
+        text-align: center;
+        background-color: #bbada0;
+        line-height: 35px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    
+    input {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+    }
+    
+    .boxContent {
+        display: -webkit-flex;
+        /* Safari */
+        display: flex;
+        width: 450px;
+        height: 450px;
+        border: 1px solid #000;
+        flex-flow: row wrap;
+        align-content: space-between;
+    }
+    
+    .row {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        flex: 1 1 100%;
+    }
+    
+    .item {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        margin: 5px;
+        flex: 1;
+        background: #bbada0;
+        text-align: center;
+        list-style: none;
+        border-radius: 2px;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+            var input=document.querySelector("input");
+            var boxContent = document.querySelector(".boxContent");
+            //输入数字，回车生成相应的方块
+            input.addEventListener("change", function() {
+                var value1 = typeof(input.value) == "string" ? parseInt(input.value) : input.value
+                if (typeof(value1) != "number" || value1 < 0 || value1 > 11) {
+                    alert("输入有误,请输入1-10之间的数字");
+                } else {
+                    while (hasChild(boxContent)) {
+                        boxContent.removeChild(boxContent.children[0]);
+                    }
+                    var value = input.value
+                    //利用文档碎片
+                    var fragment = document.createDocumentFragment();
+                    for (var i = 0; i < value; i++) {
+                        var div = document.createElement("div");
+                        div.className = "row"
+                        fragment.appendChild(div)
+                        for (var j = 0; j < value; j++) {
+                            var span = document.createElement("span");
+                            span.className = "item";
+                            var spantxt = document.createTextNode(i * value + j + 1);
+                            span.appendChild(spantxt);
+                            // div.appendChild(span);
+                            chooseSize(span, value);
+                            fragment.appendChild(span);
+                        }
+                    }
+                    boxContent.appendChild(fragment);
+                }
+            })
+            consoleNum(boxContent)
+        }
+        //点击打印出当前数字利用事件委托
+    function consoleNum(parents) {
+        parents.addEventListener('click', function(event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            if (target.nodeName.toLowerCase() == "span") {
+                console.log(target.innerHTML);
+            }
+        })
+    }
+
+    function chooseSize(nodeLi, val) {
+        switch (val) {
+            case "1":
+                nodeLi.style.fontSize = "200px";
+                break;
+            case "2":
+                nodeLi.style.fontSize = "100px";
+                break;
+            case "3":
+                nodeLi.style.fontSize = "80px";
+
+                break;
+            case "4":
+                nodeLi.style.fontSize = "60px";
+
+                break;
+            case "5":
+                nodeLi.style.fontSize = "50px";
+
+                break;
+            case "6":
+                nodeLi.style.fontSize = "40px";
+                break;
+            case "7":
+                nodeLi.style.fontSize = "30px";
+
+                break;
+            case "8":
+                nodeLi.style.fontSize = "20px";
+                break;
+            case "9":
+                nodeLi.style.fontSize = "10px";
+
+                break;
+            case "10":
+                nodeLi.style.fontSize = "5px";
+
+                break;
+        }
+    }
+    //判断节点是否存在孩子节点
+    function hasChild(node) {
+        return node.children.length
+    }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h3>请输入行列数:<input type="text" ></h3>
+        <div class="boxContent">
+        </div>
+    </div>
+</body>
+
+</html>
