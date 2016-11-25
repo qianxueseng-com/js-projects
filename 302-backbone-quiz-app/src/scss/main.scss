@@ -1,0 +1,26 @@
+$navFontClolor: #555;
+$fontSize: 2rem;
+$lineheight: $fontSize * 2;
+
+body {
+    font-family: Helvetica, Tahoma, Arial, 'Microsoft YaHei', '微软雅黑', sans-serif;
+    font-size: 14px;
+}
+
+nav {
+    font-size: $fontSize;
+    line-height: $lineheight;
+
+    min-height: 50px;
+
+    color: $navFontClolor;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.question {
+    font-size: $fontSize;
+    line-height: $lineheight;
+}

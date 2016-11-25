@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>302-backbone-quiz-app</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/main.min.css">
+</head>
+<body>
+<nav class="bavbar navbar-default">BACKBONE QUIZ APP</nav>
+<div class="container">
+    <img src="" alt="question images" class="title-img img-responsive img-thumbnail center-block">
+    <div class="question text-center"></div>
+    <div class="seclect-answer"></div>
+</div>
+
+<!--页面模板-->
+<script type="text/template" id="card_template">
+    <a href=<%= hrefA %> class="answer_a btn btn-primary btn-block"><%= answerA %></a>
+    <a href=<%= hrefB %> class="answer_b btn btn-default btn-block"><%= answerB %></a>
+</script>
+
+<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/spin.js/2.3.2/spin.min.js"></script>
+<script src="http://cdn.staticfile.org/json2/20140204/json2.min.js"></script>
+<script src="http://cdn.staticfile.org/underscore.js/1.7.0/underscore-min.js"></script>
+<script src="http://cdn.staticfile.org/backbone.js/1.1.2/backbone-min.js"></script>
+<script src="dist/js/main.js"></script>
+</body>
+</html>
